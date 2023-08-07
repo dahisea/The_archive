@@ -1,0 +1,55 @@
+baseURL = "https://dahi.icu/"
+languageCode = "zh-TW"
+defaultContentLanguage = "zh"
+title = "Dahi Blog"
+theme = "kagome"
+paginate = 5
+copyright = "轉載請註明出處　© 從前-現在 Dahi.icu"
+hasCJKLanguage = true
+googleAnalytics = 'G-PYKTMJEK97'
+  
+
+[menu]
+  [[menu.main]]
+    identifier = "yuujin"
+    name = "友人"
+    url = "/yuujin/"
+    weight = 1
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 2
+  [[menu.main]]
+    identifier = "dns"
+    name = "DNS"
+    url = "/dns/"
+    weight = 3
+  [[menu.main]]
+    identifier = "link"
+    name = "Before DDOS"
+    url = "/link/"
+    weight = 4
+
+  [[menu.social]]
+    identifier = "github"
+    name = "github"
+    url = "https://github.com/dahisea"
+    weight = 1
+  [[menu.social]]
+    identifier = "telegram"
+    name = "telegram"
+    url = "https://t.me/dahi_no_chatbot"
+    weight = 2
+    
+
+[params]
+  keywords = ['Dahi']
+  description = "時光流轉，願你有一天能與你重要的人重逢"
+  mainSections = ["posts"]
+  
+  [params.widget]
+    articles_count = 9
+    categories_count = 3
+    tags_count = 6
+
