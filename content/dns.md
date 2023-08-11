@@ -7,8 +7,12 @@ cover:
 # Dahi-no-public-DNS-server
 A DOH dns.
 
+### 53
+``64.110.104.23``
+
 
 ### DNS OVER HTTPS
+
 #### 172
 
 ``https://get-resolution-s-a-r-cdn.dahi.icu/mmtls/114514ee``
