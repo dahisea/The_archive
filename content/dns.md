@@ -1,6 +1,6 @@
 ---
 title: DNS
-description: 公共
+description: 已跑路
 cover: 
 ---
 
