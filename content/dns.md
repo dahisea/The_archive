@@ -1,6 +1,6 @@
 ---
 title: DNS
-description: 已跑路
+description: 不穩但沒有跑路
 cover: 
 ---
 
@@ -9,7 +9,7 @@ A DOH dns.
 
 
 ### DNS OVER HTTPS
-#### 香港
+#### 172
 
 ``https://get-resolution-s-a-r-cdn.dahi.icu/mmtls/114514ee``
 
