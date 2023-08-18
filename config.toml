@@ -36,7 +36,14 @@ googleAnalytics = 'G-PYKTMJEK97'
     name = "github"
     url = "https://github.com/dahisea"
     weight = 1
+    [[menu.social]]
+    identifier = "telegram"
+    name = "telegram"
+    url = "https://t.me/Unit_O"
+    weight = 2
     
+
+
 
 [params]
   keywords = ['Dahi']
