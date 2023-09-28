@@ -1,10 +1,10 @@
 <header class="header-container layout-block layout-padding">
   <div class="header-inner content-padding-large soft-size--large soft-style--box">
     <div class="header-logo">
-      <a href="{{ .Site.BaseURL }}">Home</a>
-      <br /><br />
+      <a href="{{ .Site.BaseURL }}"<del>Back to Home Page</del></a><br />
+    </div>
           {{ range .Site.Menus.main }}
-          <a class="soft-size--small soft-style--active" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}　</a>
+          <a class="soft-size--small soft-style--active" href="{{ .URL | safeURL }}" title="{{ .Title }}"><h3>{{ .Name }}</h3></a>
           {{ end }}
   </div>
 </header>
