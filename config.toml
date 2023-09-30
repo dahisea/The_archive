@@ -27,7 +27,7 @@ googleAnalytics = 'G-PYKTMJEK97'
     weight = 3
   [[menu.main]]
     identifier = "link"
-    name = "Before DDOS"
+    name = "No Attack"
     url = "/link/"
     weight = 4
 

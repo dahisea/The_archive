@@ -1,26 +1,25 @@
 ---
 title: DNS
-description: 不穩但沒有跑路
+description: 也許並不穩定
 cover: 
 ---
 
 # Dahi-no-public-DNS-server
-A DOH dns.
-
-### 53
+封鎖了部分分析Api和頁面停放
+### Port 53
 ``64.110.104.23``
 
 ``2603:c023:3:d45e::d``
 
 ### DNS OVER HTTPS
-#### 172
+#### Good
 ``https://get-resolution-s-a-r-cdn.dahi.icu/mmtls/114514ee``
 
 ``https://get-resolution-s-a-r-cdn.dahi.icu/webtranslate/api/dlookup``
 
 ``https://get-resolution-s-a-r-cdn.dahi.icu/dns-query``
 
-#### Official 
+#### Very Good
 ``https://get-resolution-ok-cdn.dahi.icu/mmtls/114514ee``
 
 ``https://get-resolution-ok-cdn.dahi.icu/webtranslate/api/dlookup``
@@ -29,5 +28,5 @@ A DOH dns.
 
 
 ### iOS/iPad OS DOH
-#### Official 
+#### Very Good
 https://fastly.jsdelivr.net/gh/dahisea/Dahi-no-public-DNS-server/dahi-no-dns-https.mobileconfig
