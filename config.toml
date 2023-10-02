@@ -1,7 +1,7 @@
 baseURL = "https://dahi.icu/"
 languageCode = "zh-TW"
 defaultContentLanguage = "zh"
-title = "Dahi Blog"
+title = "Dahi no Blog"
 theme = "kagome"
 paginate = 5
 copyright = "轉載請註明出處　© 從前-現在 Dahi.icu"
