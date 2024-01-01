@@ -4,6 +4,20 @@
       <a href="{{ .Site.BaseURL }}"><h1>{{ .Site.Title }}</h1></a>
     </div>
     <nav class="header-nav">
+      <!-- 使用CSS样式来控制按钮的显示和隐藏 -->
+      <style>
+        .header-nav--btn {
+          display: none;
+        }
+        @media screen and (max-width: 768px) {
+          .header-nav--btn {
+            display: block;
+          }
+          .header-nav--list {
+            display: none;
+          }
+        }
+      </style>
       <div class="header-nav--btn">
         <div class="btn-item"></div>
         <div class="btn-item"></div>
@@ -11,9 +25,14 @@
       </div>
       <div class="header-nav--list">
         <div>
-          {{ range .Site.Menus.main }}
-          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}</a>
-          {{ end }}
+          <!-- 使用列表元素来表示导航菜单 -->
+          <ul>
+            {{ range .Site.Menus.main }}
+            <li>
+              <a class="list-item soft-size--small soft-style--hover soft-style--active" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}</a>
+            </li>
+            {{ end }}
+          </ul>
         </div>
       </div>
     </nav>
