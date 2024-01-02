@@ -7,32 +7,31 @@
       <style>
         .header-nav--btn {
           display: none;
+          cursor: pointer;
         }
+
         @media screen and (max-width: 768px) {
           .header-nav--btn {
             display: block;
-            cursor: pointer;
           }
+
           .header-nav--list {
             display: none;
           }
+
           .header-nav--list.show {
             display: block;
           }
         }
       </style>
-      <div class="header-nav--btn">
-        <div class="btn-item"></div>
-        <div class="btn-item"></div>
-        <div class="btn-item"></div>
-      </div>
+      <div class="header-nav--btn"></div>
       <div class="header-nav--list">
         <div>
           <ul>
             {{ range .Site.Menus.main }}
-            <li>
-              <a class="list-item soft-size--small soft-style--hover soft-style--active" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}</a>
-            </li>
+              <li>
+                <a class="list-item soft-size--small soft-style--hover soft-style--active" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}</a>
+              </li>
             {{ end }}
           </ul>
         </div>
@@ -40,14 +39,3 @@
     </nav>
   </div>
 </header>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var btn = document.querySelector(".header-nav--btn");
-    var list = document.querySelector(".header-nav--list");
-
-    btn.addEventListener("click", function () {
-      list.classList.toggle("show");
-    });
-  });
-</script>
