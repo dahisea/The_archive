@@ -1,10 +1,9 @@
 <header class="header-container layout-block layout-padding">
   <div class="header-inner content-padding-large soft-size--large soft-style--box">
     <div class="header-logo">
-      <a href="{{ .Site.BaseURL }}"><h2>{{ .Site.Title }}</h2></a> <!-- 将h1改为h2，缩小标题 -->
+      <a href="{{ .Site.BaseURL }}"><h2>{{ .Site.Title }}</h2></a>
     </div>
     <nav class="header-nav">
-      <!-- 使用CSS样式来控制按钮的显示和隐藏 -->
       <style>
         .header-nav--btn {
           display: none;
@@ -12,9 +11,13 @@
         @media screen and (max-width: 768px) {
           .header-nav--btn {
             display: block;
+            cursor: pointer;
           }
           .header-nav--list {
             display: none;
+          }
+          .header-nav--list.show {
+            display: block;
           }
         }
       </style>
@@ -25,7 +28,6 @@
       </div>
       <div class="header-nav--list">
         <div>
-          <!-- 使用列表元素来表示导航菜单 -->
           <ul>
             {{ range .Site.Menus.main }}
             <li>
@@ -39,15 +41,13 @@
   </div>
 </header>
 
-<!-- 使用JavaScript来实现按钮抽屉的功能 -->
 <script>
-  // 获取按钮和列表元素
-  var btn = document.querySelector(".header-nav--btn");
-  var list = document.querySelector(".header-nav--list");
+  document.addEventListener("DOMContentLoaded", function () {
+    var btn = document.querySelector(".header-nav--btn");
+    var list = document.querySelector(".header-nav--list");
 
-  // 为按钮添加点击事件
-  btn.addEventListener("click", function() {
-    // 切换列表的显示和隐藏
-    list.classList.toggle("show");
+    btn.addEventListener("click", function () {
+      list.classList.toggle("show");
+    });
   });
 </script>
