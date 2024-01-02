@@ -10,15 +10,11 @@
         <div class="article-header layout-padding">
           {{ partial "card/card-cover.html" . }}
         </div>
-          {{- block "widget" . -}}{{- end -}}
-        <div class="article-content">
-          <div class="markdown-body content-padding-large soft-size--large soft-style--box">
-            {{ .Content }}
-          </div>
-          <br /><br />
-          <div class="content-padding-large soft-size--large soft-style--box">
-            <div id="tcomment"></div>
-          </div>
+        {{- block "widget" . -}}{{- end -}}
+        <div class="article-content content-padding-large soft-size--large soft-style--box">
+          {{ .Content }}
+          <!-- 将评论区代码放在文章内容后面，增加用户参与度 -->
+          <div id="tcomment"></div>
         </div>
         {{- block "main" . }}{{- end -}}
       </div>
@@ -31,3 +27,4 @@
   {{- partial "footer-single" . -}}
 </body>
 </html>
+
