@@ -6,9 +6,8 @@
     justify-content: space-between;
   }
 
-  .header-logo h1 {
+  .header-logo h2 {
     font-size: var(--font-large-size);
-    font-weight: bolder;
     font-family: monospace, sans-serif;
     white-space: nowrap;
     color: var(--theme-text-primary);
@@ -100,7 +99,7 @@
       display: block;
 
       .list-item {
-        padding: 8px 16px;
+        padding: 8px 10px;
       }
     }
   }
@@ -109,14 +108,54 @@
 
 @media #{$mq-mb} {
   .header-container {
+    .header-inner {
+      overflow: inherit !important;
+    }
     .header-nav--btn {
-      display: none;
+      display: block;
+    }
+    .header-nav--btn.open + .header-nav--list {
+      display: block;
     }
     .header-nav--list {
-      display: block;
+      overflow: inherit !important;
+      display: none;
+      position: absolute;
+      z-index: 9;
+      top: 100%;
+      right: 28px;
+      transform: translateY(-20px);
 
-      .list-item {
-        padding: 2px 4px;
+      &::before, &::after {
+        position: absolute;
+        top: 0;
+        right: 12px;
+        content: "";
+        display: block;
+        width: 10px;
+        height: 10px;
+        transform-origin: center;
+        transform: translate(50%, -50%) rotate(-45deg);
+        background-color: var(--theme-bg-primary);
+      }
+
+      &::before {
+        box-shadow:
+          1px 1px calc(1px * 2) var(--theme-bg-shadow),
+          calc(-1 * 1px) calc(-1 * 1px) calc(1px * 2) var(--theme-bg-high);
+      }
+
+      & > div {
+        @include soft-box(var(--soft-small-radius));
+        position: relative;
+        padding: 6px 8px;
+      }
+
+      a.list-item {
+        display: block;
+        text-align: left;
+        padding: 14px 12px;
+        transition: transitions(color);
       }
     }
   }
