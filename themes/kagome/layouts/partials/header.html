@@ -1,12 +1,14 @@
 <!-- 在你的 HTML 文件底部添加以下 JavaScript 代码 -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const btn = document.querySelector(".header-nav--btn");
-    const list = document.querySelector(".header-nav--list");
+<script>document.addEventListener('DOMContentLoaded', function() {
+  var navBtn = document.querySelector('.header-nav--btn');
 
-    btn.addEventListener("click", function () {
-      list.classList.toggle("show");
-    });
+  navBtn.addEventListener('click', function() {
+    var navList = document.querySelector('.header-nav--list');
+    navList.classList.toggle('show');
+    navBtn.classList.toggle('open');
+  });
+});
+
 
     // 添加点击页面其他地方关闭列表的功能
     document.addEventListener("click", function (event) {
