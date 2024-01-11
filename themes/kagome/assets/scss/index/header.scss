@@ -25,6 +25,18 @@
       cursor: pointer;
       user-select: none;
 
+      &.open {
+        .btn-item:nth-child(1) {
+          transform: translateY(-8px) rotate(45deg);
+        }
+        .btn-item:nth-child(2) {
+          transform: translateY(0) rotate(45deg);
+        }
+        .btn-item:nth-child(3) {
+          transform: translateY(8px) rotate(45deg);
+        }
+      }
+
       .btn-item {
         position: absolute;
         top: 0;
@@ -34,17 +46,7 @@
         transform-origin: center;
         transition: transitions(transform, 0.3s);
 
-        &:nth-child(1):before {
-          transform: translateY(-8px) rotate(0deg);
-        }
-        &:nth-child(2):before {
-          transform: translateY(0) rotate(0deg);
-        }
-        &:nth-child(3):before {
-          transform: translateY(8px) rotate(0deg);
-        }
-
-        &::before {
+        &:before {
           position: absolute;
           content: "";
           left: 0;
