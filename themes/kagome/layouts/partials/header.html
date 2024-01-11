@@ -1,3 +1,23 @@
+<!-- 在头部添加以下 script 标签 -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var btnItems = document.querySelectorAll(".btn-item");
+    var navList = document.querySelector(".header-nav--list");
+
+    btnItems.forEach(function (btnItem, index) {
+      btnItem.addEventListener("click", function () {
+        // 切换按钮状态
+        btnItems.forEach(function (item) {
+          item.classList.remove("active");
+        });
+        this.classList.add("active");
+
+        // 切换列表状态
+        navList.classList.toggle("show");
+      });
+    });
+  });
+</script>
 <header class="header-container layout-block layout-padding">
   <div class="header-inner content-padding-large soft-size--large soft-style--box">
     <div class="header-logo">
