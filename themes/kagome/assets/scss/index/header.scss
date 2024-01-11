@@ -82,9 +82,9 @@
 }
 
 .header-container .header-nav--list.show {
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
+
 
 .header-container .header-nav--list a.list-item {
   display: inline-block;
@@ -103,7 +103,7 @@
   }
 
   .header-container .header-nav--list {
-    display: flex;
+    display: none;
   }
 
   .header-container .header-nav--list a.list-item {
@@ -122,7 +122,7 @@
   }
 
   .header-container .header-nav--btn + .header-nav--list {
-    display: flex;
+    display: none;
   }
 
   .header-container .header-nav--list {
