@@ -88,30 +88,3 @@
     }
   }
 }
-
-@media #{$mq-pc} {
-  .header-container {
-    .header-nav--btn {
-      display: block;
-    }
-    .header-nav--btn.open {
-      display: block;
-    }
-    }
-  }
-}
-
-
-@media #{$mq-mb} {
-  .header-container {
-    .header-inner {
-      overflow: inherit !important;
-    }
-    .header-nav--btn {
-      display: block;
-    }
-    .header-nav--btn.open {
-      display: block;
-    }
-  }
-}
