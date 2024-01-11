@@ -11,6 +11,7 @@
     font-family: monospace, sans-serif;
     white-space: nowrap;
     color: var(--theme-text-primary);
+    transition: transitions((color, text-shadow), 0.3s);
     @include soft-text;
   }
 
@@ -87,7 +88,24 @@
       overflow: hidden;
     }
   }
-  
+}
+
+@media #{$mq-pc} {
+  .header-container {
+    .header-nav--btn {
+      display: block;
+    }
+    .header-nav--list {
+      display: none;
+
+      .list-item {
+        padding: 8px 10px;
+      }
+    }
+  }
+}
+
+@media #{$mq-mb} {
   .header-container {
     .header-inner {
       overflow: inherit !important;
@@ -95,12 +113,11 @@
     .header-nav--btn {
       display: block;
     }
-    .header-nav--btn.open + .header-nav--list {
+    .header-nav--btn + .header-nav--list {
       display: block;
     }
     .header-nav--list {
       overflow: inherit !important;
-      display: none;
       position: absolute;
       z-index: 9;
       top: 100%;
@@ -121,7 +138,9 @@
       }
 
       &::before {
-        box-shadow: 1px solid var(--theme-bg-shadow);
+        box-shadow:
+          1px 1px calc(1px * 2) var(--theme-bg-shadow),
+          calc(-1 * 1px) calc(-1 * 1px) calc(1px * 2) var(--theme-bg-high);
       }
 
       & > div {
