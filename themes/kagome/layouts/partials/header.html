@@ -1,4 +1,4 @@
-<!-- 在你的 HTML 文件中添加以下代码 -->
+<!-- 在你的 HTML 文件底部添加以下 JavaScript 代码 -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const btn = document.querySelector(".header-nav--btn");
@@ -6,7 +6,16 @@
 
     btn.addEventListener("click", function () {
       list.classList.toggle("show");
-      btn.classList.toggle("open");
+    });
+
+    // 添加点击页面其他地方关闭列表的功能
+    document.addEventListener("click", function (event) {
+      const isClickInsideBtn = btn.contains(event.target);
+      const isClickInsideList = list.contains(event.target);
+
+      if (!isClickInsideBtn && !isClickInsideList) {
+        list.classList.remove("show");
+      }
     });
   });
 </script>
