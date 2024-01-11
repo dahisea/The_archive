@@ -11,7 +11,6 @@
     font-family: monospace, sans-serif;
     white-space: nowrap;
     color: var(--theme-text-primary);
-    transition: transitions((color, text-shadow), 0.3s);
     @include soft-text;
   }
 
@@ -93,14 +92,11 @@
 @media #{$mq-pc} {
   .header-container {
     .header-nav--btn {
-      display: none;
-    }
-    .header-nav--list {
       display: block;
-
-      .list-item {
-        padding: 8px 10px;
-      }
+    }
+    .header-nav--btn.open {
+      display: block;
+    }
     }
   }
 }
@@ -114,49 +110,8 @@
     .header-nav--btn {
       display: block;
     }
-    .header-nav--btn.open + .header-nav--list {
+    .header-nav--btn.open {
       display: block;
-    }
-    .header-nav--list {
-      overflow: inherit !important;
-      display: none;
-      position: absolute;
-      z-index: 9;
-      top: 100%;
-      right: 28px;
-      transform: translateY(-20px);
-
-      &::before, &::after {
-        position: absolute;
-        top: 0;
-        right: 12px;
-        content: "";
-        display: block;
-        width: 10px;
-        height: 10px;
-        transform-origin: center;
-        transform: translate(50%, -50%) rotate(-45deg);
-        background-color: var(--theme-bg-primary);
-      }
-
-      &::before {
-        box-shadow:
-          1px 1px calc(1px * 2) var(--theme-bg-shadow),
-          calc(-1 * 1px) calc(-1 * 1px) calc(1px * 2) var(--theme-bg-high);
-      }
-
-      & > div {
-        @include soft-box(var(--soft-small-radius));
-        position: relative;
-        padding: 6px 8px;
-      }
-
-      a.list-item {
-        display: block;
-        text-align: left;
-        padding: 14px 12px;
-        transition: transitions(color);
-      }
     }
   }
 }
