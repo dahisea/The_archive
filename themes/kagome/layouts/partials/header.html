@@ -1,26 +1,3 @@
-<!-- 在你的 HTML 文件底部添加以下 JavaScript 代码 -->
-<script>document.addEventListener('DOMContentLoaded', function() {
-  var navBtn = document.querySelector('.header-nav--btn');
-
-  navBtn.addEventListener('click', function() {
-    var navList = document.querySelector('.header-nav--list');
-    navList.classList.toggle('show');
-    navBtn.classList.toggle('active');
-  });
-});
-
-    // 添加点击页面其他地方关闭列表的功能
-    document.addEventListener("click", function (event) {
-      const isClickInsideBtn = btn.contains(event.target);
-      const isClickInsideList = list.contains(event.target);
-
-      if (!isClickInsideBtn && !isClickInsideList) {
-        list.classList.remove("show");
-      }
-    });
-  });
-</script>
-
 <header class="header-container layout-block layout-padding">
   <div class="header-inner content-padding-large soft-size--large soft-style--box">
     <div class="header-logo">
@@ -28,14 +5,14 @@
     </div>
     <nav class="header-nav">
       <div class="header-nav--btn">
-        {{ range $index, $item := .Site.Menus.main }}
-          <div class="btn-item"></div>
-        {{ end }}
+        <div class="btn-item"></div>
+        <div class="btn-item"></div>
+        <div class="btn-item"></div>
       </div>
       <div class="header-nav--list">
         <div>
           {{ range .Site.Menus.main }}
-            <a class="list-item soft-size--small soft-style--hover soft-style--active" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}</a>
+          <a class="list-item soft-size--small soft-style--hover soft-style--active" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}</a>
           {{ end }}
         </div>
       </div>
