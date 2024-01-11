@@ -121,7 +121,7 @@
       }
 
       &::before {
-        border: 1px solid var(--theme-bg-shadow);
+        box-shadow: 1px solid var(--theme-bg-shadow);
       }
 
       & > div {
