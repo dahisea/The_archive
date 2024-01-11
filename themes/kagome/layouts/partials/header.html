@@ -4,16 +4,16 @@
       <a href="{{ .Site.BaseURL }}"><h2>{{ .Site.Title }}</h2></a>
     </div>
     <nav class="header-nav">
-      <div class="header-nav--btn"></div>
+      <div class="header-nav--btn">
+        {{ range $index, $item := .Site.Menus.main }}
+          <div class="btn-item"></div>
+        {{ end }}
+      </div>
       <div class="header-nav--list">
         <div>
-          <ul>
-            {{ range .Site.Menus.main }}
-              <li>
-                <a class="list-item soft-size--small soft-style--hover soft-style--active" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}</a>
-              </li>
-            {{ end }}
-          </ul>
+          {{ range .Site.Menus.main }}
+            <a class="list-item soft-size--small soft-style--hover soft-style--active" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}</a>
+          {{ end }}
         </div>
       </div>
     </nav>
