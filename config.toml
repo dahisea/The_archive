@@ -4,16 +4,16 @@ defaultContentLanguage = "zh"
 title = "Dahi no Blog"
 theme = "kagome"
 paginate = 5
-copyright = "轉載請註明出處　© 從前-現在 Dahi.icu"
+copyright = "轉載註明來源　© Long term Dahi.icu"
 hasCJKLanguage = true
 googleAnalytics = 'G-PYKTMJEK97'
   
 
 [menu]
   [[menu.main]]
-    identifier = "yuujin"
+    identifier = "tomodachi"
     name = "友人"
-    url = "/yuujin/"
+    url = "/tomodachi/"
     weight = 1
   [[menu.main]]
     identifier = "posts"
@@ -27,7 +27,7 @@ googleAnalytics = 'G-PYKTMJEK97'
     weight = 3
   [[menu.main]]
     identifier = "link"
-    name = "No Attack"
+    name = "Don't attack"
     url = "/link/"
     weight = 4
 
