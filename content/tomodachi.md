@@ -1,21 +1,9 @@
 ---
-title: 友人
-description: 友人
+title: 朋友們
+description: 友達
 cover: 
 layout: link
 ---
-
-# Format 
-
-Name：
-
-Avatar：
-
-Link：
-
-Description：
-
-Email：
 
 
 # This site
