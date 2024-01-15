@@ -12,9 +12,6 @@
 
 @mixin soft-text () {
   color: var(--theme-text-primary);
-  text-shadow:
-    2px 2px 4px var(--theme-bg-shadow),
-    -2px -2px 4px var(--theme-bg-high);
 };
 
 @mixin soft-box ($radius) {
