@@ -9,18 +9,17 @@
       <div class="article-header layout-padding">
         {{ partial "card/card-cover.html" . }}
       </div>
-      {{- block "widget" . -}}{{- end -}}
       <div class="article-content">
         <div class="markdown-body content-padding-large soft-size--large soft-style--box">
           {{ .Content }}
         </div>
-        <br /><br />
+        {{- block "main" . }}{{- end -}}
+      </div>
         <div class="content-padding-large soft-size--large soft-style--box">
           <div id="tcomment"></div>
         </div>
-        {{- block "main" . }}{{- end -}}
-      </div>
     </div>
+      {{- block "widget" . -}}{{- end -}}
   </main>
   {{- partial "footer.html" . -}}
 
