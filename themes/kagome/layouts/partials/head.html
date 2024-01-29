@@ -50,102 +50,91 @@
   {{ template "_internal/google_analytics_async.html" . }}
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3758644447684310"
      crossorigin="anonymous"></script>
+<style>
+    .prompt-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 1);
+        z-index: 1000;
+    }
 
-  
-    <style>
-        /* 样式用于提示框 */
-        .prompt-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 1); /* 不透明 */
-            z-index: 1000;
-        }
+    .prompt-content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-        .prompt-content {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    .prompt-message {
+        font-size: 24px;
+        margin-bottom: 20px;
+        text-align: center;
+        color: #fff;
+    }
 
-        .prompt-message {
-            font-size: 24px;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #fff;
-        }
+    .prompt-button-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+    }
 
-        .prompt-button-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-        }
+    .prompt-button {
+        padding: 10px 20px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
 
-        .prompt-button {
-            padding: 10px 20px;
-            background-color: #000;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    .prompt-button:hover {
+        background-color: #333;
+    }
+</style>
 
-        .prompt-button:hover {
-            background-color: #333;
-        }
-    </style>
-
-    <div class="prompt-overlay" id="promptOverlay">
-        <div class="prompt-content">
-            <div class="prompt-message">This Site is currently not available in your country.</div>
-            <div class="prompt-button-container">
-                <button class="prompt-button" onclick="closePrompt()">© Now Dahi</button>
-            </div>
+<div class="prompt-overlay" id="promptOverlay">
+    <div class="prompt-content">
+        <div class="prompt-message">This Site is currently not available in your country.</div>
+        <div class="prompt-button-container">
+            <button class="prompt-button" onclick="closePrompt()">© Now Dahi</button>
         </div>
     </div>
+</div>
 
-    <script>
-        // 保存原始标题
-        const originalTitle = document.title;
+<script>
+    const originalTitle = document.title;
 
-        // 获取 Cloudflare 提供的 IP 信息
-        function fetchIPInfo() {
-            fetch('https://cf-ns.com/cdn-cgi/trace')
-                .then(response => response.text())
-                .then(data => {
-                    // 检查 loc 字段是否为 CN
-                    if (data.includes("loc=CN")) {
-                        showPrompt();
-                        // 更改标题
-                        document.title = "Availability";
-                    }
-                })
-                .catch(error => console.error('Error fetching IP info:', error));
-        }
+    function fetchIPInfo() {
+        fetch('https://cf-ns.com/cdn-cgi/trace')
+            .then(response => response.text())
+            .then(data => {
+                if (data.includes("loc=CN")) {
+                    showPrompt();
+                    document.title = "Availability";
+                }
+            })
+            .catch(error => console.error('Error fetching IP info:', error));
+    }
 
-        // 显示提示框
-        function showPrompt() {
-            document.getElementById("promptOverlay").style.display = "block";
-        }
+    function showPrompt() {
+        document.getElementById("promptOverlay").style.display = "block";
+    }
 
-        // 关闭提示框和恢复标题
-        function closePrompt() {
-            document.getElementById("promptOverlay").style.display = "none";
-            // 恢复原始标题
-            document.title = originalTitle;
-        }
+    function closePrompt() {
+        document.getElementById("promptOverlay").style.display = "none";
+        document.title = originalTitle;
+    }
 
-        // 获取IP信息并根据结果执行相应操作
-        fetchIPInfo();
-    </script>
+    fetchIPInfo();
+</script>
 
 </head>
