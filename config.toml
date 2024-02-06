@@ -6,7 +6,6 @@ theme = "kagome"
 paginate = 5
 copyright = "轉載註明來源　© Long term Dahi.icu"
 hasCJKLanguage = true
-googleAnalytics = 'G-PYKTMJEK97'
   
 
 [menu]
