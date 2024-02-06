@@ -7,8 +7,8 @@
   }
 
   .header-logo h2 {
-    font-size: var(--font-large-size);
-    font-family: monospace, sans-serif;
+    font-family: "Noto Sans SC";
+    font-weight: 700;
     white-space: nowrap;
     color: var(--theme-text-primary);
     @include soft-text;
