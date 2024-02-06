@@ -1,9 +1,7 @@
 <head>
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="referrer" content="origin">
-  <link rel="shortcut icon" href="https://xgjyundisk.oss-cn-hangzhou.aliyuncs.com/disk_app_file_63a190a55593487c79144065/4bbc58107728660076f7b1c96b242f9c_1707221020420.png" crossorigin="anonymous" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {{ if or .Params.author .Site.Author.name }} {{/* author */}}
     <meta name="author" content="{{- or .Params.author .Site.Author.name -}}">
   {{ end }}
@@ -29,6 +27,7 @@
   {{ $title = printf "%s - %s" . $title }}
   {{ end }}
   <title>{{- $title -}}</title>
+  <link rel="shortcut icon" href="https://xgjyundisk.oss-cn-hangzhou.aliyuncs.com/disk_app_file_63a190a55593487c79144065/4bbc58107728660076f7b1c96b242f9c_1707221020420.png" crossorigin="anonymous" />
 
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
