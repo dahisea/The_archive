@@ -27,6 +27,7 @@
   {{ $title = printf "%s - %s" . $title }}
   {{ end }}
   <title>{{- $title -}}</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900">
   <link rel="shortcut icon" href="https://xgjyundisk.oss-cn-hangzhou.aliyuncs.com/disk_app_file_63a190a55593487c79144065/4bbc58107728660076f7b1c96b242f9c_1707221020420.png" crossorigin="anonymous" />
 
   {{ template "_internal/opengraph.html" . }}
