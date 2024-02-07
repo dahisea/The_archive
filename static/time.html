@@ -1,187 +1,156 @@
-<!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Singapore Time</title>
   <style>
-    /* 添加一个 @font-face 规则，指定字体的名称、来源和格式 */
-    @font-face {
-      font-family: "Yu Mincho";
-      src: url("https://fonts.gstatic.com/ea/yumincho/v6/YuMincho-Regular.eot");
-      src: url("https://fonts.gstatic.com/ea/yumincho/v6/YuMincho-Regular.eot?#iefix") format("embedded-opentype"),
-           url("https://fonts.gstatic.com/ea/yumincho/v6/YuMincho-Regular.woff2") format("woff2"),
-           url("https://fonts.gstatic.com/ea/yumincho/v6/YuMincho-Regular.woff") format("woff"),
-           url("https://fonts.gstatic.com/ea/yumincho/v6/YuMincho-Regular.ttf") format("truetype");
-    }
-
-    body {
-      font-family: "Yu Mincho", Arial, sans-serif; /* 使用字体 */
-      background-color: #f0f0f0;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
     .container {
+      width: 80%;
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
-    }
-
-    .title {
-      font-size: 64px;
-      font-weight: bold;
-      text-align: center;
-      color: #333333;
-    }
-
-    .subtitle {
-      font-size: 24px;
-      font-weight: normal;
-      text-align: center;
-      color: #666666;
-    }
-
-    .table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    .table td {
-      width: 50%;
-      padding: 10px;
-      border: 1px solid #cccccc;
-      text-align: center;
-      font-size: 18px;
-      color: #333333;
-    }
-
-    .footer {
-      font-size: 14px;
-      color: #999999;
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .footer a {
-      color: #999999;
-      text-decoration: none;
-    }
-
-    /* 使用现代化和科技感的设计风格 */
-    body {
-      background-image: linear-gradient(to right, #00c6ff, #0072ff); /* 使用渐变背景 */
-      background-attachment: fixed;
-    }
-
-    .container {
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* 使用阴影效果 */
-      border-radius: 10px; /* 使用圆角效果 */
-      overflow: hidden;
-    }
-
-    .title {
-      color: white; /* 使用鲜艳的色彩 */
-      font-family: "Impact", sans-serif; /* 使用大胆的字体 */
-      text-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* 使用文字阴影效果 */
-    }
-
-    .subtitle {
-      color: white;
-      font-family: "Yu Mincho", cursive; /* 使用手写体 */
-    }
-
-    .table {
-      background-color: white; /* 使用简单的几何形状 */
-    }
-
-    .table td {
-      font-family: "Yu Mincho", monospace; /* 使用等宽字体 */
-    }
-
-    .footer {
       background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
-    .footer p {
-      font-family: "Yu Mincho", sans-serif; /* 使用黑体 */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .menu {
+      display: flex;
+      list-style: none;
+    }
+
+    .menu li {
+      margin-left: 10px;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .menu a:hover {
+      color: #666;
+    }
+
+    .content {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .time {
+      font-size: 48px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .date {
+      font-size: 24px;
+      color: #333;
+    }
+
+    .footer {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .footer a {
-      font-family: "Yu Mincho", serif; /* 使用衬线字体 */
+      text-decoration: none;
+      color: #333;
+    }
+
+    .footer a:hover {
+      color: #666;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="title" id="time"></div>
-    <div class="subtitle" id="date"></div>
-    <table class="table">
-      <tr>
-        <td>時区</td>
-        <td id="timeZone"></td>
-        <td>UTC 偏移</td>
-        <td id="utcOffset"></td>
-      </tr>
-      <tr>
-        <td>夏令時</td>
-        <td id="isDayLightSavingsTime"></td>
-        <td colspan="2"></td>
-      </tr>
-    </table>
+    <div class="header">
+      <div class="logo">UTC Time</div>
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="content">
+      <div class="time" id="time"></div>
+      <div class="date" id="date"></div>
+    </div>
     <div class="footer">
-      <p>Powered by Copilot</p>
-      <p><a href="https://timeapi.io/">Time API</a> | <a href="https://time.is/">Time.is</a></p>
+      <a href="#">Powered by Copilot</a>
     </div>
   </div>
   <script>
-    // 获取 API 数据的函数
-    function getData() {
-      // 创建一个 XMLHttpRequest 对象
+    // 获取时间戳的api
+    var api = "https://www.timeanddate.com/scripts/ts.php";
+
+    // 格式化时间和日期
+    function formatTime(timestamp) {
+      var date = new Date(timestamp * 1000); // 转换为毫秒
+      var hours = date.getUTCHours();
+      var minutes = date.getUTCMinutes();
+      var seconds = date.getUTCSeconds();
+      var day = date.getUTCDate();
+      var month = date.getUTCMonth() + 1;
+      var year = date.getUTCFullYear();
+      var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      var weekday = weekdays[date.getUTCDay()];
+      // 补零
+      hours = hours < 10 ? "0" + hours : hours;
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      month = month < 10 ? "0" + month : month;
+      day = day < 10 ? "0" + day : day;
+      // 返回格式化后的字符串
+      return {
+        time: hours + ":" + minutes + ":" + seconds,
+        date: weekday + ", " + year + "-" + month + "-" + day
+      };
+    }
+
+    // 更新时间和日期
+    function updateTime() {
+      // 发送请求
       var xhr = new XMLHttpRequest();
-      // 设置请求的方法和地址
-      xhr.open("GET", "https://timeapi.io/api/Time/current/zone?timeZone=Asia/Singapore");
-      // 设置请求的响应类型为 JSON
-      xhr.responseType = "json";
-      // 设置请求完成后的回调函数
+      xhr.open("GET", api, true);
       xhr.onload = function() {
-        // 如果响应状态码为 200，表示成功
         if (xhr.status == 200) {
-          // 获取响应的数据
-          var data = xhr.response;
-          // 更新网页上的元素内容
-          document.getElementById("time").textContent = data.date_time.slice(11, 19);
-          document.getElementById("date").textContent = formatDate(data.date_time.slice(0, 10)) + "，" + formatWeekday(new Date(data.date_time).getDay());
-          document.getElementById("timeZone").textContent = data.timeZone;
-          document.getElementById("utcOffset").textContent = data.utcOffset;
-          document.getElementById("isDayLightSavingsTime").textContent = data.isDayLightSavingsTime ? "是" : "否";
+          // 获取响应的时间戳
+          var timestamp = xhr.responseText;
+          // 格式化时间和日期
+          var formatted = formatTime(timestamp);
+          // 显示在页面上
+          document.getElementById("time").innerHTML = formatted.time;
+          document.getElementById("date").innerHTML = formatted.date;
         }
       };
-      // 发送请求
       xhr.send();
     }
 
-    // 格式化日期的函数
-    function formatDate(date) {
-      // 将日期字符串分割成年月日的数组
-      var parts = date.split("-");
-      // 返回格式化后的日期字符串，如 2024年2月7日
-      return parts[0] + "年" + parts[1] + "月" + parts[2] + "日";
-    }
-
-    // 格式化星期的函数
-    function formatWeekday(day) {
-      // 定义一个星期的数组
-      var weekdays = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
-      // 返回对应的中文星期字符串，如 星期三
-      return weekdays[day];
-    }
-
-    // 调用一次获取 API 数据的函数
-    getData();
-    // 设置一个定时器，每隔一秒再调用一次获取 API 数据的函数
-    setInterval(getData, 1000);
+    // 每秒更新一次
+    setInterval(updateTime, 1000);
   </script>
 </body>
 </html>
