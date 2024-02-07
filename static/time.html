@@ -1,156 +1,71 @@
 <html>
 <head>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-    }
+        h1 {
+            font-size: 48px;
+            margin-top: 100px;
+        }
 
-    .container {
-      width: 80%;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: white;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+        h2 {
+            font-size: 24px;
+            margin-bottom: 50px;
+        }
 
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .menu {
-      display: flex;
-      list-style: none;
-    }
-
-    .menu li {
-      margin-left: 10px;
-    }
-
-    .menu a {
-      text-decoration: none;
-      color: #333;
-    }
-
-    .menu a:hover {
-      color: #666;
-    }
-
-    .content {
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .time {
-      font-size: 48px;
-      font-weight: bold;
-      color: #333;
-    }
-
-    .date {
-      font-size: 24px;
-      color: #333;
-    }
-
-    .footer {
-      margin-top: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .footer a {
-      text-decoration: none;
-      color: #333;
-    }
-
-    .footer a:hover {
-      color: #666;
-    }
-  </style>
+        p {
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="logo">UTC Time</div>
-      <ul class="menu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-    <div class="content">
-      <div class="time" id="time"></div>
-      <div class="date" id="date"></div>
-    </div>
-    <div class="footer">
-      <a href="#">Powered by Copilot</a>
-    </div>
-  </div>
-  <script>
-    // 获取时间戳的api
-    var api = "https://www.timeanddate.com/scripts/ts.php";
-
-    // 格式化时间和日期
-    function formatTime(timestamp) {
-      var date = new Date(timestamp * 1000); // 转换为毫秒
-      var hours = date.getUTCHours();
-      var minutes = date.getUTCMinutes();
-      var seconds = date.getUTCSeconds();
-      var day = date.getUTCDate();
-      var month = date.getUTCMonth() + 1;
-      var year = date.getUTCFullYear();
-      var weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-      var weekday = weekdays[date.getUTCDay()];
-      // 补零
-      hours = hours < 10 ? "0" + hours : hours;
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-      month = month < 10 ? "0" + month : month;
-      day = day < 10 ? "0" + day : day;
-      // 返回格式化后的字符串
-      return {
-        time: hours + ":" + minutes + ":" + seconds,
-        date: weekday + ", " + year + "-" + month + "-" + day
-      };
-    }
-
-    // 更新时间和日期
-    function updateTime() {
-      // 发送请求
-      var xhr = new XMLHttpRequest();
-      xhr.open("GET", api, true);
-      xhr.onload = function() {
-        if (xhr.status == 200) {
-          // 获取响应的时间戳
-          var timestamp = xhr.responseText;
-          // 格式化时间和日期
-          var formatted = formatTime(timestamp);
-          // 显示在页面上
-          document.getElementById("time").innerHTML = formatted.time;
-          document.getElementById("date").innerHTML = formatted.date;
+    <h1 id="time"></h1>
+    <h2 id="date"></h2>
+    <p>北京时间</p>
+    <script>
+        // 获取时间戳
+        async function getTimestamp() {
+            let response = await fetch("https://www.timeanddate.com/scripts/ts.php");
+            let text = await response.text();
+            // 去掉不必要的字符
+            let timestamp = text.slice(0, text.indexOf("."));
+            return timestamp;
         }
-      };
-      xhr.send();
-    }
 
-    // 每秒更新一次
-    setInterval(updateTime, 1000);
-  </script>
+        // 时间戳转换为北京时间
+        function convertToBeijingTime(timestamp) {
+            // 创建一个Date对象
+            let date = new Date(timestamp * 1000);
+            // 设置时区为北京
+            date.setHours(date.getHours() + 8);
+            // 返回一个包含时间和日期的对象
+            return {
+                time: date.toLocaleTimeString(),
+                date: date.toLocaleDateString()
+            };
+        }
+
+        // 显示时间和日期
+        function displayTimeAndDate() {
+            // 获取时间戳
+            getTimestamp().then(timestamp => {
+                // 转换为北京时间
+                let beijingTime = convertToBeijingTime(timestamp);
+                // 获取页面元素
+                let timeElement = document.getElementById("time");
+                let dateElement = document.getElementById("date");
+                // 更新页面内容
+                timeElement.textContent = beijingTime.time;
+                dateElement.textContent = beijingTime.date;
+            });
+        }
+
+        // 每秒更新一次
+        setInterval(displayTimeAndDate, 1000);
+    </script>
 </body>
 </html>
