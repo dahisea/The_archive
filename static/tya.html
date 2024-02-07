@@ -1,0 +1,36 @@
+<!-- 这是前端界面的 HTML 文件，用于展示测压的控制和结果 -->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>网站测压</title>
+  <script src="tscript.js"></script>
+</head>
+<body>
+  <h1>网站测压</h1>
+  <p>此乃测压之网页，可控测压之请求，亦可观测压之结果。</p>
+  <form id="form">
+    <label for="url">测压之网址：</label>
+    <input type="text" id="url" name="url" value="https://example.com"><br>
+    <label for="method">测压之方法：</label>
+    <select id="method" name="method">
+      <option value="GET">GET</option>
+      <option value="POST">POST</option>
+      <option value="HEAD">HEAD</option>
+    </select><br>
+    <label for="threads">测压之线程：</label>
+    <input type="number" id="threads" name="threads" value="10"><br>
+    <label for="requests">测压之请求数：</label>
+    <input type="number" id="requests" name="requests" value="100"><br>
+    <button type="button" id="start">启动测压</button>
+    <button type="button" id="stop">停止测压</button>
+  </form>
+  <div id="status">
+    <p>测压之状态：</p>
+    <p id="status-text">未开始</p>
+  </div>
+  <div id="result">
+    <p>测压之结果：</p>
+    <p id="result-text">无</p>
+  </div>
+</body>
+</html>
