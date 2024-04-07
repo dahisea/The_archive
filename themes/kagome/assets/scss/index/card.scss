@@ -35,7 +35,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-color: #fff; /* 修改为您希望的背景颜色 */
+    background-color: #9E7A7A; /* 修改为您希望的背景颜色 */
     
     &::after {
       content: "";
@@ -140,11 +140,11 @@
     }
 
     &:nth-child(odd) .article-card .card-cover {
-      background-color: #FFC857; /* 示例：使用柔和的黄色 */
+      background-color: #F19483; 
     }
 
     &:nth-child(even) .article-card .card-cover {
-      background-color: #DDBBBB; /* 示例：使用柔和的粉色 */
+      background-color: #EB7A77; 
     }
   }
 }

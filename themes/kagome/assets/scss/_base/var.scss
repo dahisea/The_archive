@@ -3,9 +3,8 @@ $mq-mb: "screen and (max-width: 800px)";
 
 :root {
   --layout-max-width: 1500px;
-  --base-font: var(--font-base-size) / var(--font-base-lh) 'Open Sans', sans-serif;
-  // 全局统一soft UI阴影 2px
-  --soft-shadow: 2px;
+  --base-font: var(--font-base-size) / var(--font-base-line-height) "Noto Sans SC", sans-serif;
+  --soft-shadow: 2px; // Global soft UI shadow set to 2px
 }
 
 @media #{$mq-pc} {
@@ -16,19 +15,14 @@ $mq-mb: "screen and (max-width: 800px)";
     --font-stress-size: 28px;
     --font-common-size: 22px;
     --font-base-size: 18px;
-    --font-base-lh: 2;
+    --font-base-line-height: 2;
 
-    // 导航栏，文章卡片，右侧widget
-    --content-large-padding: 40px 38px 46px;
-    // 标签term，子内容children，上下一篇article-nav，友链link
-    --content-primary-padding: 23px;
+    --content-large-padding: 30px; // Reduce padding for larger content areas
+    --content-primary-padding: 20px; // Reduce padding for smaller content areas
 
-    // 导航栏，文章卡片，右侧widget
-    --soft-large-radius: 24px;
-    // social社交图标 返回顶部按钮 404按钮 标签term 子内容children，上下一篇article-nav，友链link
-    --soft-primary-radius: 16px;
-    // soft类文字 如导航栏，分页按钮，右侧widget term，文章内容中img，aplery，dplayer等
-    --soft-small-radius: 8px;
+    --soft-large-radius: 20px; // Adjusted radius for larger elements
+    --soft-primary-radius: 12px; // Adjusted radius for primary elements
+    --soft-small-radius: 6px; // Adjusted radius for smaller elements
   }
 }
 
@@ -36,22 +30,17 @@ $mq-mb: "screen and (max-width: 800px)";
   :root {
     --layout-max-width: 100%;
     --layout-padding-x: 10px;
-    --font-large-size: 28px;
+    --font-large-size: 36px; // Smaller font size for large headings
     --font-stress-size: 24px;
-    --font-common-size: 20px;
-    --font-base-size: 18px;
-    --font-base-lh: 1.4;
+    --font-common-size: 18px;
+    --font-base-size: 16px;
+    --font-base-line-height: 1.4;
 
-    // 导航栏，文章卡片，右侧widget
-    --content-large-padding: 18px 15px 20px;
-    // 标签term，子内容children，上下一篇article-nav，友链link
-    --content-primary-padding: 20px;
+    --content-large-padding: 15px; // Reduce padding for larger content areas on mobile
+    --content-primary-padding: 10px; // Reduce padding for smaller content areas on mobile
 
-    // 导航栏，文章卡片，右侧widget
-    --soft-large-radius: 16px;
-    // social社交图标 返回顶部按钮 404按钮 标签term 子内容children，上下一篇article-nav，友链link
-    --soft-primary-radius: 10px;
-    // soft类文字 如导航栏，分页按钮，右侧widget term，文章内容中img，aplery，dplayer等
-    --soft-small-radius: 6px;
+    --soft-large-radius: 14px; // Adjusted radius for larger elements on mobile
+    --soft-primary-radius: 8px; // Adjusted radius for primary elements on mobile
+    --soft-small-radius: 4px; // Adjusted radius for smaller elements on mobile
   }
 }
