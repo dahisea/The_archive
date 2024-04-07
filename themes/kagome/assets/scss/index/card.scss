@@ -35,9 +35,8 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-image: #02d1e0;
-    background-image: linear-gradient(160deg, #ff2291, #ffb400, #02d1e0, #ff4637);
-
+    background-color: #fff; /* 修改为您希望的背景颜色 */
+    
     &::after {
       content: "";
       display: block;
@@ -140,24 +139,12 @@
       min-width: 230px;
     }
 
-    &:nth-child(1n) .article-card .card-cover {
-      background-color: #ff2291;
-      background-image: linear-gradient(160deg, #ff2291 50%, #ffb400 50%);
+    &:nth-child(odd) .article-card .card-cover {
+      background-color: #FFC857; /* 示例：使用柔和的黄色 */
     }
 
-    &:nth-child(2n) .article-card .card-cover {
-      background-color: #ffb400;
-      background-image: linear-gradient(160deg, #ffb400 50%, #02d1e0 50%);
-    }
-
-    &:nth-child(3n) .article-card .card-cover {
-      background-color: #02d1e0;
-      background-image: linear-gradient(160deg, #02d1e0 50%, #ff4637 50%);
-    }
-
-    &:nth-child(4n) .article-card .card-cover {
-      background-color: #ff4637;
-      background-image: linear-gradient(160deg, #ff4637 50%, #ff2291 50%);
+    &:nth-child(even) .article-card .card-cover {
+      background-color: #DDBBBB; /* 示例：使用柔和的粉色 */
     }
   }
 }
@@ -169,7 +156,7 @@
 
   .post-paging--item {
     margin: var(--layout-padding-x);
-    color: var(--theme-text-light);
+    color: var(--theme-text-dark); /* 根据实际需求调整文本颜色 */
     text-align: center;
     flex: 1;
     transition: transitions(color, 0.3s);
