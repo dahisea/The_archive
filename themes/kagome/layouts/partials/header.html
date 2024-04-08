@@ -6,14 +6,14 @@
       </a>
     </div>
     <nav class="header-nav">
-      <div class="header-nav--btn btn-item">&#9776;</div>
-      </div>
+      <div class="header-nav--btn">&#9776;
       <div class="header-nav--list">
         <div>
           {{ range .Site.Menus.main }}
           <a class="list-item soft-size--small soft-style--hover soft-style--active" href="{{ .URL | safeURL }}" title="{{ .Title }}">{{ .Name }}</a>
           {{ end }}
         </div>
+      </div>
       </div>
     </nav>
   </div>
