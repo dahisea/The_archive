@@ -1,6 +1,13 @@
 .footer-container {
   text-align: center;
   padding: 40px 0;
+  
+  .footer-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   .social-icons {
     display: flex;
