@@ -1,5 +1,5 @@
 baseURL = "https://dahi.icu/"
-languageCode = "zh-TW"
+languageCode = "zh-tw"
 defaultContentLanguage = "zh"
 title = "Dahi Blog"
 theme = "kagome"
