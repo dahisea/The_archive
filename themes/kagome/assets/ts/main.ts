@@ -3,7 +3,7 @@
   switchTheme(currentTheme); // 根據保存的主題設置切換主題
 
   document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuBtn = document.querySelector('.header-nav--btn') as HTMLElement | null; // 更改元素類型
+    const mobileMenuBtn = document.querySelector('.header-nav--btn'); // 找到移動菜單按鈕
 
     if (mobileMenuBtn) {
       mobileMenuBtn.addEventListener('click', () => {
@@ -11,9 +11,9 @@
       });
     }
 
-    const themeLightBtn = document.querySelector('#theme-light') as HTMLElement | null;
-    const themeDarkBtn = document.querySelector('#theme-dark') as HTMLElement | null;
-    const themeAutoBtn = document.querySelector('#theme-auto') as HTMLElement | null;
+    const themeLightBtn = document.querySelector('#theme-light');
+    const themeDarkBtn = document.querySelector('#theme-dark');
+    const themeAutoBtn = document.querySelector('#theme-auto');
 
     if (themeLightBtn && themeDarkBtn && themeAutoBtn) {
       themeLightBtn.addEventListener('click', () => switchTheme('light'));
@@ -22,22 +22,22 @@
     }
 
     // Lazy load background images
-    const lazyBackgrounds = querySelectorArrs('[background-image-lazy]');
+    const lazyBackgrounds = document.querySelectorAll('[background-image-lazy]');
     let lazyBackgroundsCount = lazyBackgrounds.length;
 
     if (lazyBackgroundsCount > 0) {
       const lazyBackgroundObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(({ isIntersecting, target }) => {
-          if (isIntersecting) {
-            const img = target.dataset.img;
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target.dataset.img;
             if (img) {
-              target.style.backgroundImage = `url(${img})`;
+              entry.target.style.backgroundImage = `url(${img})`;
             }
-            lazyBackgroundObserver.unobserve(target);
+            lazyBackgroundObserver.unobserve(entry.target);
             lazyBackgroundsCount--;
-          }
-          if (lazyBackgroundsCount <= 0) {
-            lazyBackgroundObserver.disconnect();
+            if (lazyBackgroundsCount <= 0) {
+              lazyBackgroundObserver.disconnect();
+            }
           }
         });
       });
@@ -47,15 +47,13 @@
       });
     }
 
-    // Initialize APlayer
+    // Initialize APlayer and DPlayer
     aplayerInit();
-
-    // Initialize DPlayer
     dplayerInit();
   });
 })();
 
-function toCamel(str: string): string {
+function toCamel(str) {
   const arrs = str.split('-');
   if (arrs.length === 1) return arrs[0];
   return arrs.reduce((accumulator, currentValue) => {
@@ -63,24 +61,18 @@ function toCamel(str: string): string {
   });
 }
 
-/**
- * 处理 APlayer 或 DPlayer 参数
- * @param el APlayer 或 DPlayer DOM 元素
- * @returns 配置项参数
- */
-function formatAttr(el: Element): object {
-  const config: { [key: string]: any } = {};
+function formatAttr(el) {
+  const config = {};
   const numberList = ['lrcType'];
   const boolMap = new Map([
     ['true', true],
     ['false', false],
   ]);
 
-  const attrs = el.getAttributeNames().filter(key => key.startsWith('config-'));
+  const attrs = Array.from(el.attributes);
 
-  attrs.forEach(attr => {
-    const key = toCamel(attr.replace('config-', ''));
-    const value = el.getAttribute(attr);
+  attrs.forEach(({ name, value }) => {
+    const key = toCamel(name.replace('config-', ''));
     const toBool = boolMap.get(value);
 
     if (toBool !== undefined) { // 处理布尔值
@@ -95,11 +87,7 @@ function formatAttr(el: Element): object {
   return config;
 }
 
-function querySelectorArrs(selector: string): Element[] {
-  return Array.from(document.querySelectorAll(selector));
-}
-
-function switchTheme(theme: string): void {
+function switchTheme(theme) {
   const rootDom = document.documentElement;
 
   if (theme === 'auto') {
@@ -116,22 +104,22 @@ function switchTheme(theme: string): void {
   window.localStorage.setItem('theme', theme);
 }
 
-function aplayerInit(): void {
-  const aplayers = querySelectorArrs('.aplayer-box');
+function aplayerInit() {
+  const aplayers = document.querySelectorAll('.aplayer-box');
   if (aplayers.length && window.APlayer) {
-    aplayers.forEach((el: Element) => {
-      const params = { container: el, audio: { ...(el.dataset as DOMStringMap) } };
+    aplayers.forEach(el => {
+      const params = { container: el, audio: { ...(el.dataset || {}) } };
       const config = formatAttr(el);
       new window.APlayer(Object.assign({}, config, params));
     });
   }
 }
 
-function dplayerInit(): void {
-  const dplayers = querySelectorArrs('.dplayer-box');
+function dplayerInit() {
+  const dplayers = document.querySelectorAll('.dplayer-box');
   if (dplayers.length && window.DPlayer) {
-    dplayers.forEach((el: Element) => {
-      const params = { container: el, video: { ...(el.dataset as DOMStringMap) } };
+    dplayers.forEach(el => {
+      const params = { container: el, video: { ...(el.dataset || {}) } };
       const config = formatAttr(el);
       new window.DPlayer(Object.assign({}, config, params));
     });
