@@ -63,7 +63,7 @@
   color: var(--theme-text-primary);
   font-family: "Noto Sans SC", sans-serif;
   font-size: var(--font-base-size);
-  line-height: var(--font-base-lh);
+  line-height: var(--font-base-line-height);
   word-wrap: break-word;
   transition: transitions(color, 0.3s);
 }
