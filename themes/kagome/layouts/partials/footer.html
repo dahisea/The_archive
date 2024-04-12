@@ -30,48 +30,33 @@
   <a href="https://icp.gov.moe/?keyword=20213149" target="_blank">萌ICP備20213149號</a>
   <br /><br /><a style="text-decoration:none;color:#1772b4;" href="https://travel.moe/go.html" title="异次元之旅-跃迁-我们一起去萌站成员的星球旅行吧！" target="_blank">異次元への旅</a>
   {{ end }}
-  <h3>故事已開始</h3>
+<h3>這故事展開序幕</h3>
 <h4><span id="htmer_time" style="color: black;"></span></h4>
 
 <script>
-function secondToDate(second) {
-    if (!second) return [0, 0, 0, 0, 0];
-    let time = [0, 0, 0, 0, 0];
+function calculateTime() {
+    var createTime = Math.round(new Date(Date.UTC(2020, 3, 14, 15, 55, 55)).getTime() / 1000);
+    var currentTime = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
 
-    time[0] = parseInt(second / (365 * 24 * 3600));
-    second %= 365 * 24 * 3600;
+    var timeDifference = currentTime - createTime;
+    var days = Math.floor(timeDifference / (24 * 3600));
+    timeDifference %= (24 * 3600);
+    var hours = Math.floor(timeDifference / 3600);
+    timeDifference %= 3600;
+    var minutes = Math.floor(timeDifference / 60);
+    var seconds = timeDifference % 60;
 
-    time[1] = parseInt(second / (24 * 3600));
-    second %= 24 * 3600;
-
-    time[2] = parseInt(second / 3600);
-    second %= 3600;
-
-    time[3] = parseInt(second / 60);
-    second %= 60;
-
-    time[4] = second;
-
-    return time;
+    var displayTime = days + '天 ' + hours + '時 ' + minutes + '分 ' + seconds + '秒';
+    document.getElementById("htmer_time").innerHTML = displayTime;
 }
-
-function setTime() {
-    const create_time = Math.round(new Date(Date.UTC(2020, 3, 14, 15, 55, 55)).getTime() / 1000);
-    const timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
-    const currentTime = secondToDate(timestamp - create_time);
-    
-    const currentTimeHtml = `${currentTime[0]}y${currentTime[1]}d${currentTime[2]}h${currentTime[3]}m${currentTime[4]}s`;
-    
-    document.getElementById("htmer_time").innerHTML = currentTimeHtml;
-}
-
-setInterval(setTime, 1000);
+setInterval(calculateTime, 1000); // 每秒更新一次时间显示
 </script>
 
+
   <p>
-    <a href="javascript:;" id="theme-light">🌞 {{ i18n "theme.light" }}</a>
-    <a href="javascript:;" id="theme-dark">🌛 {{ i18n "theme.dark" }}</a>
-    <a href="javascript:;" id="theme-auto">🤖️ {{ i18n "theme.auto" }}</a>
+  <button id="theme-light">日</button>
+  <button id="theme-dark">夜</button>
+  <button id="theme-auto">默</button>
   </p>
 </div>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3758644447684310"
