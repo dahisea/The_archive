@@ -1,25 +1,29 @@
 (function () {
   
-  const currentTheme:string  = window.localStorage.getItem('theme') || ''
+// 新的代碼片段
+const currentTheme = window.localStorage.getItem('theme') || 'auto'; // 默認為自動切換模式
 
-  if (currentTheme && currentTheme !== 'auto') {
-    switchTheme(currentTheme)
+switchTheme(currentTheme); // 根據保存的主題設置切換主題
+
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileMenuBtn = document.querySelector('.header-nav--btn') as HTMLElement; // 更改元素類型
+
+  if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenuBtn.classList.toggle('open');
+    });
   }
 
-  window.addEventListener('DOMContentLoaded', () => {
-    /** moble click toggle menu */
-    const mobileMenuBtn:Element = document.querySelector('.header-nav--btn')
-    mobileMenuBtn.addEventListener('click', function () {
-      this.classList.toggle('open')
-    })
+  const themeLightBtn = document.querySelector('#theme-light');
+  const themeDarkBtn = document.querySelector('#theme-dark');
+  const themeAutoBtn = document.querySelector('#theme-auto');
 
-    /** theme change click */
-    const themeLightBtn = document.querySelector('#theme-light')
-    const themeDarkBtn  = document.querySelector('#theme-dark')
-    const themeAuto     = document.querySelector('#theme-auto')
-    themeLightBtn.addEventListener('click', () => switchTheme('light'))
-    themeDarkBtn.addEventListener('click', () => switchTheme('dark'))
-    themeAuto.addEventListener('click', () => switchTheme('auto'))
+  if (themeLightBtn && themeDarkBtn && themeAutoBtn) {
+    themeLightBtn.addEventListener('click', () => switchTheme('light'));
+    themeDarkBtn.addEventListener('click', () => switchTheme('dark'));
+    themeAutoBtn.addEventListener('click', () => switchTheme('auto'));
+  }
+
 
     /** background image lazy */
     const lazyBackgrounds = querySelectorArrs('[background-image-lazy]')
@@ -94,22 +98,23 @@ function querySelectorArrs (selector:string):Array<Element> {
   return Array.from(document.querySelectorAll(selector))
 }
 
-function switchTheme (theme:string) {
-  const rootDom:Element = document.documentElement
+function switchTheme(theme: string) {
+  const rootDom: HTMLElement = document.documentElement;
+
   if (theme === 'auto') {
-    rootDom.classList.remove('theme-dark')
-    rootDom.classList.remove('theme-light')
+    // 根據系統設置切換主題
+    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    theme = prefersDarkMode ? 'dark' : 'light';
   }
-  if (theme === 'dark') {
-    rootDom.classList.remove('theme-light')
-    rootDom.classList.add('theme-dark')
-  }
-  if (theme === 'light') {
-    rootDom.classList.remove('theme-dark')
-    rootDom.classList.add('theme-light')
-  }
-  window.localStorage.setItem('theme', theme)
+
+  // 根據主題設置更新 CSS 變量
+  rootDom.classList.remove('theme-light', 'theme-dark');
+  rootDom.classList.add(`theme-${theme}`);
+
+  // 保存主題設置到本地存儲
+  window.localStorage.setItem('theme', theme);
 }
+
 
 function aplayerInit () {
   const aplayers = querySelectorArrs('.aplayer-box')
