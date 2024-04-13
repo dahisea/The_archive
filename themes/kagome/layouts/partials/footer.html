@@ -33,23 +33,21 @@
 <h3>這故事展開序幕</h3>
 <h4><span id="htmer_time" style="color: black;"></span></h4>
 
-<script>
-function calculateTime() {
-    var createTime = Math.round(new Date(Date.UTC(2020, 3, 14, 15, 55, 55)).getTime() / 1000);
-    var currentTime = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+<script>function calculateTime() {
+    var createTime = new Date(Date.UTC(2020, 2, 14, 15, 55, 55)).getTime() / 1000; // 月份从0开始，3代表4月
+    var currentTime = new Date().getTime() / 1000 + 8 * 60 * 60; // 加上8小时的时差
 
     var timeDifference = currentTime - createTime;
     var days = Math.floor(timeDifference / (24 * 3600));
-    timeDifference %= (24 * 3600);
-    var hours = Math.floor(timeDifference / 3600);
-    timeDifference %= 3600;
-    var minutes = Math.floor(timeDifference / 60);
-    var seconds = timeDifference % 60;
+    var hours = Math.floor((timeDifference % (24 * 3600)) / 3600);
+    var minutes = Math.floor((timeDifference % 3600) / 60);
+    var seconds = Math.floor(timeDifference % 60);
 
     var displayTime = days + '天 ' + hours + '時 ' + minutes + '分 ' + seconds + '秒';
     document.getElementById("htmer_time").innerHTML = displayTime;
 }
-setInterval(calculateTime, 1000); // 每秒更新一次时间显示
+setInterval(calculateTime, 1000);
+
 </script>
 
 <p>

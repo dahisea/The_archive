@@ -32,7 +32,7 @@ hasCJKLanguage = true
     weight = 2
   [[menu.main]]
     identifier = "donate"
-    name = "donate"
+    name = "Donate"
     url = "/donate/"
     weight = 2
   [[menu.main]]
