@@ -49,17 +49,33 @@
 setInterval(calculateTime, 1000);
 
 </script>
+  <!-- 日夜间模式切换按钮 -->
+  <div class="theme-switcher">
+    <button id="theme-light">亮色主题</button>
+    <button id="theme-dark">暗色主题</button>
+    <button id="theme-auto">自动</button>
+  </div>
 
-<p>
-  <a href="#" id="theme-light">🌞 主題 - 亮</a>
-  <a href="#" id="theme-dark">🌛 主題 - 暗</a>
-  <a href="#" id="theme-auto">🤖️ 自動主題</a>
-</p>
+  <script>
+    // 页面加载完成后，绑定按钮点击事件来切换主题
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeLightBtn = document.querySelector('#theme-light');
+      const themeDarkBtn = document.querySelector('#theme-dark');
+      const themeAutoBtn = document.querySelector('#theme-auto');
+
+      if (themeLightBtn && themeDarkBtn && themeAutoBtn) {
+        themeLightBtn.addEventListener('click', () => switchTheme('light'));
+        themeDarkBtn.addEventListener('click', () => switchTheme('dark'));
+        themeAutoBtn.addEventListener('click', () => switchTheme('auto'));
+      }
+    });
+  </script>
+
 
 </div>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3758644447684310"
      crossorigin="anonymous"></script>
-<div style="display:block;width:1px;">
+<div style="display:block;width:11px;height:50px">
   <ins class="adsbygoogle"
        style="display:inline-block;width:1200px;height:450px"
        data-ad-client="ca-pub-3758644447684310"
