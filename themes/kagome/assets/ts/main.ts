@@ -1,9 +1,9 @@
 (function () {
-  const currentTheme = window.localStorage.getItem('theme') || 'auto'; // 默認為自動切換模式
-  switchTheme(currentTheme); // 根據保存的主題設置切換主題
+  const currentTheme = window.localStorage.getItem('theme') || 'auto';
+  switchTheme(currentTheme);
 
   document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuBtn = document.querySelector('.header-nav--btn'); // 找到移動菜單按鈕
+    const mobileMenuBtn = document.querySelector('.header-nav--btn');
 
     if (mobileMenuBtn) {
       mobileMenuBtn.addEventListener('click', () => {
@@ -21,7 +21,6 @@
       themeAutoBtn.addEventListener('click', () => switchTheme('auto'));
     }
 
-    // Lazy load background images
     const lazyBackgrounds = document.querySelectorAll('[background-image-lazy]');
     let lazyBackgroundsCount = lazyBackgrounds.length;
 
@@ -47,7 +46,6 @@
       });
     }
 
-    // Initialize APlayer and DPlayer
     aplayerInit();
     dplayerInit();
   });
@@ -57,7 +55,7 @@ function toCamel(str) {
   const arrs = str.split('-');
   if (arrs.length === 1) return arrs[0];
   return arrs.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue.toLowerCase().replace(/( |^)[a-z]/g, v => v.toUpperCase());
+    return accumulator + currentValue.toLowerCase().replace(/( |^)[a-z]/g, (v) => v.toUpperCase());
   });
 }
 
@@ -75,11 +73,11 @@ function formatAttr(el) {
     const key = toCamel(name.replace('config-', ''));
     const toBool = boolMap.get(value);
 
-    if (toBool !== undefined) { // 处理布尔值
+    if (toBool !== undefined) {
       config[key] = toBool;
-    } else if (numberList.includes(key)) { // 处理数值
-      config[key] = parseInt(value || '0', 10); // 使用十进制解析数值
-    } else { // 字符串
+    } else if (numberList.includes(key)) {
+      config[key] = parseInt(value || '0', 10);
+    } else {
       config[key] = value || '';
     }
   });
@@ -91,16 +89,13 @@ function switchTheme(theme) {
   const rootDom = document.documentElement;
 
   if (theme === 'auto') {
-    // 根据系统设置切换主题
     const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     theme = prefersDarkMode ? 'dark' : 'light';
   }
 
-  // 根据主题设置更新 CSS 变量
   rootDom.classList.remove('theme-light', 'theme-dark');
   rootDom.classList.add(`theme-${theme}`);
 
-  // 保存主题设置到本地存储
   window.localStorage.setItem('theme', theme);
 }
 
