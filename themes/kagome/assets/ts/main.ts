@@ -1,122 +1,134 @@
 (function () {
-  const currentTheme = window.localStorage.getItem('theme') || 'auto';
-  switchTheme(currentTheme);
+  
+  const currentTheme:string  = window.localStorage.getItem('theme') || ''
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuBtn = document.querySelector('.header-nav--btn');
+  if (currentTheme && currentTheme !== 'auto') {
+    switchTheme(currentTheme)
+  }
 
-    if (mobileMenuBtn) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenuBtn.classList.toggle('open');
-      });
-    }
+  window.addEventListener('DOMContentLoaded', () => {
+    /** moble click toggle menu */
+    const mobileMenuBtn:Element = document.querySelector('.header-nav--btn')
+    mobileMenuBtn.addEventListener('click', function () {
+      this.classList.toggle('open')
+    })
 
-    const themeLightBtn = document.querySelector('#theme-light');
-    const themeDarkBtn = document.querySelector('#theme-dark');
-    const themeAutoBtn = document.querySelector('#theme-auto');
+    /** theme change click */
+    const themeLightBtn = document.querySelector('#theme-light')
+    const themeDarkBtn  = document.querySelector('#theme-dark')
+    const themeAuto     = document.querySelector('#theme-auto')
+    themeLightBtn.addEventListener('click', () => switchTheme('light'))
+    themeDarkBtn.addEventListener('click', () => switchTheme('dark'))
+    themeAuto.addEventListener('click', () => switchTheme('auto'))
 
-    if (themeLightBtn && themeDarkBtn && themeAutoBtn) {
-      themeLightBtn.addEventListener('click', () => switchTheme('light'));
-      themeDarkBtn.addEventListener('click', () => switchTheme('dark'));
-      themeAutoBtn.addEventListener('click', () => switchTheme('auto'));
-    }
-
-    const lazyBackgrounds = document.querySelectorAll('[background-image-lazy]');
-    let lazyBackgroundsCount = lazyBackgrounds.length;
-
+    /** background image lazy */
+    const lazyBackgrounds = querySelectorArrs('[background-image-lazy]')
+    let lazyBackgroundsCount = lazyBackgrounds.length
     if (lazyBackgroundsCount > 0) {
-      const lazyBackgroundObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target.dataset.img;
+      let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function({ isIntersecting, target }) {
+          if (isIntersecting) {
+            let img = target.dataset.img
             if (img) {
-              entry.target.style.backgroundImage = `url(${img})`;
+              target.style.backgroundImage = `url(${img})`
             }
-            lazyBackgroundObserver.unobserve(entry.target);
-            lazyBackgroundsCount--;
-            if (lazyBackgroundsCount <= 0) {
-              lazyBackgroundObserver.disconnect();
-            }
+            lazyBackgroundObserver.unobserve(target)
+            lazyBackgroundsCount --
           }
-        });
-      });
+          if (lazyBackgroundsCount <= 0) {
+            lazyBackgroundObserver.disconnect()
+          }
+        })
+      })
 
-      lazyBackgrounds.forEach(lazyBackground => {
-        lazyBackgroundObserver.observe(lazyBackground);
-      });
+      lazyBackgrounds.forEach(function(lazyBackground) {
+        lazyBackgroundObserver.observe(lazyBackground)
+      })
     }
 
-    aplayerInit();
-    dplayerInit();
+    /** aplayer init */
+    aplayerInit()
+    /** dplayer init */
+    dplayerInit()
   });
 })();
 
-function toCamel(str) {
-  const arrs = str.split('-');
-  if (arrs.length === 1) return arrs[0];
-  return arrs.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue.toLowerCase().replace(/( |^)[a-z]/g, (v) => v.toUpperCase());
-  });
+function toCamel(str:string) {
+  const arrs = str.split('-')
+  if (arrs.length === 1) return arrs[0]
+  return arrs.reduce((accumulator:string, currentValue:string) => {
+    return accumulator + currentValue.toLowerCase().replace(/( |^)[a-z]/g, v => v.toUpperCase())
+  })
 }
 
-function formatAttr(el) {
-  const config = {};
-  const numberList = ['lrcType'];
+/**
+ * 处理aplayer || dplayer 参数
+ * @param el aplayer || dplayer dom
+ * @returns 配置项参数
+ */
+function formatAttr(el:Element): object {
+  const config = {}
+  const numberList = ['lrcType']
   const boolMap = new Map([
     ['true', true],
     ['false', false],
-  ]);
-
-  const attrs = Array.from(el.attributes);
-
-  attrs.forEach(({ name, value }) => {
-    const key = toCamel(name.replace('config-', ''));
-    const toBool = boolMap.get(value);
-
-    if (toBool !== undefined) {
-      config[key] = toBool;
-    } else if (numberList.includes(key)) {
-      config[key] = parseInt(value || '0', 10);
-    } else {
-      config[key] = value || '';
+  ])
+  const attrs = el.getAttributeNames().filter(key => key.startsWith('config-'))
+  attrs.forEach(attr => {
+    const key = toCamel(attr.replace('config-', ''))
+    const value = el.getAttribute(attr)
+    const toBool = boolMap.get(value)
+    
+    if (toBool !== undefined) {             /** 处理bool值 */
+      config[key] = toBool
+    } else if (numberList.includes(key)) {  /** 处理number值 */
+      config[key] = parseInt(value)
+    } else {                                /** string */
+      config[key] = value
     }
-  });
-
-  return config;
+  })
+  return config
 }
 
-function switchTheme(theme) {
-  const rootDom = document.documentElement;
+function querySelectorArrs (selector:string):Array<Element> {
+  return Array.from(document.querySelectorAll(selector))
+}
 
+function switchTheme (theme:string) {
+  const rootDom:Element = document.documentElement
   if (theme === 'auto') {
-    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    theme = prefersDarkMode ? 'dark' : 'light';
+    rootDom.classList.remove('theme-dark')
+    rootDom.classList.remove('theme-light')
   }
-
-  rootDom.classList.remove('theme-light', 'theme-dark');
-  rootDom.classList.add(`theme-${theme}`);
-
-  window.localStorage.setItem('theme', theme);
+  if (theme === 'dark') {
+    rootDom.classList.remove('theme-light')
+    rootDom.classList.add('theme-dark')
+  }
+  if (theme === 'light') {
+    rootDom.classList.remove('theme-dark')
+    rootDom.classList.add('theme-light')
+  }
+  window.localStorage.setItem('theme', theme)
 }
 
-function aplayerInit() {
-  const aplayers = document.querySelectorAll('.aplayer-box');
-  if (aplayers.length && window.APlayer) {
+function aplayerInit () {
+  const aplayers = querySelectorArrs('.aplayer-box')
+  if (aplayers.length && APlayer) {
     aplayers.forEach(el => {
-      const params = { container: el, audio: { ...(el.dataset || {}) } };
-      const config = formatAttr(el);
-      new window.APlayer(Object.assign({}, config, params));
-    });
+      const params = { container: el, audio: { ...el.dataset } }
+      const config = formatAttr(el)
+      new APlayer(Object.assign({}, config, params))
+    })
   }
 }
 
-function dplayerInit() {
-  const dplayers = document.querySelectorAll('.dplayer-box');
-  if (dplayers.length && window.DPlayer) {
+function dplayerInit () {
+  const dplayers = querySelectorArrs('.dplayer-box')
+  if (dplayers.length && DPlayer) {
     dplayers.forEach(el => {
-      const params = { container: el, video: { ...(el.dataset || {}) } };
-      const config = formatAttr(el);
-      new window.DPlayer(Object.assign({}, config, params));
-    });
+      const params = { container: el, video: { ...el.dataset } }
+      const config = formatAttr(el)
+      new DPlayer(Object.assign({}, config, params))
+    })
   }
 }
