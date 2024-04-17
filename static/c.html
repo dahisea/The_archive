@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>自定义位数计算器</title>
+<script>
+function calculate() {
+  // 获取用户输入的数字和位数
+  var num1 = parseFloat(document.getElementById('num1').value);
+  var num2 = parseFloat(document.getElementById('num2').value);
+  var precision = parseInt(document.getElementById('precision').value);
+
+  // 进行计算
+  var result = num1 / num2;
+
+  // 显示结果到指定的位数
+  document.getElementById('result').value = result.toFixed(precision);
+}
+</script>
+</head>
+<body>
+  <h2>自定义位数计算器</h2>
+  <input type="number" id="num1" placeholder="输入第一个数字">
+  <input type="number" id="num2" placeholder="输入第二个数字">
+  <br><br>
+  <input type="number" id="precision" placeholder="小数点后位数">
+  <button onclick="calculate()">计算</button>
+  <br><br>
+  <input type="text" id="result" placeholder="结果" readonly>
+</body>
+</html>
