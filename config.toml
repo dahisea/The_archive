@@ -4,7 +4,7 @@ defaultContentLanguage = "zh"
 title = "Dahi Blog"
 theme = "kagome"
 paginate = 5
-copyright = "轉載註明來源　© Long term Dahi.icu"
+copyright = "©Dahi.icu"
 hasCJKLanguage = true
   
 # 作者信息
