@@ -79,7 +79,7 @@ cover:
 進入breed後台後，請立即備份full.bin和eeprom.bin。 full.bin可能可以幫助你救磚。而eeprom.bin很重要，你在每一次固件刷寫時都應將固件包與eeprom.bin一併刷入，如果沒有eeprom.bin，會導致一些奇怪的bug（比如沒信號）。
 
 7.  刷入Openwrt固件
-備份完畢後，將OPENWRT固件（評論區自取）和你的eeprom.bin一併刷入，耐心等待進度條跑完，然後就會自動重啟到OPENWRT了，enjoy it!
+備份完畢後，將OPENWRT固件（底部）和你的eeprom.bin一併刷入，耐心等待進度條跑完，然後就會自動重啟到OPENWRT了，enjoy it!
 
 8.  密碼多少
 【附加】如果你遇到需要輸入密碼時，你應該嘗試以下（用戶/密碼）組合：[root/root][root/（空）][root/password][（默認）/88888888]
@@ -103,3 +103,5 @@ cover:
 第三方固件wifi不如官方
 
 路由器折騰死了博主不負責
+
+> https://share.dahi.icu/r4av2_mi/
