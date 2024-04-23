@@ -1,6 +1,6 @@
 ---
 title: To someone who is attacking this website
-description: Static website, Attack NM. Not as good as Genshin.
+description: Static website, Not as good as Genshin.
 cover: 
 ---
 
