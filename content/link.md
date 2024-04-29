@@ -3,9 +3,7 @@ title: To someone who is attacking this website
 description: Static website, Not as good as Genshin.
 cover: 
 ---
-
 # Let us try Genshin.
-# Genshin is the best.
 當你的天空突然下起了大雨
 那是我在為你炸烏雲
 當你的髮絲微亂有陣風吹過
