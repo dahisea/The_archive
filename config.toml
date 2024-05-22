@@ -1,7 +1,7 @@
 baseURL = "https://dahi.icu/"
-languageCode = "ja-jp"
+languageCode = "ja"
 defaultContentLanguage = "zh"
-title = "ダヒのBLOG"
+title = "ダヒのブログ"
 theme = "kagome"
 paginate = 5
 copyright = "©Dahi.icu"
