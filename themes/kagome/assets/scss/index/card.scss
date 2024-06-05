@@ -138,19 +138,19 @@
       min-width: 60%;
     }
 
-    &:nth-child .article-card .card-cover {
+    &:nth-child(1n) .article-card .card-cover {
       background-color: #B9887D; 
     }
 
-    &:nth-child .article-card .card-cover {
+    &:nth-child(2n) .article-card .card-cover {
       background-color: #DC9F84; 
     }
 
-    &:nth-child .article-card .card-cover {
+    &:nth-child(3n) .article-card .card-cover {
       background-color: #E3916E; 
     }
 
-    &:nth-child .article-card .card-cover {
+    &:nth-child(4n) .article-card .card-cover {
       background-color: #D19826; 
     }
   }
