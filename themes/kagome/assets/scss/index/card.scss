@@ -135,11 +135,11 @@
     }
 
     @include mq-mb {
-      width: 100%;
-      min-width: 230px;
+      width: 80%;
+      min-width: 60%;
     }
 
-    &:nth-child(mizuga) .article-card .card-cover {
+    &:nth-child(mizu) .article-card .card-cover {
       background-color: #B9887D; 
     }
 
@@ -147,11 +147,11 @@
       background-color: #DC9F84; 
     }
 
-    &:nth-child(aka) .article-card .card-cover {
+    &:nth-child(akaa) .article-card .card-cover {
       background-color: #E3916E; 
     }
 
-    &:nth-child(yamab) .article-card .card-cover {
+    &:nth-child(yama) .article-card .card-cover {
       background-color: #D19826; 
     }
   }
