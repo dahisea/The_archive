@@ -132,11 +132,12 @@
     flex: 1 0 auto;
 
     @include mq-pc {
-      min-width: 25%;
+      min-width: 35%;
     }
 
     @include mq-mb {
-      min-width: 60%;
+      width: 77%;
+      min-width: 77%;
       margin: auto;
     }
 
