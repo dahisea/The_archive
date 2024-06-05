@@ -97,7 +97,8 @@
   scroll-snap-type: x proximity;
 
   &::-webkit-scrollbar {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   .swiper-item {
@@ -136,6 +137,7 @@
 
     @include mq-mb {
       min-width: 60%;
+      margin: auto;
     }
 
     &:nth-child(1n) .article-card .card-cover {
