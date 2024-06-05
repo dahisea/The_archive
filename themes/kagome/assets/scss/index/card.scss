@@ -139,12 +139,20 @@
       min-width: 230px;
     }
 
-    &:nth-child(odd) .article-card .card-cover {
-      background-color: #F19483; 
+    &:nth-child(mizuga) .article-card .card-cover {
+      background-color: #B9887D; 
     }
 
-    &:nth-child(even) .article-card .card-cover {
-      background-color: #EB7A77; 
+    &:nth-child(fuzi) .article-card .card-cover {
+      background-color: #DC9F84; 
+    }
+
+    &:nth-child(aka) .article-card .card-cover {
+      background-color: #E3916E; 
+    }
+
+    &:nth-child(yamab) .article-card .card-cover {
+      background-color: #D19826; 
     }
   }
 }

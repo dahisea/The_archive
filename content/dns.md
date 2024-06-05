@@ -4,7 +4,7 @@ description: 並不穩
 cover: 
 ---
 
-**已跑路**
+**原服务器已跑路**
 
 # Dahi-no-public-DNS-server
 ~~封鎖了部分分析Api和頁面停放~~

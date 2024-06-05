@@ -4,7 +4,6 @@
   {{ if or .Params.author .Site.Author.name }} {{/* author */}}
     <meta name="author" content="{{- or .Params.author .Site.Author.name -}}">
   {{ end }}
-
   {{ if or .Keywords .Site.Params.keywords }} {{/* keywords */}}
     {{ $keywords := slice }}
     {{ with .Params.keywords }}
@@ -28,13 +27,11 @@
   <link rel="shortcut icon" href="https://oss.dahi.edu.eu.org/disk_app_file_63a190a55593487c79144065/4bbc58107728660076f7b1c96b242f9c_1707221020420.png" crossorigin="anonymous" />
   {{ template "_internal/opengraph.html" . }}
   {{ template "_internal/twitter_cards.html" . }}
-
   {{/* style */}}
   {{ $sass := resources.Get "scss/index/index.scss" }}
   {{ $options := dict "targetPath" "assets/css/style.min.css" "outputStyle" "compressed" }}
   {{ $style := $sass | resources.ToCSS $options | resources.Fingerprint "sha256" }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
-
   {{/* script */}}
   {{- $js := resources.Get "ts/main.ts" -}}
   {{- $opts := dict "targetPath" "assets/js/main.min.js" "minify" hugo.IsProduction -}}

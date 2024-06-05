@@ -1,4 +1,1 @@
 User-Agent: *
-Disallow: /link/
-Disallow: /xmlrpc.php
-Disallow: /rss.xml

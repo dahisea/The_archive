@@ -1,9 +1,9 @@
 baseURL = "https://dahi.icu/"
 languageCode = "ja"
-defaultContentLanguage = "zh"
+defaultContentLanguage = "ja"
 title = "ダヒのブログ"
 theme = "kagome"
-paginate = 5
+paginate = 15
 copyright = "©Dahi.icu"
 hasCJKLanguage = true
   
@@ -17,12 +17,12 @@ hasCJKLanguage = true
 [menu]
   [[menu.main]]
     identifier = "tomodachi"
-    name = "友人"
+    name = "Friends"
     url = "/tomodachi/"
     weight = 1
   [[menu.main]]
     identifier = "posts"
-    name = "文章"
+    name = "Posts"
     url = "/posts/"
     weight = 2
   [[menu.main]]
@@ -35,11 +35,6 @@ hasCJKLanguage = true
     name = "Donate"
     url = "/donate/"
     weight = 2
-  [[menu.main]]
-    identifier = "link"
-    name = "Don't attack"
-    url = "/link/"
-    weight =3 
 
   [[menu.social]]
     identifier = "github"
