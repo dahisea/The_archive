@@ -97,7 +97,7 @@
   scroll-snap-type: x proximity;
 
   &::-webkit-scrollbar {
-    display: none;
+    display: block;
   }
 
   .swiper-item {
@@ -127,7 +127,7 @@
 
   .article-item {
     padding: var(--layout-padding-x);
-    max-width: 100%;
+    max-width: 80%;
     flex: 1 0 auto;
 
     @include mq-pc {
@@ -135,23 +135,22 @@
     }
 
     @include mq-mb {
-      width: 80%;
       min-width: 60%;
     }
 
-    &:nth-child(mizu) .article-card .card-cover {
+    &:nth-child .article-card .card-cover {
       background-color: #B9887D; 
     }
 
-    &:nth-child(fuzi) .article-card .card-cover {
+    &:nth-child .article-card .card-cover {
       background-color: #DC9F84; 
     }
 
-    &:nth-child(akaa) .article-card .card-cover {
+    &:nth-child .article-card .card-cover {
       background-color: #E3916E; 
     }
 
-    &:nth-child(yama) .article-card .card-cover {
+    &:nth-child .article-card .card-cover {
       background-color: #D19826; 
     }
   }
