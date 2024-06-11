@@ -3,7 +3,7 @@ languageCode = "ja"
 defaultContentLanguage = "ja"
 title = "ダヒのブログ"
 theme = "kagome"
-paginate = 15
+paginate = 9
 copyright = "©Dahi.ICU"
 hasCJKLanguage = true
   
