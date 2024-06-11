@@ -4,7 +4,7 @@ defaultContentLanguage = "ja"
 title = "ダヒのブログ"
 theme = "kagome"
 paginate = 15
-copyright = "©Dahi.icu"
+copyright = "©Dahi.ICU"
 hasCJKLanguage = true
   
 # 作者信息
