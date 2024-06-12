@@ -1,13 +1,12 @@
 ---
-title: "CloudflareIP位址優選"
-date: 2023-01-20T03:25:04Z
+title: "CloudflareIP位址優選部份數據"
+date: 2022-01-20T03:25:04Z
 draft: false
 categories:
 tags:
 description: 
 cover: 
 ---
-## 优选（速度）
 
 104.17.64.0   821.8 KB/s
 
@@ -63,11 +62,7 @@ cover:
 
 104.24.224.0   465.8 KB/s
 
-
-
 ### 用日本大阪机优选的ip，中国内地实测一般
-
-
 
 IP  Ping    Real Delay  Speed (MB/s)
 

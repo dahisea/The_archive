@@ -49,7 +49,8 @@ cover:
 3.  刷入breed文件
 上傳完了就可以嘗試刷入，先連接路由器終端，
 然後你可以嘗試備份（方法來自網絡），樓主忘記備份了
-命令：
+以下為命令：
+
 ```
     cd /tmp
     mkdir backupB9AD
@@ -66,10 +67,15 @@ cover:
     dd if=/dev/mtd9 of=/tmp/backupB9AD/mtd9-rootfs.bin
     dd if=/dev/mtd10 of=/tmp/backupB9AD/mtd10-disk.bin
 ```
-    備份完把這幾個文件複製出來（可以用WINSCP）保存好，以後萬一要恢復官方要用到
-然後然後你應該執行breed刷寫命令``mtd -r write /tmp/breed.bin Bootloader``
 
-4.  進去breed
+備份完把這幾個文件複製出來（可以用WINSCP）保存好，以後萬一要恢復官方要用到
+然後然後你應該執行breed刷寫命令
+
+```
+mtd -r write /tmp/breed.bin Bootloader
+```
+
+4.  進breed
 刷好了可能也就進入breed系統了。如果你要進入breed系統，請按著路由器復位鍵不動，然後重新插入路由器電源線，3秒後鬆手，此時你就進入了breed系統（後台地址為192.168.1.1）。
 
 5.  breed是什麼
@@ -96,12 +102,12 @@ cover:
 3. [https://www.right.com.cn/forum/thread-8275612- 1-1.html](https://www.right.com.cn/forum/thread-8275612-1-1.html) （評論區中right開頭固件來源）
 
 
-# 以上，感謝您的瀏覽，轉載請標註來源
+# 感謝您的瀏覽，以下是建議
 
-在刷入breed之前可以用命令備份一下全部分區，方便恢復到官方固件[流汗滑稽]樓主是fw不會，所以沒備份。如果沒備份官方uboot，那麼路由器則不能完全回到官方狀態。
+在刷入breed之前可以用命令備份一下全部分區，方便恢復到官方固件。樓主不會，所以沒備份。如果沒備份官方uboot，那麼路由器則不能回到官方狀態。
 
-第三方固件wifi不如官方
+第三方固件wifi不如官方。
 
-路由器折騰死了博主不負責
+路由器折騰死了博主不負責。
 
 > https://share.dahi.icu/r4av2_mi/
