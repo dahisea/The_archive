@@ -13,7 +13,7 @@ Link：[https://dahi.icu/](https://dahi.icu/)
 
 Description：時光流轉，願你有一天能與重要的人重逢
 
-Email：dahiddwy@gmail.com
+Email：expect@dahi.icu
 
 
 # 请按以下格式申请
