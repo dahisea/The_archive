@@ -44,40 +44,64 @@ setInterval(calculateTime, 1000);
 
 </script>
 <br />
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const requestInfoDiv = document.getElementById('request-info');
-      console.log('DOM fully loaded and parsed');
-
-      // Using XMLHttpRequest as a fallback
-      const xhr = new XMLHttpRequest();
-      xhr.open('GET', 'https://dahi.icu/whour', true);
-      xhr.onload = function() {
-        if (xhr.status >= 200 && xhr.status < 300) {
-          const data = JSON.parse(xhr.responseText);
-          console.log('Parsed JSON data:', data);
-          const infoHtml = `
-            <p><strong>IP Address (｡♥‿♥｡):</strong> ${data.ip}</p>
-            <p><strong>UTC Time (⁄ ⁄•⁄ω⁄•⁄ ⁄):</strong> ${data.utcTime}</p>
-            <p><strong>User Agent (´｡• ω •｡`):</strong> ${JSON.stringify(data.userAgentInfo)}</p>
-            <p><strong>Accept Language (◕‿◕✿):</strong> ${data.acceptLanguage}</p>
-            <p><strong>Country (◕‿◕✿):</strong> ${data.country}</p>
-            <p><strong>Platform (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧:</strong> ${data.platform}</p>
-            <p><strong>Referer (｡♥‿♥｡):</strong> ${data.referer}</p>
-          `;
-          requestInfoDiv.innerHTML = infoHtml;
-        } else {
-          requestInfoDiv.innerHTML = `<p>Error fetching request information: HTTP ${xhr.status}</p>`;
+    <div id="api-data">
+        <pre>Loading data...</pre>
+    </div>
+    <script>
+        async function fetchAPI() {
+            try {
+                const response = await fetch('https://dahi.icu/whour');  // 替换为实际的 API URL
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                const data = await response.json();
+                document.getElementById('api-data').innerHTML = formatData(data);
+            } catch (error) {
+                document.getElementById('api-data').innerHTML = `<pre>Error fetching data: ${error.message}</pre>`;
+            }
         }
-      };
-      xhr.onerror = function() {
-        console.error('Error fetching request information');
-        requestInfoDiv.innerHTML = `<p>Error fetching request information</p>`;
-      };
-      xhr.send();
-    });
-  </script>
-  <div id="request-info">Loading...</div><br />
+
+        function formatData(data) {
+            return `
+<div class="data-section">
+    <h2>IP 信息</h2>
+    <p><strong>x-real-ip:</strong> ${data.headers["x-real-ip"]}</p>
+    <p><strong>cf-connecting-ip:</strong> ${data.headers["cf-connecting-ip"]}</p>
+    <p><strong>cf-ipcity:</strong> ${data.headers["cf-ipcity"]}</p>
+    <p><strong>cf-ipcontinent:</strong> ${data.headers["cf-ipcontinent"]}</p>
+    <p><strong>cf-ipcountry:</strong> ${data.headers["cf-ipcountry"]}</p>
+    <p><strong>cf-region:</strong> ${data.headers["cf-region"]}</p>
+</div>
+<div class="data-section">
+    <h2>其他信息</h2>
+    <p><strong>x-requested-with:</strong> ${data.headers["x-requested-with"]}</p>
+</div>
+<div class="data-section">
+    <h2>其他 API 返回数据</h2>
+    <h3>Query Params</h3>
+    <pre>${JSON.stringify(data.queryParams, null, 2)}</pre>
+    <h3>Headers</h3>
+    <pre>${JSON.stringify(data.headers, null, 2)}</pre>
+    <h3>IP</h3>
+    <pre>${data.ip}</pre>
+    <h3>UTC Time</h3>
+    <pre>${data.utcTime}</pre>
+    <h3>User Agent Info</h3>
+    <pre>${JSON.stringify(data.userAgentInfo, null, 2)}</pre>
+    <h3>Accept Language</h3>
+    <pre>${data.acceptLanguage}</pre>
+    <h3>Country</h3>
+    <pre>${data.country}</pre>
+    <h3>Platform</h3>
+    <pre>${data.platform}</pre>
+    <h3>Referer</h3>
+    <pre>${data.referer}</pre>
+</div>
+            `;
+        }
+
+        fetchAPI();
+    </script><br />
   <p>
   <font size="1">
     Powered by
