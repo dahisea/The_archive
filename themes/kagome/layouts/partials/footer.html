@@ -65,37 +65,26 @@ setInterval(calculateTime, 1000);
             return `
 <div class="data-section">
     <h2>IP 信息</h2>
-    <p><strong>x-real-ip:</strong> ${data.headers["x-real-ip"]}</p>
-    <p><strong>cf-connecting-ip:</strong> ${data.headers["cf-connecting-ip"]}</p>
-    <p><strong>cf-ipcity:</strong> ${data.headers["cf-ipcity"]}</p>
-    <p><strong>cf-ipcontinent:</strong> ${data.headers["cf-ipcontinent"]}</p>
-    <p><strong>cf-ipcountry:</strong> ${data.headers["cf-ipcountry"]}</p>
-    <p><strong>cf-region:</strong> ${data.headers["cf-region"]}</p>
-</div>
-<div class="data-section">
-    <h2>其他信息</h2>
-    <p><strong>x-requested-with:</strong> ${data.headers["x-requested-with"]}</p>
-</div>
-<div class="data-section">
-    <h2>其他 API 返回数据</h2>
-    <h3>Query Params</h3>
-    <pre>${JSON.stringify(data.queryParams, null, 2)}</pre>
-    <h3>Headers</h3>
-    <pre>${JSON.stringify(data.headers, null, 2)}</pre>
-    <h3>IP</h3>
-    <pre>${data.ip}</pre>
-    <h3>UTC Time</h3>
-    <pre>${data.utcTime}</pre>
-    <h3>User Agent Info</h3>
-    <pre>${JSON.stringify(data.userAgentInfo, null, 2)}</pre>
-    <h3>Accept Language</h3>
-    <pre>${data.acceptLanguage}</pre>
-    <h3>Country</h3>
+    <strong>cf-ipcity:</strong> ${data.headers["cf-ipcity"]}<br>
+    <strong>cf-ipcontinent:</strong> ${data.headers["cf-ipcontinent"]}<br>
+    <strong>cf-ipcountry:</strong> ${data.headers["cf-ipcountry"]}<br>
+    <strong>Country</strong><br>
     <pre>${data.country}</pre>
-    <h3>Platform</h3>
-    <pre>${data.platform}</pre>
-    <h3>Referer</h3>
+    <strong>cf-region:</strong> ${data.headers["cf-region"]}<br>
+    <strong>x-real-ip:</strong> ${data.headers["x-real-ip"]}<br>
+    <strong>cf-connecting-ip:</strong> ${data.headers["cf-connecting-ip"]}<br>
+    <h2>其他信息</h2>
+    <strong>x-requested-with:</strong> ${data.headers["x-requested-with"]}<br>
+    <strong>Referer</strong><br>
     <pre>${data.referer}</pre>
+    <strong>Accept Language</strong><br>
+    <pre>${data.acceptLanguage}</pre>
+    <strong>Platform</strong><br>
+    <pre>${data.platform}</pre>
+    <strong>UTC Time</strong><br>
+    <pre>${data.utcTime}</pre>
+    <strong>User Agent Info</strong><br>
+    <pre>${JSON.stringify(data.userAgentInfo, null, 2)}</pre>
 </div>
             `;
         }
