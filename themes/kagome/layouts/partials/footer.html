@@ -43,28 +43,41 @@
 setInterval(calculateTime, 1000);
 
 </script>
-<br /><br />
-<div id="request-info"></div>
-<script>
-  // 使用fetch从Cloudflare Workers获取请求信息
-  fetch('https://your-worker-url.example')
-    .then(response => response.json())
-    .then(data => {
-      // 构建展示信息的HTML
-      const infoHtml = `
-        <p><strong>IP Address (｡♥‿♥｡):</strong> ${data.ip}</p>
-        <p><strong>UTC Time (⁄ ⁄•⁄ω⁄•⁄ ⁄):</strong> ${data.utcTime}</p>
-        <p><strong>User Agent (´｡• ω •｡`):</strong> ${JSON.stringify(data.userAgentInfo)}</p>
-        <p><strong>Accept Language (◕‿◕✿):</strong> ${data.acceptLanguage}</p>
-        <p><strong>Country (◕‿◕✿):</strong> ${data.country}</p>
-        <p><strong>Platform (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧:</strong> ${data.platform}</p>
-        <p><strong>Referer (｡♥‿♥｡):</strong> ${data.referer}</p>
-      `;
-      // 将HTML插入到页面中指定的元素中
-      document.getElementById('request-info').innerHTML = infoHtml;
-    })
-    .catch(error => console.error('Error fetching request information:', error));
-</script>
+<br />
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const requestInfoDiv = document.getElementById('request-info');
+      console.log('DOM fully loaded and parsed');
+
+      // Using XMLHttpRequest as a fallback
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'https://dahi.icu/whour', true);
+      xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          const data = JSON.parse(xhr.responseText);
+          console.log('Parsed JSON data:', data);
+          const infoHtml = `
+            <p><strong>IP Address (｡♥‿♥｡):</strong> ${data.ip}</p>
+            <p><strong>UTC Time (⁄ ⁄•⁄ω⁄•⁄ ⁄):</strong> ${data.utcTime}</p>
+            <p><strong>User Agent (´｡• ω •｡`):</strong> ${JSON.stringify(data.userAgentInfo)}</p>
+            <p><strong>Accept Language (◕‿◕✿):</strong> ${data.acceptLanguage}</p>
+            <p><strong>Country (◕‿◕✿):</strong> ${data.country}</p>
+            <p><strong>Platform (ﾉ◕ヮ◕)ﾉ*:･ﾟ✧:</strong> ${data.platform}</p>
+            <p><strong>Referer (｡♥‿♥｡):</strong> ${data.referer}</p>
+          `;
+          requestInfoDiv.innerHTML = infoHtml;
+        } else {
+          requestInfoDiv.innerHTML = `<p>Error fetching request information: HTTP ${xhr.status}</p>`;
+        }
+      };
+      xhr.onerror = function() {
+        console.error('Error fetching request information');
+        requestInfoDiv.innerHTML = `<p>Error fetching request information</p>`;
+      };
+      xhr.send();
+    });
+  </script>
+  <div id="request-info">Loading...</div><br />
   <p>
   <font size="1">
     Powered by
