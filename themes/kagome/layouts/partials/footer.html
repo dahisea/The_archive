@@ -1,6 +1,6 @@
 <footer class="footer-container">
 <div class="layout-margin content-padding-large soft-size--large soft-style--box">
-<br />
+<br>
   {{ with .Site.Menus.social }}
   <div class="social-icons">
     {{ range . }}
@@ -20,11 +20,11 @@
   </div>
   {{ end }}
   {{ with .Site.Copyright }}
-  <h1>{{ . | safeHTML }}</h1><br /><br />
+  <h1>{{ . | safeHTML }}</h1><br><br>
   <a href="https://icp.gov.moe/?keyword=20213149" target="_blank">莔ICP備20213149號</a>
-  <br /><br /><a style="text-decoration:none;color:#1772b4;" href="https://travel.moe/go.html" title="异次元之旅-跃迁-我们一起去萌站成员的星球旅行吧！" target="_blank">異次元への旅</a>
+  <br><br><a style="text-decoration:none;color:#1772b4;" href="https://travel.moe/go.html" title="异次元之旅-跃迁-我们一起去萌站成员的星球旅行吧！" target="_blank">異次元への旅</a>
   {{ end }}
-<br /><br /><h3>展開序幕</h3>
+<br><br><h3>展開序幕</h3>
 <h4><span id="htmer_time" style="color: black;"></span></h4>
 
 <script>function calculateTime() {
@@ -43,7 +43,7 @@
 setInterval(calculateTime, 1000);
 
 </script>
-<br />
+<br>
     <div id="api-data">
         <pre>Loading data...</pre>
     </div>
@@ -57,7 +57,7 @@ setInterval(calculateTime, 1000);
                 const data = await response.json();
                 document.getElementById('api-data').innerHTML = formatData(data);
             } catch (error) {
-                document.getElementById('api-data').innerHTML = `<pre>Error fetching data: ${error.message}</pre>`;
+                document.getElementById('api-data').innerHTML = `<pre>Error fetching data:${error.message}</pre>`;
             }
         }
 
@@ -65,32 +65,31 @@ setInterval(calculateTime, 1000);
             return `
 <div class="data-section">
     <h2>IP 信息</h2>
-    <strong>cf-ipcity:</strong> ${data.headers["cf-ipcity"]}<br>
-    <strong>cf-ipcontinent:</strong> ${data.headers["cf-ipcontinent"]}<br>
-    <strong>cf-ipcountry:</strong> ${data.headers["cf-ipcountry"]}<br>
-    <strong>Country</strong><br>
+    <strong>City: </strong>${data.headers["cf-ipcity"]}<br>
+    <strong>Type: </strong>${data.headers["cf-ipcontinent"]}<br>
+    <strong>Country: </strong>
     <pre>${data.country}</pre>
-    <strong>cf-region:</strong> ${data.headers["cf-region"]}<br>
-    <strong>x-real-ip:</strong> ${data.headers["x-real-ip"]}<br>
-    <strong>cf-connecting-ip:</strong> ${data.headers["cf-connecting-ip"]}<br>
+    <strong>Region: </strong>${data.headers["cf-region"]}<br>
+    <strong>IP1: </strong>${data.headers["x-real-ip"]}<br>
+    <strong>IP2: </strong>${data.headers["cf-connecting-ip"]}<br><br>
     <h2>其他信息</h2>
-    <strong>x-requested-with:</strong> ${data.headers["x-requested-with"]}<br>
-    <strong>Referer</strong><br>
+    <strong>Requested-with: </strong>${data.headers["x-requested-with"]}<br>
+    <strong>Referer: </strong>
     <pre>${data.referer}</pre>
-    <strong>Accept Language</strong><br>
+    <strong>Accept Language: </strong>
     <pre>${data.acceptLanguage}</pre>
-    <strong>Platform</strong><br>
+    <strong>Platform: </strong>
     <pre>${data.platform}</pre>
-    <strong>UTC Time</strong><br>
+    <strong>UTC Time: </strong>
     <pre>${data.utcTime}</pre>
-    <strong>User Agent Info</strong><br>
+    <strong>UA: </strong>
     <pre>${JSON.stringify(data.userAgentInfo, null, 2)}</pre>
 </div>
             `;
         }
 
         fetchAPI();
-    </script><br />
+    </script><br>
   <p>
   <font size="1">
     Powered by
