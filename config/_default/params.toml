@@ -54,7 +54,7 @@ defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all 
   showAuthor = true
   showAuthorBottom = true
   showHero = true
-  heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
@@ -70,7 +70,7 @@ defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all 
   showTableOfContents = false
   # showRelatedContent = false
   # relatedContentLimit = 3
-  showTaxonomies = false
+  showTaxonomies = true
   showAuthorsBadges = false
   showWordCount = true
   sharingLinks = [ "linkedin", "twitter", "bluesky", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram"]
@@ -93,7 +93,6 @@ defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all 
   cardView = false
   cardViewScreenWidth = false
   constrainItemsWidth = false
-  showComments = true
 
 [sitemap]
   excludedKinds = ["taxonomy", "term"]
@@ -107,7 +106,6 @@ defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all 
   showLikes = false
   showTableOfContents = false
   cardView = false
-  showComments = true
 
 [term]
   showHero = true
@@ -119,7 +117,6 @@ defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all 
   groupByYear = false
   cardView = false
   cardViewScreenWidth = false
-  showComments = true
 
 [firebase]
   # apiKey = "XXXXXX"
