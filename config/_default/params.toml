@@ -16,9 +16,10 @@ mainSections = ["posts"]
 
 disableImageOptimization = false
 disableTextInHeader = false
+showComments = true
 
-# defaultBackgroundImage = "IMAGE.jpg" # used as default for background images 
-# defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
+defaultBackgroundImage = "IMAGE.jpg" # used as default for background images 
+defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
 
 # highlightCurrentMenuArea = true
 # smartTOC = true
@@ -36,7 +37,7 @@ disableTextInHeader = false
 
 [homepage]
   layout = "hero" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "IMAGE.jpg" # used in: hero, and card
+  # homepageImage = "IMAGE.jpg" # used in: hero, and card
   showRecent = true
   showRecentItems = 5
   showMoreLink = true
@@ -52,7 +53,6 @@ disableTextInHeader = false
   showDateOnlyInArticle = false
   showDateUpdated = false
   showAuthor = true
-  showComments = true
   showAuthorBottom = true
   showHero = true
   heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
