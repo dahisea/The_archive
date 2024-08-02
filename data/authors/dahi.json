@@ -1,0 +1,8 @@
+{
+    "name": "Dahi",
+    "image" : "https://oxs.dahi.icu/avatar.png",
+    "bio": "A student.",
+    "social": [
+        { "github": "https://github.com/dahisea" }
+    ]
+}
