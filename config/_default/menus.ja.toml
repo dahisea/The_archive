@@ -11,7 +11,7 @@
 # このメニューは weight が低い値から高い値に順に表示されます。
 
 [[main]]
-  name = "文"
+  name = "Article"
   pageRef = "posts"
   weight = 10
 
@@ -33,6 +33,16 @@
    weight = 10
 
  [[footer]]
-   name = "著者"
-   pageRef = "authors"
+   name = "DNS"
+   pageRef = "DNS"
+   weight = 20
+
+ [[footer]]
+   name = "TOMODACHI"
+   pageRef = "TOMODACHI"
+   weight = 20
+   
+ [[footer]]
+   name = "DONATE"
+   pageRef = "DONATE"
    weight = 20

@@ -2,10 +2,11 @@
 title: "Tyranor模擬器Kirikiri字型大小設定"
 date: 2024-04-20T09:25:04Z
 draft: false
-categories:
-tags:
-description: 
-cover: 
+description: "一種大小調節方式"
+slug: "gal"
+tags: ["gal", "krkr"]
+series: ["實用"]
+series_order: 1
 ---
 ## patch.tjs
 ```

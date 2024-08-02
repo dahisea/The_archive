@@ -2,10 +2,11 @@
 title: "ATRI遊玩感想"
 date: 2024-04-29T12:25:34Z
 draft: false
-categories:
-tags:
-description: 
-cover: 
+description: "一種感悟"
+slug: "gal"
+tags: ["gal", "feeling"]
+series: ["實用"]
+series_order: 1
 ---
 2024.4.30
 "這顆星球正在沉沒—"

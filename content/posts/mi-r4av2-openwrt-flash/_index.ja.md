@@ -2,10 +2,11 @@
 title: "2023小米路由器4A千兆版大陸最新款（r4av2）Openwrt刷入教程"
 date: 2023-05-19T01:25:04Z
 draft: false
-categories:
-tags:
-description: 
-cover: 
+description: "教程"
+slug: "openwrt"
+tags: ["路由", "openwrt"]
+series: ["實用"]
+series_order: 1
 ---
 ## 前言
 

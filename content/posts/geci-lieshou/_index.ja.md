@@ -2,10 +2,11 @@
 title: "歌詞獵手復活版"
 date: 2024-04-20T10:25:04Z
 draft: false
-categories:
-tags:
-description: 
-cover: 
+description: "一種軟體"
+slug: "app"
+tags: ["app", "music"]
+series: ["實用"]
+series_order: 1
 ---
 ## 復甦版，不多贅述
 
