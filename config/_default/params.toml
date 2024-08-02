@@ -37,11 +37,11 @@ disableTextInHeader = false
 [homepage]
   layout = "hero" # valid options: page, profile, hero, card, background, custom
   homepageImage = "IMAGE.jpg" # used in: hero, and card
-  showRecent = false
+  showRecent = true
   showRecentItems = 5
-  showMoreLink = false
+  showMoreLink = true
   showMoreLinkDest = "/posts"
-  cardView = false
+  cardView = true
   cardViewScreenWidth = false
   layoutBackgroundBlur = false # only used when layout equals background
 
@@ -52,7 +52,8 @@ disableTextInHeader = false
   showDateOnlyInArticle = false
   showDateUpdated = false
   showAuthor = true
-  # showAuthorBottom = false
+  showComments = true
+  showAuthorBottom = true
   showHero = true
   heroStyle = "basic" # valid options: basic, big, background, thumbAndBackground
   layoutBackgroundBlur = true # only used when heroStyle equals background or thumbAndBackground
@@ -60,7 +61,6 @@ disableTextInHeader = false
   showBreadcrumbs = false
   showDraftLabel = true
   showEdit = false
-  showComments = true
   # editURL = "https://github.com/username/repo/"
   editAppendPath = true
   seriesOpened = false
@@ -108,7 +108,7 @@ disableTextInHeader = false
   cardView = false
 
 [term]
-  showHero = false
+  showHero = true
   # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
   showViews = false
