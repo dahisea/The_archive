@@ -1,0 +1,38 @@
+# -- メインメニュー --
+# メインメニューはページトップのヘッダーに表示されます。
+# 利用可能なパラメーターは name, pageRef, page, url, title, weight です。
+# 
+# 最もシンプルなメニュー設定はこちらです:
+#   name = このメニューリンクに表示される名前
+#   pageRef = ページやセクションのリンクに利用される識別子
+#
+# デフォルトでは、メニューはアルファベット順に並べられます。
+# これは、 weight value で上書き可能です。
+# このメニューは weight が低い値から高い値に順に表示されます。
+
+[[main]]
+  name = "文"
+  pageRef = "posts"
+  weight = 10
+
+
+[[main]]
+  identifier = "github"
+  pre = "github"
+  url = "https://github.com/dahisea"
+  weight = 400
+
+
+# -- フッターメニュー --
+# このフッターメニューはページ下部のコピーライト表示の前に表示されます。
+# 上記のメインメニューと同様に設定できます。
+
+ [[footer]]
+   name = "タグ"
+   pageRef = "tags"
+   weight = 10
+
+ [[footer]]
+   name = "著者"
+   pageRef = "authors"
+   weight = 20
