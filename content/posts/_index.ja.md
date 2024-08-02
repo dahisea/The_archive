@@ -1,12 +1,11 @@
 ---
-title: "資料"
-description: "Blowfish の利用方法と特徴について学ぶ。"
+title: "記事"
+description: "ダヒの記事"
 
 cascade:
-  showDate: false
+  showDate: true
   showAuthor: false
   invertPagination: true
 ---
-
 
 ---
