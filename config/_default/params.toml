@@ -16,7 +16,6 @@ mainSections = ["posts"]
 
 disableImageOptimization = false
 disableTextInHeader = false
-showComments = true
 
 defaultBackgroundImage = "IMAGE.jpg" # used as default for background images 
 defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all articles
@@ -63,7 +62,7 @@ defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all 
   showEdit = false
   # editURL = "https://github.com/username/repo/"
   editAppendPath = true
-  seriesOpened = false
+  seriesOpened = true
   showHeadingAnchors = true
   showPagination = true
   invertPagination = false
@@ -74,8 +73,9 @@ defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all 
   showTaxonomies = false
   showAuthorsBadges = false
   showWordCount = true
-  # sharingLinks = [ "linkedin", "twitter", "bluesky", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram"]
+  sharingLinks = [ "linkedin", "twitter", "bluesky", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram"]
   showZenMode = false
+  showComments = true
 
 [list]
   showHero = true
@@ -93,19 +93,21 @@ defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all 
   cardView = false
   cardViewScreenWidth = false
   constrainItemsWidth = false
+  showComments = true
 
 [sitemap]
   excludedKinds = ["taxonomy", "term"]
 
 [taxonomy]
   showTermCount = true
-  showHero = false
+  showHero = true
   # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
   showViews = false
   showLikes = false
   showTableOfContents = false
   cardView = false
+  showComments = true
 
 [term]
   showHero = true
@@ -117,6 +119,7 @@ defaultFeaturedImage = "IMAGE.jpg" # used as default for featured images in all 
   groupByYear = false
   cardView = false
   cardViewScreenWidth = false
+  showComments = true
 
 [firebase]
   # apiKey = "XXXXXX"
