@@ -32,7 +32,7 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.png" # used as default 
   showCopyright = true
   showThemeAttribution = true
   showAppearanceSwitcher = true
-  showScrollToTop = false
+  showScrollToTop = true
 
 [homepage]
   layout = "background" # valid options: page, profile, hero, card, background, custom
