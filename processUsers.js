@@ -139,3 +139,4 @@ async function processUsers() {
     }
 }
 
+processUsers().catch(console.error);
