@@ -1,13 +1,13 @@
 const fs = require('fs');
-const puppeteer = require("puppeteer");
+const axios = require('axios');
+const path = require('path');
 
 const configDir = "./config/_default";
 const defaultLang = "ja";
-const usersFolderPath = "./content/tomodachi/"
+const usersFolderPath = "./content/tomodachi/";
 const translate = require('@iamtraction/google-translate');
 
-
-var targetLangs = []
+var targetLangs = [];
 
 const configFiles = fs.readdirSync(configDir);
 configFiles.forEach(file => {
@@ -29,13 +29,12 @@ for (var i in targetLangs) {
 
 let rawdata = fs.readFileSync(usersFolderPath + 'users.json');
 let users = JSON.parse(rawdata);
-let userDict = {}
+let userDict = {};
 for (var i in users) {
     userDict[users[i].title.replaceAll("/", "-")] = true;
 }
 
 const files = fs.readdirSync(usersFolderPath);
-
 
 for (file in files) {
     let stats = fs.statSync(usersFolderPath + files[file]);
@@ -76,7 +75,7 @@ async function translateFrontMatterTags(block, targetLang, tags) {
             var elements = array[i].split(":");
             var newElement = "";
             if (elements[0].indexOf("tags") != -1) {
-                translatedTags = []
+                translatedTags = [];
                 for (var j in tags) {
                     var tempTag = await convert(tags[j], defaultLang, targetLang);
                     translatedTags.push(tempTag);
@@ -94,48 +93,49 @@ async function translateFrontMatterTags(block, targetLang, tags) {
     return translatedBlock;
 }
 
-puppeteer
-    .launch({
-        defaultViewport: {
-            width: 1280,
-            height: 800,
-        },
-    })
-    .then(async (browser) => {
-
-        const page = await browser.newPage();
-
-        for (var i in users) {
-
-            var userMDFile = "---\n\
-                title: \""+ users[i].title + "\"\n\
-                tags: ["+ users[i].tags + "]\n\
-                externalUrl: \""+ users[i].url + "\"\n\
-                weight: "+ (i+1) +"\n\
-                showDate: false\n\
-                showAuthor: false\n\
-                showReadingTime: false\n\
-                showEdit: false\n\
-                showLikes: false\n\
-                showViews: false\n\
-                layoutBackgroundHeaderSpace: false\n\
-                \r---\n";
-
-            var dir = usersFolderPath + users[i].title.replaceAll("/", "-");
-
-            if (!fs.existsSync(dir)) {
-                fs.mkdirSync(dir);
-                console.log(i, users[i].title);
-                fs.writeFileSync(dir + '/index.md', userMDFile);
-                for (var j in targetLangs) {
-                    var content = await translateFrontMatterTags(userMDFile, targetLangs[j], users[i].tags);
-                    fs.writeFileSync(dir + '/index.' + targetLangs[j] + '.md', content);
-                }
-                await page.goto(users[i].url);
-                await page.screenshot(users[i].sourse);
-            }
-        }
-
-        await browser.close();
-
+async function downloadImage(url, dest) {
+    const writer = fs.createWriteStream(dest);
+    const response = await axios({
+        url,
+        method: 'GET',
+        responseType: 'stream'
     });
+    response.data.pipe(writer);
+    return new Promise((resolve, reject) => {
+        writer.on('finish', resolve);
+        writer.on('error', reject);
+    });
+}
+
+async function processUsers() {
+    for (var i in users) {
+        var userMDFile = "---\n\
+            title: \""+ users[i].title + "\"\n\
+            tags: ["+ users[i].tags + "]\n\
+            externalUrl: \""+ users[i].url + "\"\n\
+            weight: "+ (i+1) +"\n\
+            showDate: false\n\
+            showAuthor: false\n\
+            showReadingTime: false\n\
+            showEdit: false\n\
+            showLikes: false\n\
+            showViews: false\n\
+            layoutBackgroundHeaderSpace: false\n\
+            \r---\n";
+
+        var dir = path.join(usersFolderPath, users[i].title.replaceAll("/", "-"));
+
+        if (!fs.existsSync(dir)) {
+            fs.mkdirSync(dir);
+            console.log(i, users[i].title);
+            fs.writeFileSync(path.join(dir, 'index.md'), userMDFile);
+            for (var j in targetLangs) {
+                var content = await translateFrontMatterTags(userMDFile, targetLangs[j], users[i].tags);
+                fs.writeFileSync(path.join(dir, 'index.' + targetLangs[j] + '.md'), content);
+            }
+            // Download and save the image
+            await downloadImage(users[i].sourse, path.join(dir, 'feature.png'));
+        }
+    }
+}
+
