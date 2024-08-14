@@ -14,3 +14,4 @@ command = "npm install --save iamtraction/google-translate && npm install axios 
 HUGO_VERSION = "0.130.0" #请根据自己的 Hugo 版本进行修改
 HUGO_ENV = "production"
 HUGO_ENABLEGITINFO = "true"
+
