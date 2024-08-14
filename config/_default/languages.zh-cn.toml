@@ -1,10 +1,10 @@
-languageCode = "zh-tw"
-languageName = "正體字"
+languageCode = "zh-cn"
+languageName = "简体字"
 weight = 3
 title = "ダヒのBlog"
 
 [params]
-  displayName = "正體字"
+  displayName = "简体字"
   isoCode = "zh-tw"
   rtl = false
   dateFormat = "2006-01-02"

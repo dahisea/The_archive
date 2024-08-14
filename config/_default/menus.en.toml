@@ -1,69 +1,57 @@
-# -- Main Menu --
-# The main menu is displayed in the header at the top of the page.
-# Acceptable parameters are name, pageRef, page, url, title, weight.
+# -- メインメニュー --
+# メインメニューはページトップのヘッダーに表示されます。
+# 利用可能なパラメーターは name, pageRef, page, url, title, weight です。
 # 
-# The simplest menu configuration is to provide:
-#   name = The name to be displayed for this menu link
-#   pageRef = The identifier of the page or section to link to
+# 最もシンプルなメニュー設定はこちらです:
+#   name = このメニューリンクに表示される名前
+#   pageRef = ページやセクションのリンクに利用される識別子
 #
-# By default the menu is ordered alphabetically. This can be
-# overridden by providing a weight value. The menu will then be
-# ordered by weight from lowest to highest.
+# デフォルトでは、メニューはアルファベット順に並べられます。
+# これは、 weight value で上書き可能です。
+# このメニューは weight が低い値から高い値に順に表示されます。
 
-#[[main]]
-#  name = "Blog"
-#  pageRef = "posts"
-#  weight = 10
+[[main]]
+  name = "Article"
+  pageRef = "posts"
+  weight = 10
 
-#[[main]]
-#  name = "Parent"
-#  weight = 20
+[[main]]
+  name = "Article"
+  pageRef = "posts"
+  weight = 40
 
-#[[main]]
-#  name = "example sub-menu 1"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
+ [[main]]
+   name = "TOMODACHI"
+   pageRef = "TOMODACHI"
+   weight = 20
 
-#[[main]]
-#  name = "example sub-menu 2"
-#  parent = "Parent"
-#  pageRef = "posts"
-#  weight = 20
-
-#[[subnavigation]]
-#  name = "An interesting topic"
-#  pageRef = "tags/interesting-topic"
-#  weight = 10
-
-#[[subnavigation]]
-#  name = "My Awesome Category"
-#  pre = "github"
-#  pageRef = "categories/awesome"
-#  weight = 20
-
-#[[main]]
-#  name = "Categories"
-#  pageRef = "categories"
-#  weight = 20
-
-#[[main]]
-#  name = "Tags"
-#  pageRef = "tags"
-#  weight = 30
+[[main]]
+  identifier = "github"
+  pre = "github"
+  url = "https://github.com/dahisea"
+  weight = 400
 
 
-# -- Footer Menu --
-# The footer menu is displayed at the bottom of the page, just before
-# the copyright notice. Configure as per the main menu above.
+# -- フッターメニュー --
+# このフッターメニューはページ下部のコピーライト表示の前に表示されます。
+# 上記のメインメニューと同様に設定できます。
 
+ [[footer]]
+   name = "TAG"
+   pageRef = "tags"
+   weight = 10
 
-# [[footer]]
-#   name = "Tags"
-#   pageRef = "tags"
-#   weight = 10
+ [[footer]]
+   name = "DNS"
+   pageRef = "DNS"
+   weight = 20
 
-# [[footer]]
-#   name = "Categories"
-#   pageRef = "categories"
-#   weight = 20
+ [[footer]]
+   name = "TOMODACHI"
+   pageRef = "TOMODACHI"
+   weight = 20
+   
+ [[footer]]
+   name = "DONATE"
+   pageRef = "DONATE"
+   weight = 20
