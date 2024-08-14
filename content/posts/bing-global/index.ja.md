@@ -3,7 +3,6 @@ title: "Bing搜索引擎設置"
 date: 2023-03-20T03:25:04Z
 draft: false
 description: "搜索"
-slug: "search"
 tags: ["bing", "search"]
 series: ["實用"]
 series_order: 1

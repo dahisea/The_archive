@@ -1,11 +1,9 @@
 ---
-title: "Documentation"
-description: "Learn how to use Blowfish and its features."
+title: "記事"
+description: "ダヒの記事"
 
 cascade:
-  showDate: false
+  showDate: true
   showAuthor: false
   invertPagination: true
----
-
 ---

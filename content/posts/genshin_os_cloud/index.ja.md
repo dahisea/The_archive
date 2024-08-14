@@ -1,12 +1,9 @@
 ---
-title: "Github與Git的電子信箱郵箱地址設置"
-date: 2024-04-10T01:25:04Z
+title: "雲原神國際版服務器"
+date: 2024-08-10T01:25:04Z
 draft: false
-description: "保護方式"
-slug: "github"
-tags: ["gal", "mail"]
-series: ["實用"]
-series_order: 1
+description: ""
+tags: ["game", "genshin"]
 ---
 國際版延時高，進不去?
 
