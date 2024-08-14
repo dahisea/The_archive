@@ -1,11 +1,11 @@
-<p class="text-xs text-neutral-500 dark:text-neutral-400">著作權人：Dahi｜出版單位：科賦銳（北京）信息科技有限公司</p></br><p class="text-xs text-neutral-500 dark:text-neutral-400">備案號：粵ICP備20213149號｜備案系統網址：<a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://icp.gov.moe/?keyword=20213149" target="_blank">http://beian.miit.gov.cn</a></p>
-  </br></br>
-  
+</br><p class="text-xs text-neutral-500 dark:text-neutral-400">著作權人：Dahi｜出版單位：科賦銳（北京）信息科技有限公司</p><p class="text-xs text-neutral-500 dark:text-neutral-400">備案號：粵ICP備20213149號｜備案系統網址：<a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://icp.gov.moe/?keyword=20213149" target="_blank">http://beian.miit.gov.cn</a></p>
 </br><p class="text-xs text-neutral-500 dark:text-neutral-400">展開序幕 <span id="htmer_time" style="color: black;"></span></p>
+</br></br>
+<p class="text-xs text-neutral-500 dark:text-neutral-400">
+    <div id="api-data">Loading data...</div></p>
 <script>function calculateTime() {
     var createTime = new Date(Date.UTC(2024, 7, 14, 15, 55, 55)).getTime() / 1000; // 月份从0开始，3代表4月
     var currentTime = new Date().getTime() / 1000 + 8 * 60 * 60; // 加上8小时的时差
-
     var timeDifference = currentTime - createTime;
     var days = Math.floor(timeDifference / (24 * 3600));
     var hours = Math.floor((timeDifference % (24 * 3600)) / 3600);
@@ -16,13 +16,7 @@
     document.getElementById("htmer_time").innerHTML = displayTime;
 }
 setInterval(calculateTime, 1000);
-
 </script>
-</br></br>
-<p class="text-xs text-neutral-500 dark:text-neutral-400">
-    <div id="api-data">
-        <pre>Loading data...</pre>
-    </div></p>
     <script>
         async function fetchAPI() {
             try {
@@ -33,7 +27,7 @@ setInterval(calculateTime, 1000);
                 const data = await response.json();
                 document.getElementById('api-data').innerHTML = formatData(data);
             } catch (error) {
-                document.getElementById('api-data').innerHTML = `<pre>Error fetching data:${error.message}</pre>`;
+                document.getElementById('api-data').innerHTML = `Error fetching data:${error.message}`;
             }
         }
 
@@ -41,29 +35,23 @@ setInterval(calculateTime, 1000);
             return `
 <div class="data-section text-sm text-neutral-500 dark:text-neutral-400">
     <h2>IP</h2>
-    <strong>City: </strong>${data.headers["cf-ipcity"]}</br>
-    <strong>Type: </strong>${data.headers["cf-ipcontinent"]}</br>
-    <strong>Country: </strong>
-    <pre>${data.country}</pre>
-    <strong>Region: </strong>${data.headers["cf-region"]}</br>
-    <strong>IP1: </strong>${data.headers["x-real-ip"]}</br>
-    <strong>IP2: </strong>${data.headers["cf-connecting-ip"]}</br></br>
+    City: ${data.headers["cf-ipcity"]}</br>
+    Type: ${data.headers["cf-ipcontinent"]}</br>
+    Country: ${data.country}</br>
+    Region: ${data.headers["cf-region"]}</br>
+    IP1: ${data.headers["x-real-ip"]}</br>
+    IP2: ${data.headers["cf-connecting-ip"]}</br></br>
+    
     <h2>OTHER</h2>
-    <strong>Requested-with: </strong>${data.headers["x-requested-with"]}</br>
-    <strong>Referer: </strong>
-    <pre>${data.referer}</pre>
-    <strong>Accept Language: </strong>
-    <pre>${data.acceptLanguage}</pre>
-    <strong>Platform: </strong>
-    <pre>${data.platform}</pre>
-    <strong>UTC Time: </strong>
-    <pre>${data.utcTime}</pre>
-    <strong>UA: </strong>
-    <pre>${JSON.stringify(data.userAgentInfo, null, 2)}</pre>
+    Requested-with: ${data.headers["x-requested-with"]}</br>
+    Referer: ${data.referer}</br>
+    Accept Language: ${data.acceptLanguage}</br>
+    Platform: ${data.platform}</br>
+    UTC Time: ${data.utcTime}</br>
+    UA: ${JSON.stringify(data.userAgentInfo, null, 2)}</br>
 </div>
             `;
         }
 
         fetchAPI();
     </script>
-    </br>
