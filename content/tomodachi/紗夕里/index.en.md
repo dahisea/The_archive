@@ -1,6 +1,6 @@
 ---
             title: "紗夕里"
-            tags: [In your heart forever]
+            tags: [在你心里 直到永远]
             externalUrl: "https://lolicon.team/"
             weight: 21
             showDate: false
@@ -10,5 +10,5 @@
             showLikes: false
             showViews: false
             layoutBackgroundHeaderSpace: false
-            ---
-
+            
+---

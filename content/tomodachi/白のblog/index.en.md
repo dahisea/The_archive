@@ -1,6 +1,6 @@
 ---
             title: "白のblog"
-            tags: [He is a novice with only a little technical ability.]
+            tags: [是一只只有一点点技术力的小白捏]
             externalUrl: "https://blog.mashiro.pro/"
             weight: 31
             showDate: false
@@ -10,5 +10,5 @@
             showLikes: false
             showViews: false
             layoutBackgroundHeaderSpace: false
-            ---
-
+            
+---

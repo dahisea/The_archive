@@ -1,6 +1,6 @@
 ---
             title: "Thun888's Blog"
-            tags: [Summer is empty and my heart is like an abyss]
+            tags: [夏日当空 心如深渊]
             externalUrl: "https://blog.hzchu.top/"
             weight: 41
             showDate: false
@@ -10,5 +10,5 @@
             showLikes: false
             showViews: false
             layoutBackgroundHeaderSpace: false
-            ---
-
+            
+---

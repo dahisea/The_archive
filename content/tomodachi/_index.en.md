@@ -1,26 +1,25 @@
 ---
-title: "友人"
+title: "Friends"
 date: 2024-08-14
 draft: false
-description: "一些朋友"
+description: "some friends"
 slug: "tomodachi"
-tags: ["友链"]
+tags: ["Friend Link"]
 showDate: false
 showAuthor: false
 showReadingTime: false
 showEdit: false
 layoutBackgroundHeaderSpace: false
 cardViewScreenWidth: false
+
 ---
-
 ## This site
-Name：Dahi Blog
+Name:Dahi Blog
 
-Avatar：https://oxs.dahi.icu/pic/avatar.png 或 https://s1.ax1x.com/2023/08/01/pP9zpXd.png（备用）
+Avatar: https://oxs.dahi.icu/pic/avatar.png or https://s1.ax1x.com/2023/08/01/pP9zpXd.png (backup)
 
-Link：[https://dahi.icu/](https://dahi.icu/)
+Link: [https://dahi.icu/](https://dahi.icu/)
 
-Description：時光流轉，願你有一天能與重要的人重逢
+Description: As time goes by, I hope you can meet the important people again one day
 
-Email：expect@dahi.icu
-
+Email: expect@dahi.icu

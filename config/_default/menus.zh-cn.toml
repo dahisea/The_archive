@@ -31,6 +31,11 @@
   url = "https://github.com/dahisea"
   weight = 400
 
+[[main]]
+  identifier = "telegram"
+  pre = "telegram"
+  url = "https://t.me/Unit_O"
+  weight = 400
 
 # -- フッターメニュー --
 # このフッターメニューはページ下部のコピーライト表示の前に表示されます。
