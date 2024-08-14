@@ -15,20 +15,12 @@
       {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
       {{ if and .Params.featureimage (not $featured) }}
       {{- $url:= .Params.featureimage -}}
-      {{ $featured = resources.GetRemote $url }}
+      {{ $featured = $url }}
       {{ end }}
-      {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = resources.GetRemote . }}{{ end }}{{ end -}}
+      {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = . }}{{ end }}{{ end -}}
       {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
       {{- with $featured -}}
-      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
-        {{ with . }}
-        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ else }}
-        {{ with .Resize "600x" }}
-        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
-        {{ end }}
-      {{ end }}
+        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ $featured }});"></div>
       {{- else -}}
         {{- with .Site.Params.defaultFeaturedImage }}
           <div class="w-full thumbnail_card nozoom" style="background-image:url({{ . }});"></div>
