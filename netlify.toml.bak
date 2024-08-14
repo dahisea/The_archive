@@ -1,7 +1,0 @@
-[build]
-publish = "public"
-command = "npm install --save iamtraction/google-translate && npm install axios && node processUsers.js && hugo --gc --minify"
-
-[context.production.environment]
-HUGO_VERSION = "0.130.0"
-HUGO_ENV = "production"
