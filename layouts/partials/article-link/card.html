@@ -14,19 +14,27 @@
       {{- $featured := $images.GetMatch "*feature*" -}}
       {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
       {{ if and .Params.featureimage (not $featured) }}
-      {{- $url:= .Params.featureimage -}}
+      {{- $url := .Params.featureimage -}}
+      {{- if (strings.HasPrefix $url "http") -}}
       {{ $featured = $url }}
+      {{- else -}}
+      {{ $featured = $images.GetMatch $url }}
+      {{- end -}}
       {{ end }}
-      {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = . }}{{ end }}{{ end -}}
+      {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}
+      {{- if (strings.HasPrefix . "http") -}}
+      {{ $featured = . }}
+      {{- else -}}
+      {{ $featured = resources.Get . }}
+      {{- end -}}
+      {{ end }}{{ end -}}
       {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
       {{- with $featured -}}
-      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
-        {{ with . }}
-        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .Permalink }});"></div>
-        {{ end }}
+      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg") (strings.HasPrefix $featured "http")}}
+        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ $featured }});"></div>
       {{ else }}
         {{ with .Resize "600x" }}
-        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .Permalink }});"></div>
+        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .RelPermalink }});"></div>
         {{ end }}
       {{ end }}
       {{- else -}}
@@ -34,6 +42,7 @@
       <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
       {{- end -}}
       {{- end -}}
+
 
       {{ if and .Draft .Site.Params.article.showDraftLabel }}
       <span class="absolute top-0 right-0 m-2">
