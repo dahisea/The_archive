@@ -1,11 +1,11 @@
-languageCode = "ja"
-languageName = "日本語"
+languageCode = "en"
+languageName = "ＥＮＧ"
 weight = 3
 title = "ダヒのBlog"
 
 [params]
-  displayName = "日本語"
-  isoCode = "ja"
+  displayName = "ＥＮＧ"
+  isoCode = "en"
   rtl = false
   dateFormat = "2006-01-02"
   description = "Blog"
