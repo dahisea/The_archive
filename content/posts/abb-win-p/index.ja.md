@@ -1,8 +1,9 @@
 ---
-title: "ApacheWin-bin部分Ab測壓"
+title: 「ApacheWin-bin部Ab圧力測定」
 date: 2024-04-30T10:25:04Z
 draft: false
-description: "一種方式"
-tags: ["exe"]
+description: "離れて"
+tags: ["EXE"]
+
 ---
-> https://share.dahi.icu/TOABtest/
+> HTTPS://share.大hi.ICU/TOABtest/

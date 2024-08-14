@@ -1,10 +1,11 @@
 ---
-title: "歌詞獵手復活版"
+title: 『リリックハンター復活編』
 date: 2024-04-20T10:25:04Z
 draft: false
-description: "一種軟體"
-tags: ["app", "music"]
+description: 「ソフトウェア」
+tags: [「アプリ」、「音楽」]
+
 ---
-## 復甦版，不多贅述
+## リカバリ バージョン。詳細は説明する必要はありません
 
 > https://share.dahi.icu/softedited/

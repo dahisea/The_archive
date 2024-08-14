@@ -1,10 +1,11 @@
 ---
-title: "Cloudflare出現1034錯誤"
+title: 「Cloudflareで1034エラーが発生しました」
 date: 2021-07-20T03:25:04Z
 draft: false
-description: "加速"
-tags: ["cloud"]
+description: 「加速する」
+tags: ["雲"]
+
 ---
-這意味著此網站使用了與賬號身份不符的會員制ip，
-請重新搞個ip使用（dahi.icu.cdn.cloudflare.net）。
-可用[ip-scanner](https://github.com/ip-scanner/cloudflare)
+これは、この Web サイトがアカウント ID と一致しないメンバーシップ IP を使用していることを意味します。
+使用する新しい IP を作成してください (dahi.icu.cdn.cloudflare.net)。
+利用可能 [ip-scanner](https://github.com/ip-scanner/cloudflare)

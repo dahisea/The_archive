@@ -1,76 +1,77 @@
 ---
-title: "雲原神國際版服務器"
+title: 「ユン・ユアンシェン国際版サーバー」
 date: 2024-08-10T01:25:04Z
 draft: false
-description: ""
-tags: ["game", "genshin"]
+description: 「」
+tags: 【『ゲーム』『原神』】
+
 ---
-國際版延時高，進不去?
+海外版は遅延が大きくてアクセスできない？
 
-重寫 api `https://sg-cg-api.hoyoverse.com/hk4e_global/cg/dispatcher/api/getNodesInfo`
+API `https://sg-cg-api.hoyoverse.com/hk4e_global/cg/dispatcher/api/getNodesInfo` を書き換えます
 
 
-```
+「」
 {
-  "retcode": 0,
-  "message": "OK",
-  "data": {
-    "wait_seconds": 0,
-    "nodes": [
+  "retcode": 0、
+  "メッセージ": "OK",
+  "データ"： {
+    "wait_秒": 0、
+    「ノード」: [
       {
-        "node_name": "A1",
+        "ノード名": "A1",
         "net_state": "NetStateGood",
-        "net_value": 22,
+        "net_value": 22、
         "queue_state": "QueueStateLong",
-        "queue_value": 2280,
-        "recommend": true,
-        "isp_type": 4,
-        "region_ids": [
-          "20107000055"
-        ],
+        「キュー値」: 2280、
+        「推奨」: true、
+        "isp_type": 4、
+        "地域ID": [
+          「20107000055」
+        ]、
         "node_id": "2010",
         "node_alias": "A1",
-        "vendor_id": 2,
+        「ベンダーID」: 2、
         "node_alias_i18n": "dispatch_nodeName_1"
-      },
+      }、
       {
-        "node_name": "A2",
+        "ノード名": "A2",
         "net_state": "NetStateGood",
-        "net_value": 33,
+        "net_value": 33、
         "queue_state": "QueueStateLong",
-        "queue_value": 1110,
-        "recommend": false,
-        "isp_type": 4,
-        "region_ids": [
-          "20207000065"
-        ],
+        「キュー値」: 1110、
+        「推奨」: false、
+        "isp_type": 4、
+        "地域ID": [
+          「20207000065」
+        ]、
         "node_id": "2020",
         "node_alias": "A2",
-        "vendor_id": 2,
+        「ベンダーID」: 2、
         "node_alias_i18n": "dispatch_nodeName_2"
-      },
+      }、
       {
-        "node_name": "S1",
+        "ノード名": "S1",
         "net_state": "NetStateGood",
-        "net_value": 400,
+        "net_value": 400、
         "queue_state": "QueueStateLong",
-        "queue_value": 1110,
-        "recommend": true,
-        "isp_type": 4,
-        "region_ids": [
-          "10907000036"
-        ],
-        "node_id": "1090",
+        「キュー値」: 1110、
+        「推奨」: true、
+        "isp_type": 4、
+        "地域ID": [
+          「10907000036」
+        ]、
+        "ノードID": "1090",
         "node_alias": "S1",
-        "vendor_id": 2,
+        「ベンダーID」: 2、
         "node_alias_i18n": "dispatch_nodeName_0"
       }
-    ],
-    "network_info": null,
-    "result_code": "NONE",
-    "maintenance_info": null
+    ]、
+    "ネットワーク情報": null、
+    "結果コード": "なし",
+    "メンテナンス情報": null
   }
 }
-```
+「」
 
-A是美國，S是新加坡
+A は米国、S はシンガポールを表します。

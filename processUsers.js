@@ -3,7 +3,7 @@ const axios = require('axios');
 const path = require('path');
 
 const configDir = "./config/_default";
-const defaultLang = "ja";
+const defaultLang = "zh-tw";
 const usersFolderPath = "./content/tomodachi/";
 const translate = require('@iamtraction/google-translate');
 

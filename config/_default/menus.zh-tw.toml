@@ -15,6 +15,15 @@
   pageRef = "posts"
   weight = 10
 
+[[main]]
+  name = "Article"
+  pageRef = "posts"
+  weight = 40
+
+ [[main]]
+   name = "TOMODACHI"
+   pageRef = "TOMODACHI"
+   weight = 20
 
 [[main]]
   identifier = "github"
@@ -28,7 +37,7 @@
 # 上記のメインメニューと同様に設定できます。
 
  [[footer]]
-   name = "タグ"
+   name = "TAG"
    pageRef = "tags"
    weight = 10
 
