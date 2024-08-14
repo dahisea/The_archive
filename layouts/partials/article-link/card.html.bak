@@ -20,17 +20,9 @@
       {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = . }}{{ end }}{{ end -}}
       {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
       {{- with $featured -}}
-      {{ if or $disableImageOptimization (strings.HasSuffix $featured ".svg")}}
-        {{ with . }}
-        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .Permalink }});"></div>
-        {{ end }}
-      {{ else }}
-        {{ with .Resize "600x" }}
-        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ .Permalink }});"></div>
-        {{ end }}
-      {{ end }}
+      <div class="w-full thumbnail_card nozoom" style="background-image:url({{ $featured }});"></div>
       {{- else -}}
-      {{- with $.Site.Params.images }}
+      {{- with .Site.Params.images }}
       <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
       {{- end -}}
       {{- end -}}
