@@ -2,7 +2,7 @@
 title: 「【学習と研究】日本語の漢字の簡体字・繁体字への変換」
 date: 2023-09-30T19:26:04Z
 draft: false
-description: 「変換する方法」
+description: "変換する方法"
 tags: ["ジャ"、"ズ"]
 
 ---
