@@ -1,0 +1,69 @@
+<a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center">著作權人：Dahi｜出版單位：科賦銳（北京）信息科技有限公司</a></br><a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center" href="https://icp.gov.moe/?keyword=20213149" target="_blank">備案號：粵ICP備20213149號｜備案系統網址：http://beian.miit.gov.cn</a>
+  </br></br><a style="text-decoration:none;color:#1772b4;" href="https://travel.moe/go.html" title="异次元之旅-跃迁-我们一起去萌站成员的星球旅行吧！" target="_blank">異次元への旅</a>
+  
+</br></br>展開序幕<span id="htmer_time" style="color: black;"></span>
+<script>function calculateTime() {
+    var createTime = new Date(Date.UTC(2024, 7, 14, 15, 55, 55)).getTime() / 1000; // 月份从0开始，3代表4月
+    var currentTime = new Date().getTime() / 1000 + 8 * 60 * 60; // 加上8小时的时差
+
+    var timeDifference = currentTime - createTime;
+    var days = Math.floor(timeDifference / (24 * 3600));
+    var hours = Math.floor((timeDifference % (24 * 3600)) / 3600);
+    var minutes = Math.floor((timeDifference % 3600) / 60);
+    var seconds = Math.floor(timeDifference % 60);
+
+    var displayTime = days + '天 ' + hours + '時 ' + minutes + '分 ' + seconds + '秒';
+    document.getElementById("htmer_time").innerHTML = displayTime;
+}
+setInterval(calculateTime, 1000);
+
+</script>
+</br>
+    <div id="api-data flex items-center justify-between">
+        <pre>Loading data...</pre>
+    </div>
+    <script>
+        async function fetchAPI() {
+            try {
+                const response = await fetch('https://dahi.icu/whour');  // 替换为实际的 API URL
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                const data = await response.json();
+                document.getElementById('api-data').innerHTML = formatData(data);
+            } catch (error) {
+                document.getElementById('api-data').innerHTML = `<pre>Error fetching data:${error.message}</pre>`;
+            }
+        }
+
+        function formatData(data) {
+            return `
+<div class="data-section text-sm text-neutral-500 dark:text-neutral-400">
+    <h2>IP</h2>
+    <strong>City: </strong>${data.headers["cf-ipcity"]}</br>
+    <strong>Type: </strong>${data.headers["cf-ipcontinent"]}</br>
+    <strong>Country: </strong>
+    <pre>${data.country}</pre>
+    <strong>Region: </strong>${data.headers["cf-region"]}</br>
+    <strong>IP1: </strong>${data.headers["x-real-ip"]}</br>
+    <strong>IP2: </strong>${data.headers["cf-connecting-ip"]}</br></br>
+    <h2>OTHER</h2>
+    <strong>Requested-with: </strong>${data.headers["x-requested-with"]}</br>
+    <strong>Referer: </strong>
+    <pre>${data.referer}</pre>
+    <strong>Accept Language: </strong>
+    <pre>${data.acceptLanguage}</pre>
+    <strong>Platform: </strong>
+    <pre>${data.platform}</pre>
+    <strong>UTC Time: </strong>
+    <pre>${data.utcTime}</pre>
+    <strong>UA: </strong>
+    <pre>${JSON.stringify(data.userAgentInfo, null, 2)}</pre>
+</div>
+            `;
+        }
+
+        fetchAPI();
+    </script>
+    </br>
+<a class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center">©Dahi</a>

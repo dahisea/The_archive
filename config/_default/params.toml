@@ -17,7 +17,7 @@ mainSections = ["posts"]
 disableImageOptimization = false
 disableTextInHeader = false
 
-defaultBackgroundImage = "https://www.loliapi.com/acg/pc/?.png" # used as default for background images 
+defaultBackgroundImage = "https://www.loliapi.com/acg/pe/?.png" # used as default for background images 
 defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.png" # used as default for featured images in all articles
 
 # highlightCurrentMenuArea = true
@@ -35,7 +35,7 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.png" # used as default 
   showScrollToTop = true
 
 [homepage]
-  layout = "profile" # valid options: page, profile, hero, card, background, custom
+  layout = "background" # valid options: page, profile, hero, card, background, custom
   # homepageImage = "IMAGE.jpg" # used in: hero, and card
   showRecent = true
   showRecentItems = 5
@@ -51,7 +51,7 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.png" # used as default 
   showLikes = false
   showDateOnlyInArticle = false
   showDateUpdated = false
-  showAuthor = true
+  showAuthor = false
   showAuthorBottom = true
   showHero = true
   heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
@@ -67,7 +67,7 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.png" # used as default 
   showPagination = true
   invertPagination = false
   showReadingTime = true
-  showTableOfContents = false
+  showTableOfContents = true
   # showRelatedContent = false
   # relatedContentLimit = 3
   showTaxonomies = true
@@ -87,10 +87,10 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.png" # used as default 
   showViews = false
   showLikes = false
   showTableOfContents = false
-  showCards = false
+  showCards = true
   orderByWeight = false
   groupByYear = true
-  cardView = false
+  cardView = true
   cardViewScreenWidth = false
   constrainItemsWidth = false
 
