@@ -134,7 +134,7 @@ async function processUsers() {
                 fs.writeFileSync(path.join(dir, 'index.' + targetLangs[j] + '.md'), content);
             }
             // Download and save the image
-            await downloadImage(users[i].source, path.join(dir, 'feature.png'));
+            await downloadImage(users[i].source, path.join(dir, 'feature.jpg'));
         }
     }
 }
