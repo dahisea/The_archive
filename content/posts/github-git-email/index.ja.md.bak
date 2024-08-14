@@ -3,7 +3,10 @@ title: "Github與Git的電子信箱郵箱地址設置"
 date: 2024-04-10T01:25:04Z
 draft: false
 description: "保護方式"
+slug: "github"
 tags: ["gal", "mail"]
+series: ["實用"]
+series_order: 1
 ---
 眾所周知，git的commit資訊往往包含信箱等數據，似乎官方不會主動處理開啟Private信箱帳號的git內容
 

@@ -3,7 +3,10 @@ title: "TG使用電子郵箱地址登錄認證"
 date: 2023-09-27T09:25:04Z
 draft: false
 description: "電子郵箱"
+slug: "tg"
 tags: ["mail", "tg"]
+series: ["實用"]
+series_order: 1
 ---
 要求TG使用電子郵箱地址登錄認證，你可能需要反覆使用TG請求驗證碼訊息，大概在5次以上
 

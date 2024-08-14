@@ -2,8 +2,8 @@ const fs = require('fs');
 const puppeteer = require("puppeteer");
 
 const configDir = "./config/_default";
-const defaultLang = "js";
-const usersFolderPath = "./content/users/"
+const defaultLang = "ja";
+const usersFolderPath = "./content/tomodachi/"
 const translate = require('@iamtraction/google-translate');
 
 
