@@ -1,10 +1,9 @@
 ---
-title: 「2023 Xiaomi Router 4A Gigabit Edition 中国本土最新モデル (r4av2) Openwrt フラッシュ チュートリアル」
+title: "2023 Xiaomi Router 4A Gigabit Edition 中国本土最新モデル (r4av2) Openwrt フラッシュ チュートリアル"
 date: 2023-05-19T01:25:04Z
 draft: false
 description: "チュートリアル"
-tags: ["ルーティング"、"openwrt"]
-
+tags: ["ルーティング","openwrt"]
 ---
 ## 序文
 

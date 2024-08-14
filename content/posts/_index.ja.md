@@ -1,6 +1,6 @@
 ---
 title: "注記"
-description: 「ダヒの记事」
+description: "ダヒの记事"
 
 cascade:
   showDate: true

@@ -3,7 +3,7 @@ title: 「ATRIをプレイした感想」
 date: 2024-04-29T12:25:34Z
 draft: false
 description: 「ある感情」
-tags: [「ギャル」、「気持ち」]
+tags: [「ギャル」,「気持ち」]
 
 ---
 2024.4.30
