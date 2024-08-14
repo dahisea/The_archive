@@ -22,6 +22,12 @@
   {{ partial "partials/header/basic.html" . }}
   {{ end }}
   <div class="relative flex flex-col grow">
+    <main id="main-content" class="grow">
+      {{ block "main" . }}{{ end }}
+      {{ if and (.Site.Params.footer.showScrollToTop | default true) (gt .WordCount 1) }}
+      {{- partial "scroll-to-top.html" . -}}
+      {{ end }}
+    </main>
     {{- partial "footer.html" . -}}
     {{ if .Site.Params.enableSearch | default false }}
     {{- partial "search.html" . -}}
