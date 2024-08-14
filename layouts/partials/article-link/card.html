@@ -20,11 +20,10 @@
       {{- if not $featured }}{{ with .Site.Params.defaultFeaturedImage }}{{ $featured = . }}{{ end }}{{ end -}}
       {{ if .Params.hideFeatureImage }}{{ $featured = false }}{{ end }}
       {{- with $featured -}}
-        <div class="w-full thumbnail_card nozoom" style="background-image:url({{ $featured }});"></div>
+      <div class="w-full thumbnail_card nozoom" style="background-image:url({{ $featured }});"></div>
       {{- else -}}
-        {{- with .Site.Params.defaultFeaturedImage }}
-          <div class="w-full thumbnail_card nozoom" style="background-image:url({{ . }});"></div>
-        {{ end -}}
+      {{- with .Site.Params.images }}
+      <meta property="og:image" content="{{ index . 0 | absURL }}" />{{ end -}}
       {{- end -}}
       {{- end -}}
 
