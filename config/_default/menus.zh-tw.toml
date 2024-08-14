@@ -10,10 +10,6 @@
 # これは、 weight value で上書き可能です。
 # このメニューは weight が低い値から高い値に順に表示されます。
 
-[[main]]
-  name = "Article"
-  pageRef = "posts"
-  weight = 10
 
 [[main]]
   name = "Article"
@@ -23,7 +19,7 @@
  [[main]]
    name = "TOMODACHI"
    pageRef = "TOMODACHI"
-   weight = 20
+   weight = 200
 
 [[main]]
   identifier = "github"
@@ -35,7 +31,7 @@
   identifier = "telegram"
   pre = "telegram"
   url = "https://t.me/Unit_O"
-  weight = 400
+  weight = 450
 
 # -- フッターメニュー --
 # このフッターメニューはページ下部のコピーライト表示の前に表示されます。
@@ -52,11 +48,16 @@
    weight = 20
 
  [[footer]]
-   name = "TOMODACHI"
-   pageRef = "TOMODACHI"
-   weight = 20
-   
- [[footer]]
    name = "DONATE"
    pageRef = "DONATE"
-   weight = 20
+   weight = 95
+   
+ [[footer]]
+   name = "TOMODACHI"
+   pageRef = "TOMODACHI"
+   weight = 99
+   
+ [[footer]]
+   name = "異次元への旅"
+   url = "https://travel.moe/go.html"
+   weight = 100
