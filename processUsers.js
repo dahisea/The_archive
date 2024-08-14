@@ -80,8 +80,8 @@ async function translateFrontMatterTags(block, targetLang, tags) {
                     var tempTag = await convert(tags[j], defaultLang, targetLang);
                     translatedTags.push(tempTag);
                 }
-                var trasnlatedTagsString = translatedTags.join(", ");
-                newElement = elements[0] + ": [" + trasnlatedTagsString + "]";
+                var translatedTagsString = translatedTags.join(", ");
+                newElement = elements[0] + ": [" + translatedTagsString + "]";
             } else {
                 newElement = array[i];
             }
@@ -134,7 +134,7 @@ async function processUsers() {
                 fs.writeFileSync(path.join(dir, 'index.' + targetLangs[j] + '.md'), content);
             }
             // Download and save the image
-            await downloadImage(users[i].sourse, path.join(dir, 'feature.png'));
+            await downloadImage(users[i].source, path.join(dir, 'feature.png'));
         }
     }
 }
