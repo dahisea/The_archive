@@ -3,7 +3,7 @@
 # https://blowfish.page/docs/getting-started/
 
 theme = "blowfish"
-baseURL = "https://dahi.icu/"
+baseURL = "https://www.dahi.icu/"
 defaultContentLanguage = "zh-tw"
 disableLanguages = [] #to allow translation work requiring shipping to production
 
