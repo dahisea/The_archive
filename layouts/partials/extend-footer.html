@@ -1,4 +1,4 @@
-</br><p class="text-xs text-neutral-500 dark:text-neutral-400">著作權人: Dahi｜出版單位: 科賦銳（北京）信息科技有限公司</p><p class="text-xs text-neutral-500 dark:text-neutral-400">備案號: 粵ICP備20213149號｜備案系統網址: <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://icp.gov.moe/?keyword=20213149" target="_blank">http://beian.miit.gov.cn</a></p>
+</br><p class="text-xs text-neutral-500 dark:text-neutral-400">著作權人: Dahi</p><p class="text-xs text-neutral-500 dark:text-neutral-400">備案號: 粵ICP備20213149號｜備案系統網址: <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href="https://icp.gov.moe/?keyword=20213149" target="_blank">http://beian.miit.gov.cn</a></p>
 <p class="text-xs text-neutral-500 dark:text-neutral-400">序幕已展開 <span id="htmer_time" style="color: black;"></span></p>
 </br>
 <div id="api-data">Loading data...</div>
@@ -20,7 +20,7 @@ setInterval(calculateTime, 1000);
 <script>
         async function fetchAPI() {
             try {
-                const response = await fetch('https://dahi.icu/whour');  // 替换为实际的 API URL
+                const response = await fetch('https://capi.dahi.eu.org/whour');  // 替换为实际的 API URL
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
                 }
