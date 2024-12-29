@@ -1,14 +1,14 @@
 languageCode = "zh-tw"
 languageName = "正體字"
 weight = 3
-title = "ダヒのBlog"
+title = "Dahi Academic Research Hub"
 
 [params]
   displayName = "正體字"
   isoCode = "zh-tw"
   rtl = false
   dateFormat = "2006-01-02"
-  description = "Blog"
+  description = "Academic Research"
 
 [author]
   name = "Dahi"
