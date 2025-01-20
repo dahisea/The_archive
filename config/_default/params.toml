@@ -14,7 +14,7 @@ enableCodeCopy = true
 mainSections = ["posts"]
 # robots = ""
 
-disableImageOptimization = true
+disableImageOptimization = false
 disableTextInHeader = false
 
 defaultBackgroundImage = "https://www.loliapi.com/acg/pe/?.webp" # used as default for background images 

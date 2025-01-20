@@ -146,19 +146,17 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3758644447684310"
      crossorigin="anonymous"></script>
 <script>
-const images = document.querySelectorAll('img');
-images.forEach((img) => {
-  let currentSrc = img.src;
-  
-  // 检查 URL 是否已有查询参数
-  if (currentSrc.indexOf('?') === -1) {
-    // 如果没有参数，直接添加 '?rd=...'
-    img.src = `${currentSrc}?rd=${Math.random()}`;
+const divs = document.querySelectorAll('.thumbnail_card');
+divs.forEach((div) => {
+  let currentUrl = div.style.backgroundImage;
+  currentUrl = currentUrl.replace(/^url\(["']?(.*?)["']?\)$/, '$1'); 
+  if (currentUrl.includes('?')) {
+    div.style.backgroundImage = `url(${currentUrl}&random=${Math.random()})`;
   } else {
-    // 如果已有参数，追加 '&rd=...'
-    img.src = `${currentSrc}&rd=${Math.random()}`;
+    div.style.backgroundImage = `url(${currentUrl}?random=${Math.random()})`;
   }
 });
+
 </script>  
     
 </head>
