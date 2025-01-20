@@ -25,7 +25,7 @@
     document.addEventListener("DOMContentLoaded", () => {
         const divs = document.querySelectorAll('div');
         divs.forEach((div) => {
-            let currentUrl = div.style.backgroundImage;
+            let currentUrl = div.style.background-image;
             // 如果 backgroundImage 为空或无效，跳过此 div
             if (!currentUrl || currentUrl === 'none') return;
 
@@ -34,9 +34,9 @@
             
             // 检查 URL 是否包含查询参数
             if (currentUrl.includes('?')) {
-                div.style.backgroundImage = `url(${currentUrl}&random=${Math.random()})`;
+                div.style.background-image = `url(${currentUrl}&random=${Math.random()})`;
             } else {
-                div.style.backgroundImage = `url(${currentUrl}?random=${Math.random()})`;
+                div.style.background-image = `url(${currentUrl}?random=${Math.random()})`;
             }
         });
     });
