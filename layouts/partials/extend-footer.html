@@ -24,26 +24,31 @@
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const divs = document.querySelectorAll('div');
-        let currentStyle = divs.getAttribute('style');
+        
+        divs.forEach(div => {
+            let currentStyle = div.getAttribute('style');
+            if (currentStyle) {
+                // 使用正则表达式匹配背景图片的 URL
+                let regex = /background-image:\s*url\(["']?(.*?)["']?\)/;
+                let match = regex.exec(currentStyle);
 
-        // 使用正则表达式匹配背景图片的 URL
-        let regex = /background-image:\s*url\(["']?(.*?)["']?\)/;
-        let match = regex.exec(currentStyle);
-
-        if (match) {
-            let currentUrl = match[1];
-            // 添加随机数参数
-            if (currentUrl.includes('?')) {
-                currentUrl += `&random=${Math.random()}`;
-            } else {
-                currentUrl += `?random=${Math.random()}`;
+                if (match) {
+                    let currentUrl = match[1];
+                    // 添加随机数参数
+                    if (currentUrl.includes('?')) {
+                        currentUrl += `&random=${Math.random()}`;
+                    } else {
+                        currentUrl += `?random=${Math.random()}`;
+                    }
+                    // 替换背景图片 URL，保留其他样式不变
+                    let newStyle = currentStyle.replace(regex, `background-image: url('${currentUrl}')`);
+                    div.setAttribute('style', newStyle);
+                }
             }
-            // 替换现有的背景图片 URL
-            let newStyle = currentStyle.replace(regex, `background-image: url('${currentUrl}')`);
-            divs.setAttribute('style', newStyle);
-        }
+        });
     });
 </script>
+
     <script>
         async function fetchAPI() {
             try {
