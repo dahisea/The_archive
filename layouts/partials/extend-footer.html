@@ -22,23 +22,30 @@
         setInterval(calculateTime, 1000);
     </script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const divs = document.querySelectorAll('div');
-            divs.forEach((div) => {
-                let currentUrl = div.style.backgroundImage;
-                currentUrl = currentUrl.replace(/^url\(["']?(.*?)["']?\)$/, '$1'); 
-                if (currentUrl.includes('?')) {
-                    div.style.backgroundImage = `url(${currentUrl}&random=${Math.random()})`;
-                } else {
-                    div.style.backgroundImage = `url(${currentUrl}?random=${Math.random()})`;
-                }
-            });
+    document.addEventListener("DOMContentLoaded", () => {
+        const divs = document.querySelectorAll('div');
+        divs.forEach((div) => {
+            let currentUrl = div.style.backgroundImage;
+            // 如果 backgroundImage 为空或无效，跳过此 div
+            if (!currentUrl || currentUrl === 'none') return;
+
+            // 提取 URL 部分
+            currentUrl = currentUrl.replace(/^url\(["']?(.*?)["']?\)$/, '$1'); 
+            
+            // 检查 URL 是否包含查询参数
+            if (currentUrl.includes('?')) {
+                div.style.backgroundImage = `url(${currentUrl}&random=${Math.random()})`;
+            } else {
+                div.style.backgroundImage = `url(${currentUrl}?random=${Math.random()})`;
+            }
         });
-    </script>
+    });
+</script>
+
     <script>
         async function fetchAPI() {
             try {
-                const response = await fetch('https://capi.dahi.eu.org/whour', { mode: 'cors', credentials: 'omit', headers: {'Referer': ''}});
+                const response = await fetch('https://capi.dahi.eu.org/whour');
                 await new Promise(resolve => setTimeout(resolve, 2000));  // 2秒待機
                 if (!response.ok) {
                     throw new Error('ネットワーク応答エラー ' + response.statusText);
