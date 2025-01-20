@@ -23,8 +23,8 @@
     </script>
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-        const div = document.getElementById('myDiv');
-        let currentStyle = div.getAttribute('style');
+        const divs = document.querySelectorAll('div');
+        let currentStyle = divs.getAttribute('style');
 
         // 使用正则表达式匹配背景图片的 URL
         let regex = /background-image:\s*url\(["']?(.*?)["']?\)/;
@@ -40,7 +40,7 @@
             }
             // 替换现有的背景图片 URL
             let newStyle = currentStyle.replace(regex, `background-image: url('${currentUrl}')`);
-            div.setAttribute('style', newStyle);
+            divs.setAttribute('style', newStyle);
         }
     });
 </script>
