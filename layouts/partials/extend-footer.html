@@ -21,11 +21,24 @@
         }
         setInterval(calculateTime, 1000);
     </script>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const divs = document.querySelectorAll('div');
+            divs.forEach((div) => {
+                let currentUrl = div.style.backgroundImage;
+                currentUrl = currentUrl.replace(/^url\(["']?(.*?)["']?\)$/, '$1'); 
+                if (currentUrl.includes('?')) {
+                    div.style.backgroundImage = `url(${currentUrl}&random=${Math.random()})`;
+                } else {
+                    div.style.backgroundImage = `url(${currentUrl}?random=${Math.random()})`;
+                }
+            });
+        });
+    </script>
     <script>
         async function fetchAPI() {
             try {
-                const response = await fetch('https://capi.dahi.eu.org/whour', { mode: 'cors', credentials: 'omit' });
+                const response = await fetch('https://capi.dahi.eu.org/whour', { mode: 'cors', credentials: 'omit', headers: {'Referer': ''});
                 await new Promise(resolve => setTimeout(resolve, 2000));  // 2秒待機
                 if (!response.ok) {
                     throw new Error('ネットワーク応答エラー ' + response.statusText);

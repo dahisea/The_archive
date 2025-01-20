@@ -145,18 +145,8 @@
   <meta name="theme-color"/>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3758644447684310"
      crossorigin="anonymous"></script>
-<script>
-const divs = document.querySelectorAll('.thumbnail_card');
-divs.forEach((div) => {
-  let currentUrl = div.style.backgroundImage;
-  currentUrl = currentUrl.replace(/^url\(["']?(.*?)["']?\)$/, '$1'); 
-  if (currentUrl.includes('?')) {
-    div.style.backgroundImage = `url(${currentUrl}&random=${Math.random()})`;
-  } else {
-    div.style.backgroundImage = `url(${currentUrl}?random=${Math.random()})`;
-  }
-});
 
-</script>  
+</body>
+</html>
     
 </head>
