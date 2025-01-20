@@ -21,27 +21,29 @@
         }
         setInterval(calculateTime, 1000);
     </script>
-    <script>
+<script>
     document.addEventListener("DOMContentLoaded", () => {
-        const divs = document.querySelectorAll('div');
-        divs.forEach((div) => {
-            let currentUrl = div.style.background-image;
-            // 如果 backgroundImage 为空或无效，跳过此 div
-            if (!currentUrl || currentUrl === 'none') return;
+        const div = document.getElementById('myDiv');
+        let currentStyle = div.getAttribute('style');
 
-            // 提取 URL 部分
-            currentUrl = currentUrl.replace(/^url\(["']?(.*?)["']?\)$/, '$1'); 
-            
-            // 检查 URL 是否包含查询参数
+        // 使用正则表达式匹配背景图片的 URL
+        let regex = /background-image:\s*url\(["']?(.*?)["']?\)/;
+        let match = regex.exec(currentStyle);
+
+        if (match) {
+            let currentUrl = match[1];
+            // 添加随机数参数
             if (currentUrl.includes('?')) {
-                div.style.background-image = `url(${currentUrl}&random=${Math.random()})`;
+                currentUrl += `&random=${Math.random()}`;
             } else {
-                div.style.background-image = `url(${currentUrl}?random=${Math.random()})`;
+                currentUrl += `?random=${Math.random()}`;
             }
-        });
+            // 替换现有的背景图片 URL
+            let newStyle = currentStyle.replace(regex, `background-image: url('${currentUrl}')`);
+            div.setAttribute('style', newStyle);
+        }
     });
 </script>
-
     <script>
         async function fetchAPI() {
             try {
