@@ -5,34 +5,41 @@
   {{ end }}
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
   {{/* Title */}}
   {{ if .IsHome -}}
-  <title>{{ .Site.Title | emojify }}</title>
-  <meta name="title" content="{{ .Site.Title | emojify }}" />
+  <title>{{ .Site.Title | emojify }} | 中医院</title>
+  <meta name="title" content="{{ .Site.Title | emojify }} | 中医院" />
   {{- else -}}
-  <title>{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}</title>
-  <meta name="title" content="{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }}" />
+  <title>{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }} | 中医院</title>
+  <meta name="title" content="{{ .Title | emojify }} &middot; {{ .Site.Title | emojify }} | 中医院" />
   {{- end }}
+
   {{/* Metadata */}}
   {{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description -}}
-  <meta name="description" content="{{ . }}" />
+  <meta name="description" content="{{ . }}，提供中医治疗、养生保健服务" />
   {{- end }}
-  {{ with  .Params.Tags | default .Site.Params.keywords -}}
-  <meta name="keywords" content="{{ range . }}{{ . }}, {{ end -}}" />
+  
+  {{ with .Params.Tags | default .Site.Params.keywords -}}
+  <meta name="keywords" content="中医院, 中医治疗, 养生, 中药, 保健, 疗法, 针灸, 推拿, 传统医学" />
   {{- end }}
+  
   {{ with .Site.Params.robots }}
   <meta name="robots" content="{{ . }}" />
   {{ end }}
   {{ with .Params.robots }}
   <meta name="robots" content="{{ . }}" />
   {{ end }}
+  
   <meta name="baidu-site-verification" content="codeva-tvmnWYDvHl" />
   <link rel="canonical" href="{{ .Permalink }}" />
+  
   {{ range .AlternativeOutputFormats -}}
   {{ printf `
   <link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink ($.Site.Title | emojify) |
   safeHTML }}
   {{ end -}}
+
   {{/* Asset bundles */}}
   {{ $assets := newScratch }}
   {{ $cssScheme := resources.Get (printf "css/schemes/%s.css" (.Site.Params.colorScheme | default "blowfish")) }}
@@ -50,23 +57,28 @@
   "sha512" }}
   <link type="text/css" rel="stylesheet" href="{{ $bundleCSS.RelPermalink }}"
     integrity="{{ $bundleCSS.Data.Integrity }}" />
+  
   {{ $jsAppearance := resources.Get "js/appearance.js" }}
   {{ $jsAppearance = $jsAppearance | resources.ExecuteAsTemplate "js/appearance.js" . | resources.Minify | resources.Fingerprint "sha512" }}
   <script type="text/javascript" src="{{ $jsAppearance.RelPermalink }}"
     integrity="{{ $jsAppearance.Data.Integrity }}"></script>
+  
   {{ if .Site.Params.enableSearch | default false }}
   {{ $jsFuse := resources.Get "lib/fuse/fuse.min.js" }}
   {{ $jsSearch := resources.Get "js/search.js" }}
   {{ $assets.Add "js" (slice $jsFuse $jsSearch) }}
   {{ end }}
+  
   {{ if .Site.Params.enableCodeCopy | default false }}
   {{ $jsCode := resources.Get "js/code.js" }}
   {{ $assets.Add "js" (slice $jsCode) }}
   {{ end }}
+  
   {{ if .Site.Params.rtl | default false }}
   {{ $jsRTL := resources.Get "js/rtl.js" }}
   {{ $assets.Add "js" (slice $jsRTL) }}
   {{ end }}
+  
   {{ if $assets.Get "js" }}
   {{ $bundleJS := $assets.Get "js" | resources.Concat "js/main.bundle.js" | resources.Minify | resources.Fingerprint
   "sha512" }}
@@ -74,9 +86,11 @@
     integrity="{{ $bundleJS.Data.Integrity }}" data-copy="{{ i18n " code.copy" }}" data-copied="{{ i18n " code.copied"
     }}"></script>
   {{ end }}
+  
   {{ if not .Site.Params.disableImageZoom | default true }}
   <script src="https://cdn.bootcdn.net/ajax/libs/zoom.js/0.0.1/zoom.min.js"></script>
   {{ end }}
+
   {{/* Icons */}}
   {{ if templates.Exists "partials/favicons.html" }}
   {{ partialCached "favicons.html" .Site }}
@@ -86,24 +100,27 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon-16x16.png" | relURL }}" />
   <link rel="manifest" href="{{ "site.webmanifest" | relURL }}" />
   {{ end }}
+  
   {{/* Site Verification */}}
   {{ with .Site.Params.verification.google }}
   <meta name="google-site-verification" content="{{ . }}" />
   {{ end }}
+  
   {{ with .Site.Params.verification.bing }}
   <meta name="msvalidate.01" content="{{ . }}" />
   {{ end }}
+  
   {{ with .Site.Params.verification.pinterest }}
   <meta name="p:domain_verify" content="{{ . }}" />
   {{ end }}
+  
   {{ with .Site.Params.verification.yandex }}
   <meta name="yandex-verification" content="{{ . }}" />
   {{ end }}
-  {{/* Social */}}
-  {{ template "_internal/opengraph.html" . }}
-  {{ template "_internal/twitter_cards.html" . }}
+
   {{/* Schema */}}
   {{ partial "schema.html" . }}
+  
   {{/* Me */}}
   {{ with .Site.Author.name }}
   <meta name="author" content="{{ . }}" />{{ end }}
@@ -113,40 +130,35 @@
   <link href="{{ $url }}" rel="me" />{{ end }}
   {{ end }}
   {{ end }}
+  
   {{/* Vendor */}}
   {{ partial "vendor.html" . }}
+  
   {{/* Analytics */}}
   {{ partial "analytics/main.html" .Site }}
+
   {{/* Extend head - eg. for custom analytics scripts, etc. */}}
   {{ if templates.Exists "partials/extend-head.html" }}
   {{ partialCached "extend-head.html" .Site }}
   {{ end }}
+
   <meta name="theme-color"/>
-  {{/* Firebase */}}
-  {{ with $.Site.Params.firebase }}
-  {{ if isset $.Site.Params "firebase" }}
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script>
-
-    const firebaseConfig = {
-      apiKey: {{ $.Site.Params.firebase.apiKey }},
-      authDomain: {{ $.Site.Params.firebase.apiKey }},
-      projectId: {{ $.Site.Params.firebase.projectId }},
-      storageBucket: {{ $.Site.Params.firebase.storageBucket }},
-      messagingSenderId: {{ $.Site.Params.firebase.messagingSenderId }},
-      appId: {{ $.Site.Params.firebase.appId }},
-      measurementId: {{ $.Site.Params.firebase.measurementId }}
-    };
-
-    var app = firebase.initializeApp(firebaseConfig);
-    var db = firebase.firestore();
-    var auth = firebase.auth();
-
-  </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3758644447684310"
      crossorigin="anonymous"></script>
-  {{ end }}
-  {{ end }}
+<script>
+const images = document.querySelectorAll('img');
+images.forEach((img) => {
+  let currentSrc = img.src;
+  
+  // 检查 URL 是否已有查询参数
+  if (currentSrc.indexOf('?') === -1) {
+    // 如果没有参数，直接添加 '?rd=...'
+    img.src = `${currentSrc}?rd=${Math.random()}`;
+  } else {
+    // 如果已有参数，追加 '&rd=...'
+    img.src = `${currentSrc}&rd=${Math.random()}`;
+  }
+});
+</script>  
+    
 </head>

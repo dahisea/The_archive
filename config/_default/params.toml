@@ -14,11 +14,11 @@ enableCodeCopy = true
 mainSections = ["posts"]
 # robots = ""
 
-disableImageOptimization = false
+disableImageOptimization = true
 disableTextInHeader = false
 
-defaultBackgroundImage = "https://www.loliapi.com/acg/pe/?.png" # used as default for background images 
-defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.png" # used as default for featured images in all articles
+defaultBackgroundImage = "https://www.loliapi.com/acg/pe/?.webp" # used as default for background images 
+defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.webp" # used as default for featured images in all articles
 
 # highlightCurrentMenuArea = true
 # smartTOC = true
