@@ -5,7 +5,7 @@ cover:
 
 ---
 #Dahi-no-public-DNS-server
-## Google Dns
+## ALI Dns (CHINA)
 ### DNS OVER HTTPS
 ``https://get-resolution-ok-cdn.dahi.icu/dns-query``
 

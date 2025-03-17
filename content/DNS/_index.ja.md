@@ -5,7 +5,7 @@ cover:
 
 ---
 #ダヒのパブリックDNSサーバー
-## Google DNS
+## ALI DNS(CHINA)
 ### DNS OVER HTTPS
 「https://get-resolution-ok-cdn.dahi.icu/dns-query」
 
