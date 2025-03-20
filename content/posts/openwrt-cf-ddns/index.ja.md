@@ -1,39 +1,38 @@
 ---
-title: 「Openwrt の CloudflareDDNS 設定」
+title: "OpenWrtのCloudFlaredDns構成"
 date: 2024-08-01T10:25:04Z
 draft: false
-description: 「DDNSの方法」
-tags: [「オープンワート」]
-
+description: "DDNSメソッド"
+tags: [「ああ、人体にスプレーする」]
 ---
-### 1. Cloudflare.com-v4 が DDNS 設定に含まれているかどうかを確認します
+### 1。cloudflare.com-v4がDDNS設定に含まれているかどうかを確認します
 
-![スクリーンショット_20240802-183356.png](https://oxs.dahi.icu/pic/スクリーンショット_20240802-183356.png)
-![Screenshot_20240802-183347.png](https://oxs.dahi.icu/pic/Screenshot_20240802-183347.png)
-
-
-### 2. CF 解析を構成する
-
-対応する解像度を自由に設定するだけです。ipv4 は a、ipv6 は aaaa
+！[screenshot_20240802-183356.pinnico]（https：// oh like.dahi.icu/batch/screenshot_20240802-183356.pinnico）
+！[screenshot_20240802-183347.pinnico]（https：// oh like.dahi.icu/batch/screenshot_20240802-183347.pinnico）
 
 
-### 3. CF API トークンの作成
-私のプロフィール -> API トークン -> トークンの作成 -> カスタムトークンの作成
+### 2。CF解析を構成します
+
+対応する解析を自由に構成するだけで、ipv4はa、ipv6はaaaaです
+
+
+###3。CFAPIトークンを作成します
+私のプロフィール - > APIトークン - >トークンを作成 - >カスタムトークンを作成します
 
 https://dash.cloudflare.com/profile/api-tokens
 
-必要な権限: ゾーンの DNS 変更
+必要な権限：リージョンDNS変更
 
-### 4. 図に示すように、OpenwrtDDNS モジュールを構成します。
-![スクリーンショット_20240802-194810~2.png](https://oxs.dahi.icu/pic/スクリーンショット_20240802-194810~2.png)
+### 4。図に示すように、openwrtddnsモジュールを構成します
+..
 
 引用
-> https://alexskra.com/blog/dynamc-dnsddns-with-openwrt-and-cloudflare/
+> https：// alexはguest.com/blog/ for the carriage-denis's tannin-with-ohスプレーを人体に備えています。
 
-![スクリーンショット_20240802-194810~2.png](https://oxs.dahi.icu/pic/スクリーンショット_20240802-194810~2.png)
+..
 
-外国人マスターの指導に感謝します（
+彼らのアドバイスをしてくれた外国のマスターに感謝します（
 
-![スクリーンショット_20240802-195526.png](https://oxs.dahi.icu/pic/スクリーンショット_20240802-195526.png)
+！[screenshot_20240802-195526.pinnico]（https：// oh like.dahi.icu/batch/screenshot_20240802-195526.pinnico）
 
-## さて、再起動してお楽しみください。
+##さあ、再起動して楽しんでください。

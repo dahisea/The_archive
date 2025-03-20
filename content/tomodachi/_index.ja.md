@@ -2,24 +2,25 @@
 title: "友達"
 date: 2024-08-14
 draft: false
-description: 「何人かの友達」
+description: "何人かの友達"
 slug: "tomodachi"
-tags: [「フレンドリンク」]
+tags: ["フレンドリーリンク"]
 showDate: false
 showAuthor: false
 showReadingTime: false
 showEdit: false
 layoutBackgroundHeaderSpace: false
 cardViewScreenWidth: false
-
 ---
-## このサイト
-名前:ダヒブログ
+##このサイト
 
-アバター: https://oxs.dahi.icu/pic/avatar.png または https://s1.ax1x.com/2023/08/01/pP9zpXd.png (バックアップ)
+名前：ダヒブログ
+アバター：https：//oxs.dahi.icu/pic/avatar.pngまたはhttps://s1.ax1x.com/2023/08/01/pp9zpxd.png（代替）
+リンク：[https://dahi.icu/]（https://dahi.icu/）
+説明：タイムハエ、いつか重要な人たちと再び会えることを願っています
 
-リンク: [https://dahi.icu/](https://dahi.icu/)
+## Eメール：全員IIラフ@Punchasing Power.com
 
-説明: 時が経っても、いつか大切な人たちにまた会えますように
 
-電子メール: Expect@dahi.icu
+
+<div id = "tcomment"> </div>

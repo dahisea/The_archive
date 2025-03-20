@@ -1,11 +1,12 @@
 ---
 title: 寄付する
 description: 
-cover: 
-
+cover:
 ---
-#ETH
-0xAF81630F672d5feb9BDd4EFc9d844f02bc2C7F35
+＃書くのは楽しいです
 
-#BTC
-bc1qflvaz3julqg6ays8ue5pdhvkjxyu6wrm2v7tgc
+＃eth
+0小さなAF81630F672しかし5FEB9BDD4EFC9
+
+＃BTC
+彼の父親になる父、lv azheng 3は国から離れています

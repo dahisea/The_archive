@@ -1,10 +1,9 @@
 ---
-title: "注記"
-description: "ダヒの记事"
+title: "覚えて"
+description: "ヒの官网"
 
 cascade:
   showDate: true
   showAuthor: false
   invertPagination: true
-
 ---

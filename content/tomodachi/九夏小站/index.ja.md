@@ -1,6 +1,6 @@
 ---
-            title: "九夏小站"
-            tags: [一个没有梦想的咸鱼开发者]
+title: "ジュキアの小さな駅"
+            tags: [夢のない塩漬け魚の開発者]
             externalUrl: "https://blog.inekoxia.com/"
             weight: 71
             showDate: false
@@ -10,5 +10,4 @@
             showLikes: false
             showViews: false
             layoutBackgroundHeaderSpace: false
-            
 ---

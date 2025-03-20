@@ -1,6 +1,6 @@
 ---
-            title: "染屿小窝"
-            tags: [永远相信美好的事情即将发生]
+title: "Ranyu Small Nest"
+            tags: [常に良いことが起こると信じている]
             externalUrl: "https://melog.cc/"
             weight: 61
             showDate: false
@@ -10,5 +10,4 @@
             showLikes: false
             showViews: false
             layoutBackgroundHeaderSpace: false
-            
 ---

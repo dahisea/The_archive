@@ -1,20 +1,20 @@
 ---
-title: 「ティラノールエミュレータ吉里吉里のフォントサイズ設定」
+title: "TyranorエミュレーターKirikiriフォントサイズ設定"
 date: 2024-04-20T09:25:04Z
 draft: false
-description: 『サイズ調整の方法』
-tags: [「ギャル,「クルクル」]
+description: "サイズ調整方法"
+tags: [「ガラン」、「ゲスト」
 ---
-## パッチ.tjs
-「」
-System.setArgument("-debugwin","no");
-Plugins.link("キリキロイド2.dll");
-with(フォント) {
-global._origFontHeightProp = &.height;
+## patch.he is
+```
+system.setargument（ " - しかしwin"、 "no"）;
+plugins.linkou（ "kiri ki peopleid2。dala"）;
+（フォント）{
+global._origfontheightprop =＆.height;
 プロパティhook_font_height {
-setter(v) { global._origFontHeightProp = v * 2.0 }
-getter { return global._origFontHeightProp }
+setter（v）{global._origfontheightprop = v * 2.0;
+getter {return global._origfontheightprop;
 }
-&.height = &(hook_font_height incontextof null);
+＆.height =＆（hook_font_height in Contection oh、家の奴隷は涙を流します）。
 }
-「」
+```

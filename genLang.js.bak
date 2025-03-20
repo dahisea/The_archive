@@ -67,24 +67,6 @@ async function processFrontMatter(block) {
     return translatedBlock.trim(); // Remove trailing newline
 }
 
-// Process Markdown content, preserving code blocks and URLs
-async function processContent(content) {
-    const lines = content.split("\n");
-    let translatedContent = "";
-
-    for (const line of lines) {
-        // Skip translation for code blocks and URLs
-        if (line.startsWith("```") || line.startsWith("http")) {
-            translatedContent += `${line}\n`;
-        } else {
-            const translatedLine = await convert(line, defaultLang, targetLang);
-            translatedContent += `${translatedLine}\n`;
-        }
-    }
-
-    return translatedContent.trim();
-}
-
 // Process a single file
 async function processFile(filePath) {
     if (!filePath.endsWith("index.md")) return;
@@ -101,7 +83,7 @@ async function processFile(filePath) {
     const content = parts.slice(2).join("---\n");
 
     const translatedFrontMatter = await processFrontMatter(frontMatter);
-    const translatedContent = await processContent(content);
+    const translatedContent = await convert(content, defaultLang, targetLang);
 
     const newFileContent = `---\n${translatedFrontMatter}\n---\n${translatedContent}`;
     fs.writeFileSync(targetFilePath, newFileContent, 'utf8');

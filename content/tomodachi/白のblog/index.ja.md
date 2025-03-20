@@ -1,6 +1,6 @@
 ---
-            title: "白のblog"
-            tags: [是一只只有一点点技术力的小白捏]
+title: "白いブログ"
+            tags: [それは少しだけの技術的な力を持つ初心者です]
             externalUrl: "https://blog.mashiro.pro/"
             weight: 31
             showDate: false
@@ -10,5 +10,4 @@
             showLikes: false
             showViews: false
             layoutBackgroundHeaderSpace: false
-            
 ---

@@ -4,7 +4,7 @@ description:
 cover: 
 ---
 # Dahi-no-public-DNS-server
-## ALI Dns(CHINA)
+## A Proxy FOR ALI Dns(CHINA)
 ### DNS OVER HTTPS
 ``https://get-resolution-ok-cdn.dahi.icu/dns-query``
 

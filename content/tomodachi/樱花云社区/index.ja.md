@@ -1,6 +1,6 @@
 ---
-            title: "樱花云社区"
-            tags: [技术交流社区]
+title: "さくらクラウドコミュニティ"
+            tags: [技術交換コミュニティ]
             externalUrl: "https://www.sakuraidc.cc/"
             weight: 01
             showDate: false
@@ -10,5 +10,4 @@
             showLikes: false
             showViews: false
             layoutBackgroundHeaderSpace: false
-            
 ---

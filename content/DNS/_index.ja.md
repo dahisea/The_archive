@@ -1,13 +1,12 @@
 ---
 title: DNS
 description: 
-cover: 
-
+cover:
 ---
-#ダヒのパブリックDNSサーバー
-## ALI DNS(CHINA)
-### DNS OVER HTTPS
-「https://get-resolution-ok-cdn.dahi.icu/dns-query」
+＃dahi-no-public-dns-server
+##アリDNS（中国）のプロキシ
+### dns over https
+`` https：//翌日解像度-ok-chen dingnan.dahi.icu/denis-query``
 
-### iOS/iPad OS DOH
+### iOS/iPad os doh
 https://fastly.jsdelivr.net/gh/dahisea/Dahi-no-public-DNS-server/dahi-no-dns-https.mobileconfig
