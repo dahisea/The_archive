@@ -5,7 +5,7 @@ draft: false
 description: ""
 tags: ["game", "genshin"]
 ---
-國際版延時高，進不去?
+國際版延時高，進不去抓包軟件？啟動！
 
 重寫 api `https://sg-cg-api.hoyoverse.com/hk4e_global/cg/dispatcher/api/getNodesInfo`
 
@@ -73,4 +73,4 @@ tags: ["game", "genshin"]
 }
 ```
 
-A是美國，S是新加坡
+A是美國，S是新加坡哦！
