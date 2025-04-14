@@ -17,11 +17,10 @@
 
   {{/* Metadata */}}
   {{ with (.Params.Summary | default .Params.Description) | default .Site.Params.description -}}
-  <meta name="description" content="{{ . }}，提供中医治疗、养生保健服务" />
+  <meta name="description" content="{{ . }}" />
   {{- end }}
   
   {{ with .Params.Tags | default .Site.Params.keywords -}}
-  <meta name="keywords" content="中医院, 中医治疗, 养生, 中药, 保健, 疗法, 针灸, 推拿, 传统医学" />
   {{- end }}
   
   {{ with .Site.Params.robots }}
@@ -144,6 +143,7 @@
 
   <meta name="theme-color"/>
   <script src="https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.38/twikoo.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3758644447684310" data-overlays="bottom" crossorigin="anonymous"></script>
     <script>
         twikoo.init({
             envId: 'https://cobk.dahi.icu', 
