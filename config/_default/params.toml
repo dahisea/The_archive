@@ -35,8 +35,8 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.webp" # used as default
   showScrollToTop = true
 
 [homepage]
-  layout = "background" # valid options: page, profile, hero, card, background, custom
-  # homepageImage = "IMAGE.jpg" # used in: hero, and card
+  layout = "hero" # valid options: page, profile, hero, card, background, custom
+  homepageImage = "https://www.loliapi.com/acg/pe/?.webp" # used in: hero, and card
   showRecent = true
   showRecentItems = 5
   showMoreLink = true
