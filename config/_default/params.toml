@@ -14,8 +14,8 @@ enableCodeCopy = true
 mainSections = ["posts"]
 # robots = ""
 
-disableImageOptimization = false
-disableTextInHeader = false
+disableImageOptimization = true
+disableTextInHeader = true
 
 defaultBackgroundImage = "https://www.loliapi.com/acg/pe/?.webp" # used as default for background images 
 defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.webp" # used as default for featured images in all articles
@@ -35,8 +35,7 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.webp" # used as default
   showScrollToTop = true
 
 [homepage]
-  layout = "card" # valid options: page, profile, hero, card, background, custom
-  homepageImage = "https://www.loliapi.com/acg/pe/?.webp" # used in: hero, and card
+  layout = "profile" # valid options: page, profile, hero, card, background, custom
   showRecent = true
   showRecentItems = 5
   showMoreLink = true
