@@ -12,16 +12,22 @@ showEdit: false
 layoutBackgroundHeaderSpace: false
 cardViewScreenWidth: false
 ---
+# This site
 
-## This site
+## Name
+Dahi Blog
 
-Name：Dahi Blog
-Avatar：https://oxs.dahi.icu/pic/avatar.png 或 https://s1.ax1x.com/2023/08/01/pP9zpXd.png（备用）
-Link：[https://dahi.icu/](https://dahi.icu/)
-Description：時光流轉，願你有一天能與重要的人重逢
+## Avatar
+[https://oxs.dahi.icu/pic/avatar.png](https://oxs.dahi.icu/pic/avatar.png)
+or [https://s1.ax1x.com/2023/08/01/pP9zpXd.png](https://s1.ax1x.com/2023/08/01/pP9zpXd.png)（Backup）
 
-## Email：dahiicu@gmail.com
+## Link
+[https://dahi.icu/](https://dahi.icu/)
 
+## Description
+時光流轉，願你有一天能與重要的人重逢
 
+## Email
+dahiicu@gmail.com
 
 <div id="tcomment"></div>
