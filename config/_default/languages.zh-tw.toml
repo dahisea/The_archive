@@ -1,20 +1,20 @@
 languageCode = "zh-tw"
 languageName = "正體字"
 weight = 3
-title = "Dahi的部落格"
+title = "大海Dahi的部落格世界"
 
 [params]
   displayName = "正體字"
   isoCode = "zh-tw"
   rtl = false
   dateFormat = "2006-01-02"
-  description = "Dahi的部落格"
+  description = "Welcome to Dahi的部落格"
 
 [author]
   name = "Dahi"
   image = "https://img3.tapimg.com/avatars/etag/FrXPfpRN0pwF5SuiQ7MIPO3BXdkK.png?imageMogr2/auto-orient/strip/format/webp"
   headline = "ようこそ"
-  bio = "Study"
+  bio = "Studying"
   links = [
     { github = "https://github.com/dahisea" }
   ]
