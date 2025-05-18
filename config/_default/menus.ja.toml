@@ -17,8 +17,8 @@
   weight = 40
 
  [[main]]
-   name = "TOMODACHI"
-   pageRef = "TOMODACHI"
+   name = "Tomo"
+   pageRef = "tomodachi"
    weight = 200
 
 [[main]]
@@ -49,13 +49,8 @@
 
  [[footer]]
    name = "DONATE"
-   pageRef = "DONATE"
+   pageRef = "donate"
    weight = 95
-   
- [[footer]]
-   name = "TOMODACHI"
-   pageRef = "TOMODACHI"
-   weight = 99
    
  [[footer]]
    name = "異次元への旅"

@@ -1,14 +1,14 @@
-languageCode = "zh-TW"
-languageName = "繁體字"
+languageCode = "ja"
+languageName = "日本語"
 weight = 3
-title = "大海Dahi的部落格世界"
+title = "大海DahiのBlog世界"
 
 [params]
-  displayName = "繁體字"
-  isoCode = "zh-TW"
+  displayName = "日本語"
+  isoCode = "ja"
   rtl = false
   dateFormat = "2006-01-02"
-  description = "Welcome to Dahi的部落格"
+  description = "Welcome to Dahi Blog"
 
 [author]
   name = "Dahi"
