@@ -1,11 +1,11 @@
-languageCode = "zh-SG"
-languageName = "简体中文"
+languageCode = "zh-TW"
+languageName = "正體字"
 weight = 3
 title = "大海DahiのBlog世界"
 
 [params]
-  displayName = "简体中文"
-  isoCode = "zh-SG"
+  displayName = "正體字"
+  isoCode = "zh-TW"
   rtl = false
   dateFormat = "2006-01-02"
   description = "Welcome to Dahi Blog"
