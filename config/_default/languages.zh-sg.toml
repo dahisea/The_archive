@@ -5,7 +5,7 @@ title = "大海DahiのBlog世界"
 
 [params]
   displayName = "简体中文"
-  isoCode = "zh-cn"
+  isoCode = "zh-SG"
   rtl = false
   dateFormat = "2006-01-02"
   description = "Welcome to Dahi Blog"
