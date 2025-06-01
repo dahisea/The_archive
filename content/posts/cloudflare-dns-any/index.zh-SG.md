@@ -32,7 +32,7 @@ Cloudflare 提供以下公共 DNS over HTTPS 端点：
 
 手动配置安全的DNS
 
-##高级应用
+## 高级应用
 
 ### 在路由器上配置
 
