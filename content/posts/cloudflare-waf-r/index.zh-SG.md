@@ -23,11 +23,11 @@ tags: ["cloudflare", "waf"]
 
 ## 规则 2: AS Byebye
 
-**适用场景**：动态软件，本站为静态，动态访问都是robot
+**适用场景**：动态软件，本站为静态，动态访问都是robot，以及不科学的路径
 
 **规则详情**：
 ```
-(ends_with(http.request.uri.path, ".php")) or (ends_with(http.request.uri.path, ".asp")) or (ends_with(http.request.uri.path, ".aspx")) or (ends_with(http.request.uri.path, ".jsp")) or (ends_with(http.request.uri.path, ".cfm")) or (ends_with(http.request.uri.path, ".pl")) or (ends_with(http.request.uri.path, ".cgi")) or (ends_with(http.request.uri.path, ".py")) or (ends_with(http.request.uri.path, ".sh")) or (ends_with(http.request.uri.path, ".do")) or (ends_with(http.request.uri.path, ".action")) or (ends_with(http.request.uri.path, ".phtml")) or (ends_with(http.request.uri.path, ".phar")) or (ends_with(http.request.uri.path, ".inc")) or (ends_with(http.request.uri.path, ".bak")) or (ends_with(http.request.uri.path, ".swp")) or (ends_with(http.request.uri.path, ".sql")) or (ends_with(http.request.uri.path, ".env")) or (ends_with(http.request.uri.path, ".git")) or (ends_with(http.request.uri.path, ".svn")) or (ends_with(http.request.uri.path, ".htaccess")) or (ends_with(http.request.uri.path, ".htpasswd"))
+(ends_with(http.request.uri.path, ".php")) or (ends_with(http.request.uri.path, ".asp")) or (ends_with(http.request.uri.path, ".aspx")) or (ends_with(http.request.uri.path, ".jsp")) or (ends_with(http.request.uri.path, ".cfm")) or (ends_with(http.request.uri.path, ".pl")) or (ends_with(http.request.uri.path, ".cgi")) or (ends_with(http.request.uri.path, ".py")) or (ends_with(http.request.uri.path, ".sh")) or (ends_with(http.request.uri.path, ".do")) or (ends_with(http.request.uri.path, ".action")) or (ends_with(http.request.uri.path, ".phtml")) or (ends_with(http.request.uri.path, ".phar")) or (ends_with(http.request.uri.path, ".inc")) or (ends_with(http.request.uri.path, ".bak")) or (ends_with(http.request.uri.path, ".swp")) or (ends_with(http.request.uri.path, ".sql")) or (ends_with(http.request.uri.path, ".env")) or (ends_with(http.request.uri.path, ".git")) or (ends_with(http.request.uri.path, ".svn")) or (ends_with(http.request.uri.path, ".htaccess")) or (ends_with(http.request.uri.path, ".htpasswd")) or (http.request.uri.path contains "/.")
 ```
 
 ## 规则 3: AI Byebye
