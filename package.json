@@ -1,6 +1,6 @@
 {
   "dependencies": {
     "@iamtraction/google-translate": "github:iamtraction/google-translate",
-    "axios": "^1.7.4"
+    "axios": "^1.9.0"
   }
 }

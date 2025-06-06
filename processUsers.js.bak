@@ -5,9 +5,8 @@ const path = require('path');
 const configDir = "./config/_default";
 const defaultLang = "zh-tw";
 const usersFolderPath = "./content/tomodachi/";
-const translate = require('@iamtraction/google-translate');
 
-var targetLangs = [];
+var targetLangs = ["zh-SG"];
 
 const configFiles = fs.readdirSync(configDir);
 configFiles.forEach(file => {
@@ -51,48 +50,6 @@ for (file in files) {
     }
 }
 
-var cache = {};
-
-async function convert(text, from, to) {
-    var options = {
-        from: from,
-        to: to
-    };
-    if (!cache[to])
-        cache[to] = {};
-    if (cache[to][text])
-        return cache[to][text];
-    var translated_text = await translate(text, options);
-    cache[to][text] = translated_text.text;
-    return translated_text.text;
-}
-
-async function translateFrontMatterTags(block, targetLang, tags) {
-    var array = block.split("\n");
-    var translatedBlock = "";
-    for (var i = 0; i < array.length; i++) {
-        if (array[i].indexOf(":") > -1) {
-            var elements = array[i].split(":");
-            var newElement = "";
-            if (elements[0].indexOf("tags") != -1) {
-                translatedTags = [];
-                for (var j in tags) {
-                    var tempTag = await convert(tags[j], defaultLang, targetLang);
-                    translatedTags.push(tempTag);
-                }
-                var translatedTagsString = translatedTags.join(", ");
-                newElement = elements[0] + ": [" + translatedTagsString + "]";
-            } else {
-                newElement = array[i];
-            }
-        } else {
-            newElement = array[i];
-        }
-        translatedBlock += newElement + "\n";
-    }
-    return translatedBlock;
-}
-
 async function downloadImage(url, dest) {
     const writer = fs.createWriteStream(dest);
     const response = await axios({
@@ -109,19 +66,19 @@ async function downloadImage(url, dest) {
 
 async function processUsers() {
     for (var i in users) {
-        var userMDFile = "---\n\
-            title: \""+ users[i].title + "\"\n\
-            tags: ["+ users[i].tags + "]\n\
-            externalUrl: \""+ users[i].url + "\"\n\
-            weight: "+ (i+1) +"\n\
-            showDate: false\n\
-            showAuthor: false\n\
-            showReadingTime: false\n\
-            showEdit: false\n\
-            showLikes: false\n\
-            showViews: false\n\
-            layoutBackgroundHeaderSpace: false\n\
-            \r---\n";
+        var userMDFile = `---
+title: "${users[i].title}"
+tags: [${users[i].tags}]
+externalUrl: "${users[i].url}"
+weight: ${i+1}
+showDate: false
+showAuthor: false
+showReadingTime: false
+showEdit: false
+showLikes: false
+showViews: false
+layoutBackgroundHeaderSpace: false
+---\n`;
 
         var dir = path.join(usersFolderPath, users[i].title.replaceAll("/", "-"));
 
@@ -129,9 +86,9 @@ async function processUsers() {
             fs.mkdirSync(dir);
             console.log(i, users[i].title);
             fs.writeFileSync(path.join(dir, 'index.md'), userMDFile);
+            // Create files for other languages with the same content
             for (var j in targetLangs) {
-                var content = await translateFrontMatterTags(userMDFile, targetLangs[j], users[i].tags);
-                fs.writeFileSync(path.join(dir, 'index.' + targetLangs[j] + '.md'), content);
+                fs.writeFileSync(path.join(dir, 'index.' + targetLangs[j] + '.md'), userMDFile);
             }
             // Download and save the image
             await downloadImage(users[i].source, path.join(dir, 'feature.jpg'));
