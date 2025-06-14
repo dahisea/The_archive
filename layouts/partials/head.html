@@ -90,7 +90,7 @@
   {{ end }}
   
   {{ if not .Site.Params.disableImageZoom | default true }}
-  <script src="https://cdn.bootcdn.net/ajax/libs/zoom.js/0.0.1/zoom.min.js"></script>
+  <script src="https://cdn.jsdmirror.com/npm/zoom-vanilla.js@2.0.6/dist/zoom.min.js"></script>
   {{ end }}
 
   {{/* Icons */}}
@@ -145,7 +145,7 @@
   {{ end }}
 
   <meta name="theme-color"/>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3758644447684310" data-overlays="bottom" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3758644447684310" crossorigin></script>
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <script>document.addEventListener("DOMContentLoaded",()=>{"serviceWorker"in navigator?(console.log("浏览器支持 Service Worker"),window.addEventListener("load",async()=>{try{const e=await navigator.serviceWorker.register("/sw.js",{scope:"/"});console.log("Service Worker 注册成功:",e),e.addEventListener("updatefound",()=>{const e=e.installing;console.log("发现新版本的 Service Worker:",e),e.addEventListener("statechange",()=>{console.log("Service Worker 状态变化:",e.state)})})}catch(e){console.error("Service Worker 注册失败:",e)}}),navigator.serviceWorker.addEventListener("controllerchange",()=>{console.log("控制页面的 Service Worker 已变更")})):console.warn("当前浏览器不支持 Service Worker")});</script>
 </head>
