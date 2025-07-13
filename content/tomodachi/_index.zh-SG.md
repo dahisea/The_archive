@@ -31,3 +31,19 @@ or [https://s1.ax1x.com/2023/08/01/pP9zpXd.png](https://s1.ax1x.com/2023/08/01/p
 ## Email
 dahiicu@gmail.com
 
+<script src="https://giscus.app/client.js"
+        data-repo="dahisea/Blog_Archive_U_Comment"
+        data-repo-id="R_kgDOPLxRAg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOPLxRAs4Cs5B9"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light_protanopia"
+        data-lang="zh-TW"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        defer>
+</script>

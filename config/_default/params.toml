@@ -74,7 +74,7 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.webp" # used as default
   showWordCount = true
   sharingLinks = [ "linkedin", "twitter", "bluesky", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram"]
   showZenMode = false
-  showComments = false
+  showComments = true
 
 [list]
   showHero = true
