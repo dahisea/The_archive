@@ -1,8 +1,8 @@
 ---
-title: "白のblog"
-tags: [是一只只有一点点技术力的小白捏]
-externalUrl: "https://blog.mashiro.pro/"
-weight: 6
+title: "AcoFork"
+tags: [Protect What You Love!]
+externalUrl: "https://www.afo.im/"
+weight: 5
 showDate: false
 showAuthor: false
 showReadingTime: false

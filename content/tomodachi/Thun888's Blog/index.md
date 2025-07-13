@@ -2,7 +2,7 @@
 title: "Thun888's Blog"
 tags: [夏日当空 心如深渊]
 externalUrl: "https://blog.hzchu.top/"
-weight: 5
+weight: 7
 showDate: false
 showAuthor: false
 showReadingTime: false

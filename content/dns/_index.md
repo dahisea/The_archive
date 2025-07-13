@@ -2,6 +2,7 @@
 title: DNS
 description: 
 cover: 
+showComments: true
 ---
 # Dahi-no-public-DNS-server
 ## A Proxy FOR ALI Dns(CHINA)

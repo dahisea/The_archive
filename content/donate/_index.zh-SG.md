@@ -2,6 +2,7 @@
 title: Donate
 description: 
 cover: 
+showComments: true
 ---
 # 爱发电
 https://afdian.tv/a/dahia

@@ -1,8 +1,8 @@
 ---
-title: "白のblog"
-tags: [是一只只有一点点技术力的小白捏]
-externalUrl: "https://blog.mashiro.pro/"
-weight: 6
+title: "夜轻Blog"
+tags: [一个人]
+externalUrl: "https://blog.yeqing.net/"
+weight: 4
 showDate: false
 showAuthor: false
 showReadingTime: false

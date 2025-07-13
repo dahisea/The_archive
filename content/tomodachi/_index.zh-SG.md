@@ -11,6 +11,7 @@ showReadingTime: false
 showEdit: false
 layoutBackgroundHeaderSpace: false
 cardViewScreenWidth: false
+showComments: true
 ---
 # This site
 
@@ -30,4 +31,3 @@ or [https://s1.ax1x.com/2023/08/01/pP9zpXd.png](https://s1.ax1x.com/2023/08/01/p
 ## Email
 dahiicu@gmail.com
 
-<div id="tcomment"></div>
