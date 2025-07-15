@@ -18,7 +18,7 @@ disableImageOptimization = false
 disableTextInHeader = false
 
 defaultBackgroundImage = "https://www.loliapi.com/acg/pe/?.webp" # used as default for background images 
-defaultFeaturedImage = "#random-card" # used as default for featured images in all articles
+defaultFeaturedImage = "https://www.loliapi.com/acg/pc/#random-card" # used as default for featured images in all articles
 
 # highlightCurrentMenuArea = true
 # smartTOC = true
