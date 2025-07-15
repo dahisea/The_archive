@@ -35,21 +35,21 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.webp" # used as default
   showScrollToTop = true
 
 [homepage]
-  layout = "profile" # valid options: page, profile, hero, card, background, custom
+  layout = "background" # valid options: page, profile, hero, card, background, custom
   showRecent = true
   showRecentItems = 10
   showMoreLink = true
   showMoreLinkDest = "/posts"
-  cardView = true
+  cardView = false
   cardViewScreenWidth = false
   layoutBackgroundBlur = false # only used when layout equals background
 
 [article]
   showDate = true
-  showViews = false
+  showViews = true
   showLikes = false
-  showDateOnlyInArticle = false
-  showDateUpdated = false
+  showDateOnlyInArticle = true
+  showDateUpdated = true
   showAuthor = false
   showAuthorBottom = true
   showHero = true
@@ -83,7 +83,7 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.webp" # used as default
   layoutBackgroundHeaderSpace = true # only used when heroStyle equals background
   showBreadcrumbs = false
   showSummary = false
-  showViews = false
+  showViews = true
   showLikes = false
   showTableOfContents = false
   showCards = true
@@ -99,18 +99,18 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.webp" # used as default
 [taxonomy]
   showTermCount = true
   showHero = true
-  # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
-  showViews = false
+  showViews = true
   showLikes = false
   showTableOfContents = false
   cardView = false
 
 [term]
   showHero = true
-  # heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
+  heroStyle = "background" # valid options: basic, big, background, thumbAndBackground
   showBreadcrumbs = false
-  showViews = false
+  showViews = true
   showLikes = false
   showTableOfContents = true
   groupByYear = false
