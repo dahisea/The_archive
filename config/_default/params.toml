@@ -40,7 +40,7 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/?.webp" # used as default
   showRecentItems = 10
   showMoreLink = true
   showMoreLinkDest = "/posts"
-  cardView = false
+  cardView = true
   cardViewScreenWidth = false
   layoutBackgroundBlur = false # only used when layout equals background
 
