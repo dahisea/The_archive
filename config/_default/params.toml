@@ -13,7 +13,7 @@ enableSearch = true
 enableCodeCopy = true
 mainSections = ["posts"]
 # robots = ""
-
+disableImageZoom = false
 disableImageOptimization = false
 disableTextInHeader = false
 
@@ -25,7 +25,7 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/" # used as default for f
 # smartTOCHideUnfocusedChildren = true
 
 [header]
-  layout = "fixed-fill-blur" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
+  layout = "fixed" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
 
 [footer]
   showMenu = true
@@ -73,7 +73,7 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/" # used as default for f
   showAuthorsBadges = false
   showWordCount = true
   sharingLinks = [ "linkedin", "twitter", "bluesky", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram"]
-  showZenMode = false
+  showZenMode = true
   showComments = true
 
 [list]
@@ -135,12 +135,8 @@ defaultFeaturedImage = "https://www.loliapi.com/acg/pc/" # used as default for f
   # domain = "llama.yoursite.com"
   # dataDomains = "yoursite.com,yoursite2.com"
 
-[buymeacoffee]
-  # identifier = ""
-  # globalWidget = true
-  # globalWidgetMessage = "Hello"
-  # globalWidgetColor = "#FFDD00"
-  # globalWidgetPosition = "Right"
+[advertisement]
+  adsense = "ca-pub-3758644447684310"
 
 [verification]
   # google = ""
