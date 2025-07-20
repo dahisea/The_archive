@@ -1,10 +1,10 @@
 languageCode = "zh-TW"
 languageName = "正體字"
 weight = 3
-title = "大海DahiのBlog世界"
+title = "ダヒの世界"
 
 [params]
-  displayName = "正體字"
+  displayName = "正體"
   isoCode = "zh-TW"
   rtl = false
   dateFormat = "2006-01-02"
