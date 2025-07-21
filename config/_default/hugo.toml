@@ -13,7 +13,7 @@ hasCJKLanguage = true
 
 buildDrafts = false
 buildFuture = false
-
+enableRobotsTXT = true
 enableEmoji = true
 
 [pagination]
