@@ -1,6 +1,5 @@
 ---
 title: "友人"
-date: 2024-08-14
 draft: false
 description: "一些朋友"
 slug: "tomodachi"

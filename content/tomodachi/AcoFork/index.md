@@ -1,7 +1,7 @@
 ---
 title: "AcoFork"
-tags: [Protect What You Love!]
-externalUrl: "https://www.afo.im/"
+tags: [爱你所爱]
+externalUrl: "https://2x.nz/"
 weight: 5
 showDate: false
 showAuthor: false
