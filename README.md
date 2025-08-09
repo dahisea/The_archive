@@ -1,8 +1,11 @@
-# The_archive (BLOWFISH)
+# The_archive (BLOWFISH Patch)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5ad762ea-3107-4a5b-8338-d0fd001e0061/deploy-status)](https://app.netlify.com/projects/dahia/deploys)
 ![code-size](https://img.shields.io/github/languages/code-size/dahisea/The_archive)
 
-# What are the Differences
+# What are the Differences in custom
+- Supports for Pictures API using in cover of posts.
+- A friend links system optimized.
+
 Most differencess are in the custom layout modifications, which follow the https://github.com/nunocoracao/blowfish/blob/main/LICENSE .The_archive was hosted in netlify with the domain name https://dahi.icu/ and expecting your inspiration to optimising.
 
 # Blowfish
