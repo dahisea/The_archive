@@ -8,7 +8,11 @@
 
 Most differencess are in the custom layout modifications, which follow the https://github.com/nunocoracao/blowfish/blob/main/LICENSE .The_archive was hosted in netlify with the domain name https://dahi.icu/ and expecting your inspiration to optimising.
 
-# Blowfish
+# Copyright
+We keep the right of posts. The code of this patch is OpenSource.
+
+
+# Blowfish README
 
 Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohugo.io). It's built using Tailwind CSS with a clean and minimalist design that prioritises to your content.
 
