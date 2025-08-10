@@ -11,7 +11,7 @@ For using, please check our [Code of Conduct](/Code-of-Conduct.md) first.
 Most differencess are in the custom layout modifications, which follow the https://github.com/nunocoracao/blowfish/blob/main/LICENSE .The_archive was hosted in netlify with the domain name https://dahi.icu/ and expecting your inspiration to optimising.
 
 # Copyright
-We keep the right of posts. The code of this patch is OpenSource.
+We reserve the right of posts. The code of this patch is OpenSource.
 
 
 # Blowfish README
