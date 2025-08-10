@@ -4,7 +4,7 @@
 
 For using, please check our [Code of Conduct](/Code-of-Conduct.md) first.
 
-# What are the Differences in custom
+# What are the Diff
 - Supports for Pictures API using in cover of posts.
 - A friend links system optimized.
 
