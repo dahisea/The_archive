@@ -1,7 +1,7 @@
 languageCode = "zh-TW"
 languageName = "正體字"
 weight = 3
-title = "ダヒの世界"
+title = "Dahi Blog"
 
 [params]
   displayName = "正體"
