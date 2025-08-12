@@ -1,13 +1,36 @@
-# BLOWFI
+# The_archive (BLOWFISH Patch)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/5ad762ea-3107-4a5b-8338-d0fd001e0061/deploy-status)](https://app.netlify.com/projects/dahia/deploys)
-![code-size](https://img.shields.io/github/languages/code-size/dahisea/The_archive)
-现在你可以部署在 Netlify！
+![code-size](https://img.shields.io/github/languages/code-size/dahisea/blowfi)
+
 
 # What are the Diff
 - Supports for Pictures API using in cover of posts.
 - A friend links system optimized.
 
-Most differencess are in the custom layout modifications, which follow the MIT .The repo was hosted in netlify with the domain name https://dahi.icu/ and expecting your inspiration to optimising.
+Most differencess are in the custom layout modifications, which follow the https://github.com/nunocoracao/blowfish/blob/main/LICENSE .The_archive was hosted in netlify with the domain name https://dahi.icu/ and expecting your inspiration to optimising.
+
+# Copyright
+We reserve the right of posts. The code of this patch is OpenSource.
+
+
+# Blowfish README
+
+Blowfish is designed to be a powerful, lightweight theme for [Hugo](https://gohugo.io). It's built using Tailwind CSS with a clean and minimalist design that prioritises to your content.
+
+![blowfish screenshot](https://github.com/nunocoracao/blowfish/blob/main/images/screenshot.png?raw=true)
+
+
+🌏 [Demo site](https://blowfish.page/)  
+📑 [Theme documentation](https://blowfish.page/docs/)  
+💎 [Merch Store](http://tee.pub/lic/qwSlWVBL5zc)  
+🐛 [Bug reports & issues](https://github.com/nunocoracao/blowfish/issues)  
+💡 [Questions & feature requests](https://github.com/nunocoracao/blowfish/discussions)
+
+
+
+<a href="https://www.buymeacoffee.com/nunocoracao" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+<a target="_blank" href="http://tee.pub/lic/qwSlWVBL5zc"><img class="nozoom" src="https://img.buymeacoffee.com/button-api/?text=Merch Store &emoji=💎&slug=nunocoracao&button_colour=5F7FFF&font_colour=ffffff&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00" /></a>
+
 
 
 ## Features
