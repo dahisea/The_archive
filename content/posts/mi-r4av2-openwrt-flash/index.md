@@ -1,5 +1,5 @@
 ---
-title: "2023小米路由器4A千兆版最新款（r4av2）Openwrt刷入教程"
+title: "小米路由器4A千兆版最新款（r4av2）Openwrt刷入教程"
 date: 2023-05-19T01:25:04Z
 draft: false
 description: "教程"

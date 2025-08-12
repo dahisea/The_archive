@@ -1,5 +1,5 @@
 ---
-title: "Bing搜索引擎設置，解決Bing訪問慢白屏的問題"
+title: "Bing搜索引擎設定"
 date: 2023-03-20T03:25:04Z
 draft: false
 description: "搜索"

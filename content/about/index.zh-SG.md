@@ -1,5 +1,5 @@
 ---
-title: "关于"
+title: "行为准则"
 date: 2024-08-14
 draft: false
 description: "关于本站"
