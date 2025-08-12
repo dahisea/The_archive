@@ -7,7 +7,7 @@
 - Supports for Pictures API using in cover of posts.
 - A friend links system optimized.
 
-Most differencess are in the custom layout modifications, which follow the https://github.com/nunocoracao/blowfish/blob/main/LICENSE .The_archive was hosted in netlify with the domain name https://dahi.icu/ and expecting your inspiration to optimising.
+Most differencess are in the custom layout.The repo was hosted in netlify and expecting your inspiration to optimising.
 
 # Copyright
 We reserve the right of posts. The code of this patch is OpenSource.
