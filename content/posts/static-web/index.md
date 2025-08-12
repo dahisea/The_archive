@@ -1,10 +1,11 @@
 ---
-title: "Tyranor模擬器Kirikiri字型大小設定"
+title: "N款静态托管/CDN服务的对比"
 date: 2025-07-14T09:25:04Z
 draft: false
 description: "Serverless服务有很多，静态托管就是重中之重，来看看谁最稳定快速"
 tags: ["Github", "Netlify"]
 ---
+
 # [Netlify](https://www.netlify.com)
 
 注册门槛高，需要使用谷歌邮箱注册。支持IPv6回源。用量限制较宽松，仅有带宽和构建时间限制。 **我认为是免费计划里最快的CDN！并且限制很少！**
