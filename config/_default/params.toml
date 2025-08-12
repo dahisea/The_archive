@@ -17,7 +17,7 @@ disableImageZoom = false
 disableImageOptimization = false
 disableTextInHeader = false
 
-defaultBackgroundImage = "" # used as default for background images 
+defaultBackgroundImage = "https://www.loliapi.com/acg/pe/" # used as default for background images 
 defaultFeaturedImage = "https://www.loliapi.com/acg/pc/" # used as default for featured images in all articles
 
 # highlightCurrentMenuArea = true
